@@ -1,0 +1,20 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history';
+import { Router, Switch, Route } from 'react-router';
+import { HomeComponent } from 'app/components/pages/home';
+
+export const history = createBrowserHistory();
+ReactDOM.render(
+  <div>
+    <Router history={history}>
+        <Switch>
+          <Route path="/" component={HomeComponent} />
+          <Route path="/lol" component={HomeComponent} />
+        </Switch>
+      </Router>
+
+  </div>,
+  document.getElementById('root')
+);
