@@ -1,6 +1,11 @@
 .scroll-progress-bar {
-  max-height: calc(100% - 100px);
-  .bar{
+  max-height: 250px;
+  position: absolute;
+  right: 106px;
+  height: 100%;
+  top: 44%;
+  transform: translateY(-50%);
+  .bar {
     position: relative;
     min-width: 10px;
     min-height: 100%;
@@ -10,26 +15,25 @@
     background: #758fac;
     margin: auto;
     margin-top: 25px;
-    .drag-handler{
+    .drag-handler {
       position: absolute;
       border-radius: 50%;
       min-width: 32px;
       min-height: 32px;
       margin-left: -12px;
       transform: translateY(-16px);
-      background-color: red;
+      background-color: white;
+      border: 1px solid black;
       cursor: pointer;
       -webkit-user-drag: auto;
-
     }
   }
 }
-.scroll-big-container{
+.scroll-big-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;  
+  bottom: 0;
   border: 1px solid red;
 }
-

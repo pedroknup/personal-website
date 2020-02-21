@@ -4,39 +4,11 @@ import { RouteComponentProps } from 'react-router';
 // import { withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import './styles.scss';
-import { ScrollProgressBar } from '../../scroll-progress-bar'
+import { ScrollProgressBar } from '../../scroll-progress-bar';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
-export interface IHomeComponentProps { }
+export interface IHomeComponentProps {}
 
-const useStyles = makeStyles({
-  card: {
-    minWidth: 275,
-    marginTop: 100,
-    width: '100%',
-    maxWidth: '400px',
-    margin: 'auto'
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative'
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)'
-  },
-  textField: {
-    margin: '8px 0'
-  },
-  title: {
-    margin: '24px auto'
-  },
-  pos: {
-    marginBottom: 12
-  }
-});
 
 const STEPS = 2000;
 export const HomeComponent = (
@@ -48,82 +20,160 @@ export const HomeComponent = (
   const container = React.useRef<HTMLDivElement>(null);
   const intro = React.useRef<HTMLDivElement>(null);
   const [internalCurrentPosition, setInternalCurrentPosition] = React.useState(0);
+  const [previousState, setPreviousState] = React.useState(0);
+  const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
   const setNextState = (nextState: number) => {
     const diff = nextState - currentState;
     if (diff > 0) {
-
     }
-  }
+  };
+
   React.useEffect(() => {
     if (container)
-      if (container.current)
-        container.current.style.overflow = 'hidden'
-  }, [])
-  React.useEffect(() => {
-    setInternalCurrentPosition(currentPosition)
-  }, [currentPosition])
-  React.useEffect(() => {
-    WheelReact.config({
-      left: () => {
-        console.log('wheel left detected.');
-      },
-      right: () => {
-        console.log('wheel right detected.');
-      },
-      up: () => {
-        console.log('wheel up detected.');
-      },
-      down: () => {
-        console.log('wheel down detected.');
+      if (container.current) {
+        container.current.style.overflow = 'hidden';
       }
-    });
-  })
-  const roundUp = (value: number) => {
-    return (~~((value + 99) / 100) * 100);
+    document.body.addEventListener('touchmove', deactivateDefaultScroll);
+
+    document.body.addEventListener('onscroll', stoppedScrolling, false);
+    return () => {
+      document.body.removeEventListener('touchmove', deactivateDefaultScroll);
+
+      document.body.removeEventListener('onscroll', stoppedScrolling);
+    };
+  }, []);
+  const stoppedScrolling = (event: Event) => {};
+
+  React.useEffect(
+    () => {
+      setInternalCurrentPosition(0);
+      setInternalCurrentPosition(roundUp(currentPosition));
+      const color = getColorForPercentage(currentPosition * 0.05 / 100)
+     if (container) if (container.current) {
+         container.current.style.background= color
+       }
+    },
+    [currentPosition]
+  );
+
+  const roundUp = (value: number, ref = 100) => {
+    let rounded = ~~((value + 99) / ref) * ref;
+    return rounded;
+  };
+  const deactivateDefaultScroll = (e: Event) => {
+    e.preventDefault(); // this one is the key
+    e.stopPropagation();
+  };
+  function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
+
+  const getColorForPercentage = (pct: number) => {
+    const percentColors = [{ pct: 0.0, color: { r: 0xff, g: 0x00, b: 0 } }, { pct: 0.5, color: { r: 0xff, g: 0xff, b: 0 } }, { pct: 1.0, color: { r: 0x00, g: 0xff, b: 0 } }];
+    for (var i = 1; i < percentColors.length - 1; i++) {
+      if (pct < percentColors[i].pct) {
+        break;
+      }
+    }
+    var lower = percentColors[i - 1];
+    var upper = percentColors[i];
+    var range = upper.pct - lower.pct;
+    var rangePct = (pct - lower.pct) / range;
+    var pctLower = 1 - rangePct;
+    var pctUpper = rangePct;
+    var color = { r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper), g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper), b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper) };
+    return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
+    // or output as hex if preferred
+  };
+
+  const runAnimationThroughSteps = async (from: number) => {
+    let currentStep = roundUp(from);
+    let targetStep = 0;
+    if (currentStep >= STEPS / 4 && currentStep < (STEPS * 3) / 4) {
+      // >= 500
+      targetStep = 1000;
+    } else if (currentStep >= (STEPS * 3) / 4) {
+      // >= 1.5K
+      targetStep = 2000;
+    }
+
+    let to = targetStep;
+    const sleepMs = 50;
+    let i = from;
+    if (to > from) {
+      while (i < to) {
+        setCurrentPosition(i);
+        await sleep(sleepMs);
+        i += 100;
+      }
+    } else {
+      while (i > to) {
+        setCurrentPosition(i);
+        await sleep(sleepMs);
+        i -= 100;
+      }
+    }
+    let final = Math.round(i / 50) * 50;
+    if (final < 0) final = 0;
+    else if (final > STEPS) final = STEPS;
+    setCurrentPosition(final);
+  };
   return (
-
-    <div onWheel={(e) => {
-      e.preventDefault();
-      if (intro)
-        if (intro.current)
-          if (container)
-            if (container.current)
-              if (container.current.scrollTop === 0) {
-                let count = currentPosition + e.deltaY;
-                if (count > STEPS + 200) count = STEPS + 200
-                else if (count < 0) count = 0;
-                setCurrentPosition(count)
-                console.log(" scale", currentPosition);
-                if (currentPosition === STEPS + 200) {
-                  if (container)
-                    if (container.current)
-                      container.current.style.overflow = 'auto'
-                } else {
-                  if (container)
-                    if (container.current)
-                      container.current.style.overflow = 'hidden'
-                }
-
-              } else {
-                container.current.style.overflow = 'auto'
-              }
-    }
-    }
+    <div
       ref={container}
-      className="home-container">
+      onWheel={(e) => {
+        if (isScrolling !== null && isScrolling != undefined) window.clearTimeout(isScrolling);
+        setIsScrolling(
+          setTimeout(() => {
+            runAnimationThroughSteps(internalCurrentPosition);
+          }, 150)
+        );
+
+        if (intro)
+          if (intro.current)
+            if (container)
+              if (container.current)
+                if (container.current.scrollTop === 0) {
+                  let count = currentPosition + e.deltaY;
+                  if (count > STEPS + 200) count = STEPS + 200;
+                  else if (count < 0) count = 0;
+                  setCurrentPosition(count);
+                  if (currentPosition === STEPS + 200) {
+                    if (container) if (container.current) container.current.style.overflow = 'auto';
+                  } else {
+                    if (container)
+                      if (container.current) container.current.style.overflow = 'hidden';
+                  }
+                } else {
+                  container.current.style.overflow = 'auto';
+                }
+      }}
+      id="container"
+      className="home-container"
+    >
       <div ref={intro} className="intro">
-        <div style={{ color: 'red', position: 'absolute', top: 16, left: 16 }}>{internalCurrentPosition}</div>
-        <ScrollProgressBar onChange={(value) => {
-
-          setInternalCurrentPosition(roundUp(value / 100 * STEPS))
-        }} onMouseUp={(value) => {
-          setCurrentPosition(roundUp(value / 100 * STEPS))
-        }} progress={currentPosition > STEPS ? STEPS * 0.05 : currentPosition * 0.05} />
-
+        <div style={{ color: 'white', position: 'absolute', top: 16, left: 16 }}>
+          {internalCurrentPosition}
+          <br />
+          {currentPosition}
+        </div>
+        <ScrollProgressBar
+          onChange={(value) => {
+            const total = (value / 100) * STEPS;
+            const rounded = roundUp(total);
+            setInternalCurrentPosition(0);
+            setInternalCurrentPosition(rounded);
+          }}
+          onMouseUp={(value) => {
+            const rounded = Math.round(value);
+            setCurrentPosition((rounded / 100) * STEPS);
+            let currentStep = (rounded / 100) * STEPS;
+            runAnimationThroughSteps(currentStep);
+          }}
+          progress={currentPosition > STEPS ? STEPS * 0.05 : currentPosition * 0.05}
+        />
       </div>
-      <div className="huge"></div>
+      <div className="huge" />
     </div>
-
   );
 };

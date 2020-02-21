@@ -1,20 +1,26 @@
 .home-container {
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: lightgray;
-  .intro{
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  overflow: auto;
+  .intro {
     justify-content: space-around;
     display: flex;
     min-height: 1000px;
   }
 }
 
-.huge{
+.huge {
   min-height: 2000px;
   min-width: 20px;
   background-color: lightblue;
 }
+body {
+  overflow: hidden;
+}
+

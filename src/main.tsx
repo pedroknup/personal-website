@@ -12,6 +12,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/" component={HomeComponent} />
           <Route path="/lol" component={HomeComponent} />
+          <Route exact path="/" component={HomeComponent} />
         </Switch>
       </Router>
 
