@@ -1,5 +1,20 @@
 .home-container {
-  margin: auto;
-  text-align: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightgray;
+  .intro{
+    justify-content: space-around;
+    display: flex;
+    min-height: 1000px;
+  }
 }
 
+.huge{
+  min-height: 2000px;
+  min-width: 20px;
+  background-color: lightblue;
+}
