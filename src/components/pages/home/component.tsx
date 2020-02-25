@@ -5,20 +5,22 @@ import { RouteComponentProps } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import './styles.scss';
 import { ScrollProgressBar } from '../../scroll-progress-bar';
+import { IntroPageComponent } from '../intro';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 export interface IHomeComponentProps {}
 
-
-const STEPS = 2000;
+const STEPS = 2400;
 export const HomeComponent = (
   // props: IHomeComponentProps & RouteComponentProps & HomeContainerProps
   props: IHomeComponentProps
 ) => {
   const [currentState, setCurrentState] = React.useState(0);
   const [currentPosition, setCurrentPosition] = React.useState(0);
+  const [hasScrolledIntro, setHasScrolledIntro] = React.useState(false);
   const container = React.useRef<HTMLDivElement>(null);
   const intro = React.useRef<HTMLDivElement>(null);
+  const introPageRef = React.useRef<HTMLDivElement>(null);
   const [internalCurrentPosition, setInternalCurrentPosition] = React.useState(0);
   const [previousState, setPreviousState] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
@@ -48,10 +50,19 @@ export const HomeComponent = (
     () => {
       setInternalCurrentPosition(0);
       setInternalCurrentPosition(roundUp(currentPosition));
-      const color = getColorForPercentage(currentPosition * 0.05 / 100)
-     if (container) if (container.current) {
-         container.current.style.background= color
-       }
+      const percentage = 100 - internalCurrentPosition / 4;
+      if (introPageRef) {
+        if (introPageRef.current) {
+          introPageRef.current.style.opacity = `${percentage}%`;
+        }
+      }
+      if (hasScrolledIntro) {
+        const color = getColorForPercentage((currentPosition * 0.05) / 100);
+        if (container)
+          if (container.current) {
+            container.current.style.background = color;
+          }
+      }
     },
     [currentPosition]
   );
@@ -69,7 +80,11 @@ export const HomeComponent = (
   }
 
   const getColorForPercentage = (pct: number) => {
-    const percentColors = [{ pct: 0.0, color: { r: 0xff, g: 0x00, b: 0 } }, { pct: 0.5, color: { r: 0xff, g: 0xff, b: 0 } }, { pct: 1.0, color: { r: 0x00, g: 0xff, b: 0 } }];
+    const percentColors = [
+      { pct: 0.0, color: { r: 0xff, g: 0x00, b: 0 } },
+      { pct: 0.5, color: { r: 0xff, g: 0xff, b: 0 } },
+      { pct: 1.0, color: { r: 0x00, g: 0xff, b: 0 } }
+    ];
     for (var i = 1; i < percentColors.length - 1; i++) {
       if (pct < percentColors[i].pct) {
         break;
@@ -81,20 +96,24 @@ export const HomeComponent = (
     var rangePct = (pct - lower.pct) / range;
     var pctLower = 1 - rangePct;
     var pctUpper = rangePct;
-    var color = { r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper), g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper), b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper) };
+    var color = {
+      r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
+      g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
+      b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
+    };
     return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
     // or output as hex if preferred
   };
 
   const runAnimationThroughSteps = async (from: number) => {
     let currentStep = roundUp(from);
-    let targetStep = 0;
+    let targetStep = 400;
     if (currentStep >= STEPS / 4 && currentStep < (STEPS * 3) / 4) {
       // >= 500
-      targetStep = 1000;
+      targetStep = STEPS / 2;
     } else if (currentStep >= (STEPS * 3) / 4) {
       // >= 1.5K
-      targetStep = 2000;
+      targetStep = STEPS;
     }
 
     let to = targetStep;
@@ -114,7 +133,7 @@ export const HomeComponent = (
       }
     }
     let final = Math.round(i / 50) * 50;
-    if (final < 0) final = 0;
+    if (final < 400) final = 400;
     else if (final > STEPS) final = STEPS;
     setCurrentPosition(final);
   };
@@ -126,7 +145,7 @@ export const HomeComponent = (
         setIsScrolling(
           setTimeout(() => {
             runAnimationThroughSteps(internalCurrentPosition);
-          }, 150)
+          }, 200)
         );
 
         if (intro)
@@ -135,10 +154,16 @@ export const HomeComponent = (
               if (container.current)
                 if (container.current.scrollTop === 0) {
                   let count = currentPosition + e.deltaY;
-                  if (count > STEPS + 200) count = STEPS + 200;
-                  else if (count < 0) count = 0;
+                  if (count > STEPS + 400) count = STEPS + 400;
+                  else if (count < 400 && hasScrolledIntro) {
+                    if (hasScrolledIntro) count = 400;
+                    else count = 0;
+                  }
+                  if (count >= 400 && !hasScrolledIntro) {
+                    setHasScrolledIntro(true);
+                  }
                   setCurrentPosition(count);
-                  if (currentPosition === STEPS + 200) {
+                  if (currentPosition >= STEPS + 100) {
                     if (container) if (container.current) container.current.style.overflow = 'auto';
                   } else {
                     if (container)
@@ -170,9 +195,14 @@ export const HomeComponent = (
             let currentStep = (rounded / 100) * STEPS;
             runAnimationThroughSteps(currentStep);
           }}
-          progress={currentPosition > STEPS ? STEPS * 0.05 : currentPosition * 0.05}
+          progress={currentPosition > STEPS ? (STEPS - 100) * 0.05 : (currentPosition - 100) * 0.05}
         />
       </div>
+      {!hasScrolledIntro && (
+        <div ref={introPageRef}>
+          <IntroPageComponent />
+        </div>
+      )}
       <div className="huge" />
     </div>
   );

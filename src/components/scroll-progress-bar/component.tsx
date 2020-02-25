@@ -35,7 +35,7 @@ export const ScrollProgressBar = (
   var isMoving = false;
   React.useEffect(
     () => {
-      let height = getHeight();
+      let height = getHeight() - 25;
       const valueInPx = (props.progress / 100) * height;
       setPosTop(valueInPx);
     },
