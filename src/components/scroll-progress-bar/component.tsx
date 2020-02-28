@@ -7,6 +7,7 @@ import './styles.scss';
 
 export interface ScrollProgressBar {
   progress: number;
+  minimum: number;
   onChange: (value: number) => void;
   onMouseUp: (value: number) => void;
 }
@@ -35,8 +36,11 @@ export const ScrollProgressBar = (
   var isMoving = false;
   React.useEffect(
     () => {
-      let height = getHeight() - 25;
-      const valueInPx = (props.progress / 100) * height;
+      let progress = props.progress;
+      if (props.progress < props.minimum)
+      progress = 0;
+      let height = getHeight();
+      const valueInPx = (props.progress / 100) * height - 2;
       setPosTop(valueInPx);
     },
     [props.progress]

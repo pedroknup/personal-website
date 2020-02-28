@@ -7,22 +7,22 @@
   transform: translateY(-50%);
   .bar {
     position: relative;
-    min-width: 10px;
+    min-width: 2px;
     min-height: 100%;
-    max-width: 10px;
+    max-width: 2px;
     background: #758fac;
     text-align: center;
     background: #758fac;
     margin: auto;
+    opacity: 0.2;
     margin-top: 25px;
     .drag-handler {
       position: absolute;
       border-radius: 50%;
-      min-width: 32px;
-      min-height: 32px;
-      margin-left: -12px;
-      transform: translateY(-16px);
-      background-color: white;
+      min-width: 4px;
+      min-height: 4px;
+      margin-left: -2px;
+      background-color: black;
       border: 1px solid black;
       cursor: pointer;
       -webkit-user-drag: auto;
@@ -30,10 +30,13 @@
   }
 }
 .scroll-big-container {
+  border: 1px solid red;
+}
+
+.full-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  border: 1px solid red;
 }

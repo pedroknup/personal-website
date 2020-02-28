@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+body {
+  font-family: Operator Mono !important;
+  color: $foreground;
+  h1{
+    font-weight: 100 !important;
+
+  }
+}
+.component-tag {
+  color: $orange-highlight;
+  &::before {
+    content: '<';
+    color: $foreground;
+  }
+  &::after {
+    content: '/>';
+    color: $foreground;
+  }
+}

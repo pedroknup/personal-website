@@ -47,6 +47,7 @@ module.exports = {
           'ts-loader'
         ].filter(Boolean)
       },
+
       // // css
       // {
       //   test: /\.css$/,
@@ -136,6 +137,10 @@ module.exports = {
       {
         test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/,
         use: 'file-loader'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: 'file-loader'
       }
     ]
   },
@@ -178,7 +183,7 @@ module.exports = {
         collapseInlineTagWhitespace: true
       },
       append: {
-        head: `<script src="//cdn.polyfill.io/v3/polyfill.min.js"></script>`
+        head: '<script src="//cdn.polyfill.io/v3/polyfill.min.js"></script>'
       },
       meta: {
         title: package.name,

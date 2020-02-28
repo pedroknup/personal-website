@@ -1,10 +1,12 @@
+@import '../../../styles/variables.scss';
+
 .home-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: lightgray;
+  background-color: $background;
   -webkit-overflow-scrolling: touch;
   height: 100vh;
   overflow: auto;
@@ -18,9 +20,8 @@
 .huge {
   min-height: 2000px;
   min-width: 20px;
-  background-color: lightblue;
+  background-color: $background;
 }
 body {
   overflow: hidden;
 }
-

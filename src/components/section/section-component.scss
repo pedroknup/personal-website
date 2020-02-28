@@ -1,0 +1,28 @@
+@import '../../styles/main.scss';
+
+.section {
+  padding: 0 32px;
+  .title {
+    width: 100%;
+    span {
+      color: $orange-highlight;
+      &::before {
+        content: '<';
+        color: $foreground;
+      }
+      &::after {
+        content: '>';
+        color: $foreground;
+      }
+    }
+    &.closing {
+      text-align: right;
+      span {
+        &::after {
+          content: '/>';
+          color: $foreground;
+        }
+      }
+    }
+  }
+}

@@ -11,5 +11,16 @@ export interface IHomeComponentProps {}
 
 const STEPS = 2000;
 export const IntroPageComponent = () => {
-  return <div className="intro-container">INTRO</div>;
+  return <div className="intro-container">
+      <h1>
+        Hi! <br />My name is <span className="component-tag">PedroKnup</span>
+      </h1>
+      <h3>and I am </h3>
+      <div className="scroll-down">
+        Scroll down to continue
+        <div className="arrow bounce">
+          <a className="fa fa-arrow-down fa-2x" href="#" > aa</a>
+        </div>
+      </div>
+    </div>;
 };
