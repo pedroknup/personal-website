@@ -15,7 +15,9 @@ export const Section = (props: ISectionProps) => {
       <div className="title">
         <span>{title}</span>
       </div>
+      <div className="content big">
       {children}
+      </div>
       <div className="title closing">
         <span>{title}</span>
       </div>
