@@ -1,0 +1,36 @@
+import * as React from 'react';
+import './skills-component.scss';
+import { Section } from '../../section/section-component';
+export interface IHomeComponentProps {}
+const { useState, useEffect } = React;
+
+interface ISkillItemProps {
+  title: string;
+  content: any;
+  open?: boolean;
+  progress: number;
+  id: number;
+  onClick: (key:number) => void;
+}
+export const SkillItem = (props: ISkillItemProps) => {
+  const { title, content, progress, open, id , onClick} = props;
+
+  const toggleOpen = () => {
+    onClick(id)
+  };
+
+  return (
+    <div className={`skill-item ${open ? 'open' : 'closed'}`}>
+      <div onClick={toggleOpen} className="title-container">
+        <span className="title">{title}</span>
+        <span className="icon">
+          <span className={`chevron ${open ? '' : 'bottom'}`} />
+        </span>
+      </div>
+      <div className="progress-container">
+        <div style={{ width: `${progress}%` }} className="bar" />
+      </div>
+      {open && <span className="content">{content}</span>}
+    </div>
+  );
+};

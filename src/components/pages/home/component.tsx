@@ -146,22 +146,13 @@ export const HomeComponent = (
     else if (final > STEPS) final = STEPS;
     setCurrentPosition(final);
   };
-  return (
-    <div
-      ref={container}
-      onWheel={(e) => {
+  return <div ref={container} onWheel={(e) => {
         if (isScrolling !== null && isScrolling != undefined) window.clearTimeout(isScrolling);
-        setIsScrolling(
-          setTimeout(() => {
+        setIsScrolling(setTimeout(() => {
             runAnimationThroughSteps(internalCurrentPosition);
-          }, 300)
-        );
+          }, 300));
 
-        if (intro)
-          if (intro.current)
-            if (container)
-              if (container.current)
-                if (container.current.scrollTop === 0) {
+        if (intro) if (intro.current) if (container) if (container.current) if (container.current.scrollTop === 0) {
                   let count = currentPosition + e.deltaY;
                   if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
                   else if (count < MINIMUM_STEPS && hasScrolledIntro) {
@@ -175,19 +166,15 @@ export const HomeComponent = (
                     count = MINIMUM_STEPS;
                   }
                   setCurrentPosition(count);
-                  if (currentPosition >= STEPS-300) {
+                  if (currentPosition >= STEPS - 300) {
                     if (container) if (container.current) container.current.style.overflow = 'auto';
                   } else {
-                    if (container)
-                      if (container.current) container.current.style.overflow = 'hidden';
+                    if (container) if (container.current) container.current.style.overflow = 'hidden';
                   }
                 } else {
                   container.current.style.overflow = 'auto';
                 }
-      }}
-      id="container"
-      className="home-container"
-    >
+      }} id="container" className="home-container">
       <div ref={intro} className="intro">
         <IntroPageComponent />
         <div style={{ color: 'white', position: 'absolute', top: 16, left: 16 }}>
@@ -196,37 +183,25 @@ export const HomeComponent = (
           {currentPosition}
         </div>
         <div ref={aboutPageRef}>
-          <ScrollProgressBar
-            minimum={MINIMUM_STEPS}
-            onChange={(value) => {
+          <ScrollProgressBar minimum={MINIMUM_STEPS} onChange={(value) => {
               const total = (value / 100) * STEPS;
               const rounded = roundUp(total);
               setInternalCurrentPosition(0);
               setInternalCurrentPosition(rounded);
-            }}
-            onMouseUp={(value) => {
+            }} onMouseUp={(value) => {
               const rounded = Math.round(value);
               setCurrentPosition((rounded / 100) * STEPS);
               let currentStep = (rounded / 100) * STEPS;
               runAnimationThroughSteps(currentStep);
-            }}
-            progress={
-              currentPosition > STEPS
-                ? (STEPS - MINIMUM_STEPS) * 0.05
-                : currentPosition <= MINIMUM_STEPS
-                ? 0
-                : (currentPosition - MINIMUM_STEPS) * 0.05
-            }
-          />
+            }} progress={currentPosition > STEPS ? (STEPS - MINIMUM_STEPS) * 0.05 : currentPosition <= MINIMUM_STEPS ? 0 : (currentPosition - MINIMUM_STEPS) * 0.05} />
         </div>
       </div>
-
+      <SkillsPage />
       <div className="huge" />
       <AboutPage />
-      <SkillsPage />
+
       <ProfessionalExperiencesPage />
       <EducationPage />
       <BlogPage />
-    </div>
-  );
+    </div>;
 };
