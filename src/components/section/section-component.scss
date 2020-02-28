@@ -30,5 +30,14 @@
         }
       }
     }
+    .description{
+      &::before{
+        content: none;
+      }
+      &::after{
+        content: none;
+      }
+      color: $foreground-light
+    }
   }
 }

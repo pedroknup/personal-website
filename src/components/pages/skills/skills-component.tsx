@@ -28,66 +28,32 @@ export const SkillsPage = () => {
     if (key === selectedSkill) setSelectedSkill(-1);
     else setSelectedSkill(key);
   };
-  return (
-    <Section title="Skills">
+  return <Section title="Skills" description="My favorite and most relevant tools and frameworks">
       <div className="skills-container">
         <section>
           <span className="title">Front End</span>
           {skillsFront.map((skill) => {
-            return <SkillItem
-              key={skill.id}
-              id={skill.id}
-              onClick={skillOnClick}
-              open={skill.id === selectedSkill}
-              title={skill.name}
-              content={skill.content}
-              progress={skill.progress}
-            />;
+            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Back End</span>
           {skillsBack.map((skill) => {
-            return <SkillItem
-              key={skill.id}
-              id={skill.id}
-              onClick={skillOnClick}
-              open={skill.id === selectedSkill}
-              title={skill.name}
-              content={skill.content}
-              progress={skill.progress}
-            />;
+            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Mobile</span>
           {skillsMobile.map((skill) => {
-            return <SkillItem
-              key={skill.id}
-              id={skill.id}
-              onClick={skillOnClick}
-              open={skill.id === selectedSkill}
-              title={skill.name}
-              content={skill.content}
-              progress={skill.progress}
-            />;
+            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Others</span>
           {skillsOther.map((skill) => {
-            return <SkillItem
-              key={skill.id}
-              id={skill.id}
-              onClick={skillOnClick}
-              open={skill.id === selectedSkill}
-              title={skill.name}
-              content={skill.content}
-              progress={skill.progress}
-            />;
+            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
       </div>
-    </Section>
-  );
+    </Section>;
 };

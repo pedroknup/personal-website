@@ -196,7 +196,7 @@ export const HomeComponent = (
             }} progress={currentPosition > STEPS ? (STEPS - MINIMUM_STEPS) * 0.05 : currentPosition <= MINIMUM_STEPS ? 0 : (currentPosition - MINIMUM_STEPS) * 0.05} />
         </div>
       </div>
-      <SkillsPage />
+      <SkillsPage /> 
       <div className="huge" />
       <AboutPage />
 

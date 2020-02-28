@@ -6,7 +6,7 @@ export interface IHomeComponentProps {}
 
 export const ProfessionalExperiencesPage = () => {
   return <div className="professional-experiences-container">
-      <Section title="ProfessionalExperiences">
+      <Section title="ProfessionalExperiences" description="Professional Career">
         <span>Professional Experiences section</span>
 
       </Section>

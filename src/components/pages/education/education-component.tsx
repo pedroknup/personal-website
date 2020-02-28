@@ -13,9 +13,8 @@ export interface IHomeComponentProps {}
 const STEPS = 2000;
 export const EducationPage = () => {
   return <div className="education-container">
-      <Section title="Education">
+      <Section title="Education" description="Academic Career">
         <span>Education section</span>
-
       </Section>
     </div>;
 };

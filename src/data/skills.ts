@@ -1,4 +1,10 @@
-import { ISkillItem } from '../../types/interfaces';
+interface ISkillItem { 
+  name: string;
+  content: any;
+  progress: number;
+  id: number;
+}
+
 const skillsFront: ISkillItem[] = [
   {
     id: 0,
