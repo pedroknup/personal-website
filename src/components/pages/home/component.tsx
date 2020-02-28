@@ -12,6 +12,8 @@ import { Section } from '../../section';
 import { ProfessionalExperiencesPage } from '../professional-experience';
 import { AboutPage } from '../about';
 import { BlogPage } from '../blog';
+const sticky = require('react-sticky');
+const { StickyContainer, Sticky } = sticky;
 const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
 
@@ -31,6 +33,8 @@ export const HomeComponent = (
   const [internalCurrentPosition, setInternalCurrentPosition] = React.useState(0);
   const [previousState, setPreviousState] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
+  const [hasScrolled, setHasScrolled] = React.useState(false);
+
   const setNextState = (nextState: number) => {
     const diff = nextState - currentState;
     if (diff > 0) {
@@ -146,13 +150,25 @@ export const HomeComponent = (
     else if (final > STEPS) final = STEPS;
     setCurrentPosition(final);
   };
-  return <div ref={container} onWheel={(e) => {
+  return (
+    <div
+      ref={container}
+      onWheel={(e) => {
+        console.log('rolled');
+        if (!hasScrolled) {
+          setHasScrolled(true);
+        }
         if (isScrolling !== null && isScrolling != undefined) window.clearTimeout(isScrolling);
-        setIsScrolling(setTimeout(() => {
+        setIsScrolling(
+          setTimeout(() => {
             runAnimationThroughSteps(internalCurrentPosition);
-          }, 300));
-
-        if (intro) if (intro.current) if (container) if (container.current) if (container.current.scrollTop === 0) {
+          }, 300)
+        );
+        if (intro)
+          if (intro.current)
+            if (container)
+              if (container.current)
+                if (container.current.scrollTop === 0) {
                   let count = currentPosition + e.deltaY;
                   if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
                   else if (count < MINIMUM_STEPS && hasScrolledIntro) {
@@ -169,38 +185,78 @@ export const HomeComponent = (
                   if (currentPosition >= STEPS) {
                     if (container) if (container.current) container.current.style.overflow = 'auto';
                   } else {
-                    if (container) if (container.current) container.current.style.overflow = 'hidden';
+                    if (container)
+                      if (container.current) container.current.style.overflow = 'hidden';
                   }
                 } else {
                   container.current.style.overflow = 'auto';
                 }
-      }} id="container" className="home-container">
+      }}
+      id="container"
+      className="home-container"
+    >
+      <div className="links">
+        <div className="buttons">
+          <div className="button red" />
+          <div className="button yellow" />
+          <div className="button green" />
+        </div>
+        {/* <div className="title">Pedro Knup</div> */}
+        <div className="container">
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Experiences</a>
+          <a href="#">Education</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
       <div ref={intro} className="intro">
-        <IntroPageComponent />
-        <div style={{ color: 'white', position: 'absolute', top: 16, left: 16 }}>
+        <IntroPageComponent
+          hasScrolled={hasScrolled}
+          onFinish={() => {
+            setHasScrolled(true);
+          }}
+        />
+        <div style={{ color: 'white', opacity: 0.1, position: 'absolute', top: 16, right: 16 }}>
           {internalCurrentPosition}
           <br />
           {currentPosition}
         </div>
         <div ref={aboutPageRef}>
-          <ScrollProgressBar minimum={MINIMUM_STEPS} onChange={(value) => {
+          <ScrollProgressBar
+            minimum={MINIMUM_STEPS}
+            onChange={(value) => {
               const total = (value / 100) * STEPS;
               const rounded = roundUp(total);
               setInternalCurrentPosition(0);
               setInternalCurrentPosition(rounded);
-            }} onMouseUp={(value) => {
+            }}
+            onMouseUp={(value) => {
               const rounded = Math.round(value);
               setCurrentPosition((rounded / 100) * STEPS);
               let currentStep = (rounded / 100) * STEPS;
               runAnimationThroughSteps(currentStep);
-            }} progress={currentPosition > STEPS ? (STEPS - MINIMUM_STEPS) * 0.1 : currentPosition <= MINIMUM_STEPS ? 0 : (currentPosition - MINIMUM_STEPS) * 0.1} />
+            }}
+            progress={
+              currentPosition > STEPS
+                ? (STEPS - MINIMUM_STEPS) * 0.1
+                : currentPosition <= MINIMUM_STEPS
+                ? 0
+                : (currentPosition - MINIMUM_STEPS) * 0.1
+            }
+          />
         </div>
       </div>
-      <SkillsPage /> 
-      <AboutPage />
-      <ProfessionalExperiencesPage />
-      <EducationPage />
-      <div className="huge" />
-      <BlogPage />
-    </div>;
+
+      <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
+        <Section title="About" />
+
+        <SkillsPage />
+        <AboutPage />
+        <ProfessionalExperiencesPage />
+        <EducationPage />
+        <BlogPage />
+      </div>
+    </div>
+  );
 };

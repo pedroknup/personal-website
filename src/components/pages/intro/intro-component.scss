@@ -1,36 +1,25 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/main.scss';
 .intro-text {
-  padding: 32px;
   &.finished {
     color: $green-highlight !important;
   }
+  padding: 32px;
 }
 .intro-container {
   overflow: auto;
   width: 100%;
   background-color: $background;
   font-family: Operator Mono;
-  // font-size: 24px;
-  h1 {
-    font-size: 48px;
-    line-height: 56px;
-    margin-bottom: 16px !important;
-  }
-  h3 {
-    font-size: 20px;
-  }
+  padding: 0;
+
   .scroll-down {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 128px;
-    text-align: center;
-    margin: auto;
-    color: $red-highlight;
-  }
-  * {
-    font-weight: 100 !important;
+    margin-left: 32px;
+    span {
+      background-color: $red-highlight;
+      color: white;
+      width: 204px;
+    }
   }
 }
 
@@ -83,4 +72,8 @@
       opacity: 1;
     }
   }
+}
+
+.soft-transition {
+  transition: opacity 2s ease;
 }

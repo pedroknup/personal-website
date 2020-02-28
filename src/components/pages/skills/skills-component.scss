@@ -6,7 +6,7 @@ $bar-length: 12px;
   flex-direction: row;
   justify-content: space-around;
   section {
-    flex: 25%;
+    min-width: 25%;
     margin: 4px;
     .title {
       color: $red-highlight;
@@ -47,6 +47,9 @@ $bar-length: 12px;
         color: white;
       }
     }
+  }
+  .clickable {
+    cursor: pointer;
   }
   span.title {
     // color: $green-highlight;

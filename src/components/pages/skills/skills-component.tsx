@@ -6,7 +6,6 @@ import './skills-component.scss';
 import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { Section } from '../../section/section-component';
 import { SkillItem } from './skill-item-component';
-import { ISkillItem } from '../../../../types/interfaces';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../../data';
