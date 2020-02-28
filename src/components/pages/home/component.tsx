@@ -166,7 +166,7 @@ export const HomeComponent = (
                     count = MINIMUM_STEPS;
                   }
                   setCurrentPosition(count);
-                  if (currentPosition >= STEPS - 300) {
+                  if (currentPosition >= STEPS) {
                     if (container) if (container.current) container.current.style.overflow = 'auto';
                   } else {
                     if (container) if (container.current) container.current.style.overflow = 'hidden';
