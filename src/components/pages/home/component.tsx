@@ -16,7 +16,7 @@ const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
 
 const MINIMUM_STEPS = 0;
-const STEPS = 2000;
+const STEPS = 1000;
 export const HomeComponent = (
   // props: IHomeComponentProps & RouteComponentProps & HomeContainerProps
   props: IHomeComponentProps
@@ -193,15 +193,14 @@ export const HomeComponent = (
               setCurrentPosition((rounded / 100) * STEPS);
               let currentStep = (rounded / 100) * STEPS;
               runAnimationThroughSteps(currentStep);
-            }} progress={currentPosition > STEPS ? (STEPS - MINIMUM_STEPS) * 0.05 : currentPosition <= MINIMUM_STEPS ? 0 : (currentPosition - MINIMUM_STEPS) * 0.05} />
+            }} progress={currentPosition > STEPS ? (STEPS - MINIMUM_STEPS) * 0.1 : currentPosition <= MINIMUM_STEPS ? 0 : (currentPosition - MINIMUM_STEPS) * 0.1} />
         </div>
       </div>
       <SkillsPage /> 
-      <div className="huge" />
       <AboutPage />
-
       <ProfessionalExperiencesPage />
       <EducationPage />
+      <div className="huge" />
       <BlogPage />
     </div>;
 };
