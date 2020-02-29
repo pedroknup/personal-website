@@ -203,7 +203,7 @@ export const HomeComponent = (
         </div>
         {/* <div className="title">Pedro Knup</div> */}
         <div className="container">
-          <a href="#">About</a>
+          <a className="selected" href="#">About</a>
           <a href="#">Skills</a>
           <a href="#">Experiences</a>
           <a href="#">Education</a>
@@ -249,7 +249,7 @@ export const HomeComponent = (
       </div>
 
       <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-        <Section title="About" />
+        <AboutPage />
 
         <SkillsPage />
         <AboutPage />

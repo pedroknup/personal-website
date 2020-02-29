@@ -71,6 +71,9 @@
         text-decoration: none;
         color: $foreground;
         padding: 0 24px;
+        &.selected{
+          color: white;
+        }
         &:hover {
           color: white;
         }

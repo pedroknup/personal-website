@@ -10,12 +10,78 @@ const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 export interface IHomeComponentProps {}
 
+interface ILink {
+  url: string;
+  title: string;
+}
+const links: ILink[] = [
+  {
+    url: '',
+    title: 'phknup@gmail.com'
+  },
+  {
+    url: '',
+    title: 'linkedin'
+  },
+  {
+    url: '',
+    title: 'github'
+  },
+  {
+    url: '',
+    title: 'youtube'
+  },
+
+  {
+    url: '',
+    title: 'instagram'
+  },
+
+  {
+    url: '',
+    title: 'facebook'
+  }
+];
+
 const STEPS = 2000;
 export const AboutPage = () => {
-  return <div className="about-container">
+  return (
+    <div className="about-container">
       <Section title="About">
-        <span>About section</span>
-
+        <span className="obj">
+          {`{`} <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">name</span>:{' '}
+          <span className="string">"Pedro Henrique Knup"</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">age</span>:{' '}
+          <span className="number">25</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">nationality</span>:{' '}
+          <span className="string">"Brazilian"</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">based</span>:{' '}
+          <span className="string">"Eindhoven, Netherlands"</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">contact</span>: [
+          <span>
+            {links.map((link, key) => (
+              <span className=".contact-links">
+                <a href={link.url} key={key}>
+                  {link.title}
+                </a>
+                {', '}
+              </span>
+            ))}
+          </span>
+          ] <br />
+          {`}`} <br />
+        </span>
+        <span>
+          
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum."
+        </span>
       </Section>
-    </div>;
+    </div>
+  );
 };
