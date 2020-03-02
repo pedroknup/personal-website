@@ -249,10 +249,10 @@ export const HomeComponent = (
       </div>
 
       <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-        <AboutPage />
+        {/* <AboutPage /> */}
 
-        <SkillsPage />
         <AboutPage />
+        <SkillsPage />
         <ProfessionalExperiencesPage />
         <EducationPage />
         <BlogPage />

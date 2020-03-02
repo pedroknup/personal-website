@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import './about-component.scss';
 import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { Section } from '../../section/section-component';
+import Typist from 'react-typist';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 export interface IHomeComponentProps {}
@@ -47,7 +48,7 @@ const STEPS = 2000;
 export const AboutPage = () => {
   return (
     <div className="about-container">
-      <Section title="About">
+      <Section paddingColumns={2} title="About">
         <span className="obj">
           {`{`} <br />
           &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">name</span>:{' '}
@@ -72,15 +73,15 @@ export const AboutPage = () => {
           ] <br />
           {`}`} <br />
         </span>
+        <br />
         <span>
-          
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum."
+          ullamco laboris nisi ut aliquip ex ea commodo consequat."
         </span>
+        <br />
+        <br />
+       
       </Section>
     </div>
   );

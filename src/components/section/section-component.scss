@@ -2,10 +2,15 @@
 
 .section {
   margin: 0 32px;
+  border-left: 1px solid #ffffff08;
+  position: relative;
   .content {
     margin: 0 32px;
-    &.big{ 
+    &.big {
       min-height: 500px;
+    }
+    &.padding {
+      border-left: 1px solid #ffffff08;
     }
   }
   .title {
@@ -30,14 +35,14 @@
         }
       }
     }
-    .description{
-      &::before{
+    .description {
+      &::before {
         content: none;
       }
-      &::after{
+      &::after {
         content: none;
       }
-      color: $foreground-light
+      color: $foreground-light;
     }
   }
 }

@@ -98,10 +98,28 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
               <Typist.Backspace count={8} delay={100} />
             musician */}
           <span />
+           
         </Typist>
       </div>
       
-       <div style={{opacity: hasFinishedTyping ? 1 : 0}} className="soft-transition scroll-down">
+        {hasFinishedTyping && 
+       (   <div style={{display:'flex'}}>
+         [
+      <Typist avgTypingDelay={80}
+          cursor={{ hideWhenDone:true, element: '' }}
+          startDelay={1000}>
+
+<span style={{ display: 'flex' }} className="obj">
+            <span className="string">"Developer"</span>,<span className="string">"Designer"</span>,
+            <span className="string">"Musician"</span>
+        </span>
+
+      </Typist>
+       ]
+       </div>
+       )
+        }
+       {/* <div style={{opacity: hasFinishedTyping ? 1 : 0}} className="soft-transition scroll-down">
           <span>
             Scroll down to continue
             <br />
@@ -112,8 +130,9 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
             <a className="fa fa-arrow-down fa-2x" href="#">
               aa
             </a>
-          </div> */}
-      </div>
+          </div> 
+      </div> 
+      */}
     </div>
   );
 };

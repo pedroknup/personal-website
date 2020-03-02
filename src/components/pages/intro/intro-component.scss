@@ -4,7 +4,7 @@
   &.finished {
     color: $super-orange-highlight !important;
   }
-  padding: 32px;
+  padding: 4px 32px;
 }
 .intro-container {
   overflow: auto;
@@ -12,6 +12,7 @@
   background-color: $background;
   font-family: Operator Mono;
   padding: 0;
+  min-height: 100vh;
 
   .scroll-down {
     margin-left: 32px;
@@ -20,6 +21,25 @@
       color: white;
       width: 204px;
     }
+  }
+  .obj {
+    white-space: pre-wrap;
+    color: $foreground;
+    .property {
+      color: $red-highlight;
+    }
+    .string {
+      color: $green-highlight;
+    }
+    .number {
+      color: $orange-highlight;
+    }
+  }
+  a {
+    color: $blue-highlight;
+  }
+  .contact-links {
+    color: $foreground;
   }
 }
 
