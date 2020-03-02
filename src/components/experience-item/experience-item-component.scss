@@ -1,0 +1,69 @@
+@import '../../styles/variables.scss';
+
+.experience-item {
+  padding: 6px 0;
+  display: inline-flex;
+  width: 100%;
+  &.open {
+    background-color: $background-light;
+  }
+  .toggle {
+    width: 24px;
+    min-width: 24px;
+  }
+
+  .picture {
+    min-width: 100px;
+    min-height: 60px;
+    max-height: 60px;
+    margin-right: 8px;
+    background-color: rgba(255, 255, 255, 0.233);
+  }
+  .content2 {
+    .date {
+      // color: $orange-highlight;
+      color: $foreground;
+    }
+    .title {
+      color: $blue-highlight;
+    }
+    .name {
+      color: $green-highlight;
+    }
+    .content2 {
+      margin: 6px 0;
+      display: none;
+      &.open {
+        display: block;
+      }
+    }
+  }
+}
+
+.chevron2::before {
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 7px;
+  position: relative;
+  top: 22px;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron2.right:before {
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+.chevron2.bottom:before {
+  top: 22px;
+  transform: rotate(135deg);
+}
+
+.chevron2.left:before {
+  transform: rotate(-135deg);
+}
