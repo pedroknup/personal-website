@@ -7,14 +7,10 @@ const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
 
 export const ProfessionalExperiencesPage = () => {
-  return (
-    <div className="professional-experiences-container">
-      <Section paddingColumns={2} title="ProfessionalExperiences" description="Professional Career">
+  return <div className="professional-experiences-container">
+      <Section id="experiences" paddingColumns={2} title="ProfessionalExperiences" description="Professional Career">
         {/* <span>Professional Experiences section</span> */}
-        {professionalExperiences.map((item, key) => (
-          <ExperienceItem {...item} key={key} />
-        ))}
+        {professionalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
       </Section>
-    </div>
-  );
+    </div>;
 };

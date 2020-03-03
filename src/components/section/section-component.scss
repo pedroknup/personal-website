@@ -1,22 +1,29 @@
 @import '../../styles/main.scss';
 
 .section {
-  margin: 0 32px;
+  margin: 0 16px 0 32px;
   border-left: 1px solid #ffffff08;
   position: relative;
+  .anchor {
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
   .content {
-    margin: 0 32px;
+    margin-left: 32px;
+    padding-bottom: 32px;
     &.big {
-      min-height: 500px;
     }
     &.padding {
       border-left: 1px solid #ffffff08;
     }
   }
   .title {
-    width: 100%;
     span {
       color: $orange-highlight;
+      background-color: $background;
+      margin-left: -1px;
+      padding-left: 1px;
       &::before {
         content: '<';
         color: $foreground;
@@ -35,14 +42,17 @@
         }
       }
     }
-    .description {
-      &::before {
-        content: none;
-      }
-      &::after {
-        content: none;
-      }
-      color: $foreground-light;
+  }
+  .description {
+    margin-left: -1px;
+    padding-left: 1px;
+    background-color: $background;
+    &::before {
+      content: none;
     }
+    &::after {
+      content: none;
+    }
+    color: $foreground-light;
   }
 }

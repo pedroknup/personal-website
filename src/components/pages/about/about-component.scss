@@ -20,4 +20,9 @@
   .contact-links { 
     color: $foreground
   }
+  .brackets{
+    background-color: $background;
+    margin-left: -1px;
+    padding: 2px 0 2px 1px;
+  }
 }

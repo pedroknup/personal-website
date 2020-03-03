@@ -102,7 +102,7 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
         </Typist>
       </div>
       
-        {hasFinishedTyping && 
+        {/* {hasFinishedTyping && 
        (   <div style={{display:'flex'}}>
          [
       <Typist avgTypingDelay={80}
@@ -117,7 +117,7 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
       </Typist>
        ]
        </div>
-       )
+       ) */
         }
        {/* <div style={{opacity: hasFinishedTyping ? 1 : 0}} className="soft-transition scroll-down">
           <span>

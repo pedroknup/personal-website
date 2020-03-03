@@ -46,43 +46,45 @@ const links: ILink[] = [
 
 const STEPS = 2000;
 export const AboutPage = () => {
-  return (
-    <div className="about-container">
-      <Section paddingColumns={2} title="About">
+  return <div className="about-container">
+      <Section id="about" paddingColumns={2} title="About">
         <span className="obj">
-          {`{`} <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">name</span>:{' '}
-          <span className="string">"Pedro Henrique Knup"</span>, <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">age</span>:{' '}
-          <span className="number">25</span>, <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">nationality</span>:{' '}
-          <span className="string">"Brazilian"</span>, <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">based</span>:{' '}
-          <span className="string">"Eindhoven, Netherlands"</span>, <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">contact</span>: [
-          <span>
-            {links.map((link, key) => (
-              <span className=".contact-links">
+          <span className="brackets">
+            {`{`} <br />
+          </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">name</span>: <span className="string">
+            "Pedro Henrique Knup"
+          </span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
+            age
+          </span>: <span className="number">25</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
+            nationality
+          </span>: <span className="string">"Brazilian"</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
+            based
+          </span>: <span className="string">"Eindhoven, Netherlands"</span>, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">contact</span>: [<span>
+            {links.map((link, key) => <span className=".contact-links">
                 <a href={link.url} key={key}>
                   {link.title}
                 </a>
                 {', '}
-              </span>
-            ))}
+              </span>)}
           </span>
           ] <br />
-          {`}`} <br />
+          <span className="brackets">
+            {`}`} <br />
+          </span>
         </span>
         <br />
         <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         </span>
         <br />
         <br />
-       
       </Section>
-    </div>
-  );
+    </div>;
 };

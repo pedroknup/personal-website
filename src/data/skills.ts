@@ -37,15 +37,15 @@ const skillsFront: ISkillItem[] = [
 ];
 const skillsBack: ISkillItem[] = [
   {
-    id: 4,
-    name: '.NET Framework/Core',
+    id: 5,
+    name: 'Node',
     content:
       'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
     progress: 90
   },
   {
-    id: 5,
-    name: 'Node',
+    id: 4,
+    name: '.NET',
     content:
       'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
     progress: 85
@@ -118,7 +118,7 @@ const skillsMobile: ISkillItem[] = [
   },
   {
     id: 15,
-    name: 'Xamarin/Xamarin.Forms',
+    name: 'Xamarin',
     content:
       'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
     progress: 60
@@ -156,7 +156,7 @@ const skillsOther: ISkillItem[] = [
   },
   {
     id: 20,
-    name: 'Xamarin/Xamarin.Forms',
+    name: 'Xamarin',
     content:
       'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
     progress: 60

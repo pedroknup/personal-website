@@ -27,7 +27,7 @@ export const SkillsPage = () => {
     if (key === selectedSkill) setSelectedSkill(-1);
     else setSelectedSkill(key);
   };
-  return <Section title="Skills" description="My favorite and most relevant tools and frameworks">
+  return <Section id="skills" paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
       <div className="skills-container">
         <section>
           <span className="title">Front End</span>

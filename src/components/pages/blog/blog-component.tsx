@@ -13,7 +13,7 @@ export interface IHomeComponentProps {}
 const STEPS = 2000;
 export const BlogPage = () => {
   return <div className="Blog-container">
-      <Section title="Blog">
+      <Section id="blog" title="Blog">
         <span>Blod section</span>
 
       </Section>

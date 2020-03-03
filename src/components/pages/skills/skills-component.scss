@@ -6,8 +6,8 @@ $bar-length: 12px;
   flex-direction: row;
   justify-content: space-around;
   section {
-    min-width: 25%;
-    margin: 4px;
+    min-width: 24%;
+    max-width: 24%;
     .title {
       color: $red-highlight;
     }
@@ -39,6 +39,7 @@ $bar-length: 12px;
   .title-container {
     display: flex;
     cursor: pointer;
+
     &:hover {
       .chevron {
         color: white;
@@ -54,6 +55,7 @@ $bar-length: 12px;
   span.title {
     // color: $green-highlight;
     color: $foreground;
+    width: 100%;
   }
   .content {
     font-size: 12px;

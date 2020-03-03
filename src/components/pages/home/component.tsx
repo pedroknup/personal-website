@@ -12,11 +12,27 @@ import { Section } from '../../section';
 import { ProfessionalExperiencesPage } from '../professional-experience';
 import { AboutPage } from '../about';
 import { BlogPage } from '../blog';
+import { INavbarItem, Navbar } from '../../../components/nav-bar/nav-bar-component';
 const sticky = require('react-sticky');
 const { StickyContainer, Sticky } = sticky;
 const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
-
+//  <a className="selected" href="#">About</a>
+//           <a href="#">Skills</a>
+//           <a href="#professional">Experiences</a>
+//           <a href="#">Education</a>
+//           <a href="#">Blog</a>
+const initialNavbarItem: INavbarItem[] = [
+  {
+    title: 'About',
+    isSelected: true,
+    id: 'about'
+  },
+  { title: 'Skills', isSelected: true, id: 'skills' },
+  { title: 'Experiences', isSelected: true, id: 'experiences' },
+  { title: 'Education', isSelected: true, id: 'education' },
+  { title: 'Blog', isSelected: true, id: 'blog' }
+];
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
 export const HomeComponent = (
@@ -34,7 +50,7 @@ export const HomeComponent = (
   const [previousState, setPreviousState] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
   const [hasScrolled, setHasScrolled] = React.useState(false);
-
+  const [navBarItems, setNavBarItems] = React.useState(initialNavbarItem);
   const setNextState = (nextState: number) => {
     const diff = nextState - currentState;
     if (diff > 0) {
@@ -56,6 +72,17 @@ export const HomeComponent = (
     };
   }, []);
   const stoppedScrolling = (event: Event) => {};
+
+  const onNavbarItemClick = () => {
+    setHasScrolled(true);
+    if (intro)
+      if (intro.current)
+        if (container)
+          if (container.current)
+            if (container.current.scrollTop === 0) {
+              if (container) if (container.current) container.current.style.overflow = 'auto';
+            }
+  };
 
   React.useEffect(
     () => {
@@ -195,21 +222,7 @@ export const HomeComponent = (
       id="container"
       className="home-container"
     >
-      <div className="links">
-        <div className="buttons">
-          <div className="button red" />
-          <div className="button yellow" />
-          <div className="button green" />
-        </div>
-        {/* <div className="title">Pedro Knup</div> */}
-        <div className="container">
-          <a className="selected" href="#">About</a>
-          <a href="#">Skills</a>
-          <a href="#">Experiences</a>
-          <a href="#">Education</a>
-          <a href="#">Blog</a>
-        </div>
-      </div>
+      <Navbar onClick={onNavbarItemClick} items={navBarItems} />
       <div ref={intro} className="intro">
         <IntroPageComponent
           hasScrolled={hasScrolled}

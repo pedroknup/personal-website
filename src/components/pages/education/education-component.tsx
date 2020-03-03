@@ -15,7 +15,7 @@ export interface IHomeComponentProps {}
 const STEPS = 2000;
 export const EducationPage = () => {
   return <div className="education-container">
-      <Section title="Education" description="Academic Career">
+      <Section paddingColumns={2} id="education" title="Education" description="Academic Career">
         {educationalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
       </Section>
     </div>;

@@ -1,0 +1,70 @@
+@import '../../styles/variables.scss';
+
+.links {
+  display: flex;
+  background-color: rgb(46, 46, 46);
+  z-index: 5;
+  margin-left: -32;
+  margin-right: -32;
+  padding: 4px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  .title {
+    color: white;
+    padding: 0 2px;
+    font-weight: 500;
+    width: 80px;
+    margin-left: 4px;
+  }
+  .buttons {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .button {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      min-height: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      &.red {
+        background-color: rgb(179, 49, 49);
+        &:hover {
+          background-color: red;
+        }
+      }
+      &.yellow {
+        background-color: rgb(204, 204, 45);
+        &:hover {
+          background-color: yellow;
+        }
+      }
+      &.green {
+        background-color: rgb(45, 97, 45);
+        &:hover {
+          background-color: green;
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    a {
+      text-decoration: none;
+      color: $foreground;
+      padding: 0 24px;
+      &.selected {
+        color: white;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
