@@ -7,6 +7,8 @@ import './education-component.scss';
 import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { Section } from '../../section/section-component';
 const wheelReact = require('wheel-react');
+import { educationalExperiences, IExperience } from '../../../data/experiences';
+import { ExperienceItem } from '../../../components/experience-item';
 const WheelReact = wheelReact.default;
 export interface IHomeComponentProps {}
 
@@ -14,7 +16,7 @@ const STEPS = 2000;
 export const EducationPage = () => {
   return <div className="education-container">
       <Section title="Education" description="Academic Career">
-        <span>Education section</span>
+        {educationalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
       </Section>
     </div>;
 };
