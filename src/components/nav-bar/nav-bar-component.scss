@@ -2,7 +2,9 @@
 
 .links {
   display: flex;
-  background-color: rgb(46, 46, 46);
+  background-color: rgba(46, 46, 46, 0.9) !important;
+  border-bottom: 1px solid rgb(37, 37, 37) !important;
+  backdrop-filter: blur(2px);
   z-index: 5;
   margin-left: -32;
   margin-right: -32;
@@ -12,6 +14,9 @@
   top: 0;
   font-family: sans-serif;
   font-size: 12px;
+  @media (max-width: #{$screen-sm-min}) {
+    height: 24px;
+  }
   .title {
     color: white;
     padding: 0 2px;
@@ -55,6 +60,9 @@
     display: flex;
     width: 100%;
     flex-direction: row;
+    @media (max-width: #{$screen-sm-min}) {
+      display: none !important;
+    }
     a {
       text-decoration: none;
       color: $foreground;

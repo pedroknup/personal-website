@@ -5,9 +5,18 @@ $bar-length: 12px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   section {
     min-width: 24%;
     max-width: 24%;
+    @media (max-width: #{$screen-md-min}) {
+      min-width: 49%;
+      max-width: 49%;
+    }
+    @media (max-width: #{$screen-sm-min}) {
+      min-width: 100%;
+      max-width: 100%;
+    }
     .title {
       color: $red-highlight;
     }
@@ -15,7 +24,6 @@ $bar-length: 12px;
 }
 
 .skill-item {
-  max-width: 300px;
   position: relative;
   z-index: 1;
   margin: 8px 0;
