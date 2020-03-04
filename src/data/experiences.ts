@@ -22,7 +22,7 @@ const educationalExperiences: IExperience[] = [
     icon: require('../assets/logo-companies/cefet.png'),
     link: 'www.google.com',
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }]
     }
   },
@@ -33,7 +33,7 @@ const educationalExperiences: IExperience[] = [
     description: 'Universidade Federal de Itajubá (UNIFEI)',
     link: 'www.google.com',
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
     }
   }
@@ -47,7 +47,7 @@ const professionalExperiences: IExperience[] = [
     icon: require('../assets/logo-companies/vale.png'),
     link: 'www.google.com',
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }]
     }
   },
@@ -58,7 +58,7 @@ const professionalExperiences: IExperience[] = [
     description: 'Clubpetro',
     link: 'www.google.com',
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
     }
   },
@@ -69,7 +69,7 @@ const professionalExperiences: IExperience[] = [
     link: 'www.google.com',
     icon: require('../assets/logo-companies/webbio.png'),
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
     }
   },
@@ -82,7 +82,7 @@ const professionalExperiences: IExperience[] = [
     icon: require('../assets/logo-companies/pycom.png'),
     defaultOpened: true,
     content: {
-      content: 'Content',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
     }
   }
