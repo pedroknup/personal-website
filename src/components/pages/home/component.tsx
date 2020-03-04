@@ -25,20 +25,23 @@ export interface IHomeComponentProps {}
 const initialNavbarItem: INavbarItem[] = [
   {
     title: 'About',
-    isSelected: true,
+    isSelected: false,
     id: 'about'
   },
-  { title: 'Skills', isSelected: true, id: 'skills' },
-  { title: 'Experiences', isSelected: true, id: 'experiences' },
-  { title: 'Education', isSelected: true, id: 'education' },
-  { title: 'Blog', isSelected: true, id: 'blog' }
+  { title: 'Skills', isSelected: false, id: 'skills' },
+  { title: 'Experiences', isSelected: false, id: 'experiences' },
+  { title: 'Education', isSelected: false, id: 'education' },
+  { title: 'Blog', isSelected: false, id: 'blog' }
 ];
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
+
+
 export const HomeComponent = (
   // props: IHomeComponentProps & RouteComponentProps & HomeContainerProps
   props: IHomeComponentProps
 ) => {
+  const [currentScrollPosition, setCurrentScrollPosition] = React.useState(0);
   const [currentState, setCurrentState] = React.useState(0);
   const [currentPosition, setCurrentPosition] = React.useState(0);
   const [hasScrolledIntro, setHasScrolledIntro] = React.useState(false);
@@ -51,37 +54,79 @@ export const HomeComponent = (
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [navBarItems, setNavBarItems] = React.useState(initialNavbarItem);
+  const [currentPage, setCurrentPage] = React.useState<string>('')
   const setNextState = (nextState: number) => {
     const diff = nextState - currentState;
     if (diff > 0) {
     }
   };
 
+
   React.useEffect(() => {
+    document.body.addEventListener('scroll', stoppedScrolling, true);
+ 
     if (container)
       if (container.current) {
         container.current.style.overflow = 'hidden';
       }
     document.body.addEventListener('touchmove', deactivateDefaultScroll);
 
-    document.body.addEventListener('onscroll', stoppedScrolling, false);
+
+
+
     return () => {
       document.body.removeEventListener('touchmove', deactivateDefaultScroll);
 
-      document.body.removeEventListener('onscroll', stoppedScrolling);
+      document.body.removeEventListener('scroll', stoppedScrolling);
     };
   }, []);
-  const stoppedScrolling = (event: Event) => {};
+  const setSelectedNavbarItem = (id:string) => {
+    const navBarItemsTemp = initialNavbarItem;
+    for (let i=0;i<navBarItemsTemp.length; i++){
+      if (navBarItemsTemp[i].id===id){
+        navBarItemsTemp[i].isSelected = true;
+      }else{
+         navBarItemsTemp[i].isSelected = false;
+      }
+    }
+   
+    if (navBarItems != navBarItemsTemp){
+      console.log("setting true for ", id, "obj: ", navBarItemsTemp)
+      setNavBarItems(navBarItemsTemp);
+    }
+  }
+  const stoppedScrolling = () => {
+      const aboutY = document.getElementById('about')?.getBoundingClientRect().y || 0;
+    const skillsY = document.getElementById('skills')?.getBoundingClientRect().y || 0;
+    const educationY = document.getElementById('education')?.getBoundingClientRect().y || 0;
+    const experienceY = document.getElementById('experiences')?.getBoundingClientRect().y || 0;
+    const blogY = document.getElementById('blog')?.getBoundingClientRect().y || 0;
+    let currentPageStr = '';
+    
+    if (aboutY <= 100) currentPageStr = 'about';
+    if (skillsY <= 100) currentPageStr = 'skills';
+    if (experienceY <= 100) currentPageStr = 'experiences';
+    if (educationY <= 100) currentPageStr = 'education';
+    if (blogY <= 100) currentPageStr = 'blog';
+    setCurrentPage(currentPageStr)
+    setSelectedNavbarItem(currentPageStr);
+   
 
-  const onNavbarItemClick = () => {
+  };
+
+  const onNavbarItemClick = (id:string) => {
     setHasScrolled(true);
     if (intro)
-      if (intro.current)
-        if (container)
-          if (container.current)
-            if (container.current.scrollTop === 0) {
-              if (container) if (container.current) container.current.style.overflow = 'auto';
-            }
+    if (intro.current)
+    if (container)
+    if (container.current)
+    if (container.current.scrollTop === 0) {
+      if (container) if (container.current) container.current.style.overflow = 'auto';
+    }
+
+    setTimeout(() => {
+      stoppedScrolling()
+    }, 500);
   };
 
   React.useEffect(
@@ -180,8 +225,11 @@ export const HomeComponent = (
   return (
     <div
       ref={container}
+      onScroll={(e)=>{
+      //  console.log(e.clientY - e.currentTarget.getBoundingClientRect().top)
+      }}
       onWheel={(e) => {
-        console.log('rolled');
+        setCurrentScrollPosition(window.pageYOffset);
         if (!hasScrolled) {
           setHasScrolled(true);
         }
@@ -197,6 +245,7 @@ export const HomeComponent = (
               if (container.current)
                 if (container.current.scrollTop === 0) {
                   let count = currentPosition + e.deltaY;
+
                   if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
                   else if (count < MINIMUM_STEPS && hasScrolledIntro) {
                     count = 0;
@@ -230,10 +279,12 @@ export const HomeComponent = (
             setHasScrolled(true);
           }}
         />
-        <div style={{ color: 'white', opacity: 0.1, position: 'absolute', top: 16, right: 16 }}>
+        <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
           {internalCurrentPosition}
           <br />
           {currentPosition}
+          <br />
+          {/* {JSON.stringify(navBarItems)} */}
         </div>
         <div ref={aboutPageRef}>
           <ScrollProgressBar
@@ -269,6 +320,7 @@ export const HomeComponent = (
         <ProfessionalExperiencesPage />
         <EducationPage />
         <BlogPage />
+      <div className="huge"></div>
       </div>
     </div>
   );

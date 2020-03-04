@@ -67,17 +67,18 @@
       display: flex;
       width: 100%;
       flex-direction: row;
-      a {
-        text-decoration: none;
-        color: $foreground;
-        padding: 0 24px;
-        &.selected{
-          color: white;
-        }
-        &:hover {
-          color: white;
+    }
+    a {
+      text-decoration: none;
+      color: $foreground;
+      padding: 0 24px;
+      &.selected {
+        color: red;
+        .divider {
+          width: 100% !important;
         }
       }
+     
     }
   }
 }

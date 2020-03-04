@@ -6,13 +6,13 @@ interface INavbarItem {
   isSelected?: boolean;
 }
 interface INavbarProps {
-  onClick: () => void;
+  onClick: (id: string) => void;
   items: INavbarItem[];
 }
 
 const Navbar = (props: INavbarProps) => {
   const onClick = (id: string) => {
-    props.onClick();
+    props.onClick(id);
     const el = document.getElementById(`${id}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -39,6 +39,7 @@ const Navbar = (props: INavbarProps) => {
             }}
           >
             {item.title}
+            <div className="divider"></div>
           </a>
         ))}
         {/* <a className="selected" href="#">About</a>
