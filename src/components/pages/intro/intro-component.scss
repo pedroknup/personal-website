@@ -1,6 +1,7 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/main.scss';
 .intro-text {
+  margin-top: 100px;
   &.finished {
     color: $super-orange-highlight !important;
   }

@@ -10,11 +10,26 @@ interface ISectionProps {
   id?: string;
   paddingColumns?: number;
   children?: any;
+  isHighlighted?: boolean;
+  removeHighlight?: (id: string) => void;
 }
 export const Section = (props: ISectionProps) => {
-  const { title, children, description, padding, paddingColumns } = props;
-  return <div style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className="section">
-      <div id={props.id} className="anchor" />
+  const { title, children, description, padding, paddingColumns} = props;
+  // const [isHighlighted, setIsHighilighted] = React.useState(props.isHighlighted)
+  // React.useEffect(
+  //   () => {
+  //     // setIsHighilighted(props.isHighlighted);
+  //     if (props.isHighlighted) {
+  //       setTimeout(() => {
+  //         if (props.id) 
+  //           props.removeHighlight && props.removeHighlight(props.id)
+  //       }, 3000);
+  //     }
+  //   },
+  //   [props.isHighlighted]
+  // );
+  return <div id={props.id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${props.isHighlighted ? 'highlight' : ''}`}>
+      <div className="anchor" />
       <div className="title">
         <span>{title}</span>
       </div>

@@ -3,10 +3,15 @@
 .section {
   margin: 0 16px 0 32px;
   border-left: 1px solid #ffffff08;
+
   position: relative;
+  background-color :$background;
+  &.highlight{
+    // background-color: $background-light !important;
+  }
   .anchor {
     position: absolute;
-    top: -20px;
+    top: 0px;
     left: 0;
   }
   .content {

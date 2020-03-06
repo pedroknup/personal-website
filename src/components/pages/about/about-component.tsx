@@ -9,7 +9,10 @@ import { Section } from '../../section/section-component';
 import Typist from 'react-typist';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
-export interface IHomeComponentProps {}
+interface ISkillsProps {
+  removeHighlight?: (id: string) => void;
+  isHighlighted?: boolean;
+}
 
 interface ILink {
   url: string;
@@ -45,9 +48,9 @@ const links: ILink[] = [
 ];
 
 const STEPS = 2000;
-export const AboutPage = () => {
+export const AboutPage = (props:ISkillsProps) => {
   return <div className="about-container">
-      <Section id="about" paddingColumns={2} title="About">
+      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="about" paddingColumns={2} title="About">
         <span className="obj">
           <span className="brackets">
             {`{`} <br />
@@ -63,16 +66,16 @@ export const AboutPage = () => {
           </span>: <span className="string">"Brazilian"</span>, <br />
           &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
             based
-          </span>: <span className="string">"Eindhoven, Netherlands"</span>, <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">contact</span>: [<span>
-            {links.map((link, key) => <span className=".contact-links">
+          </span>: <span className="string">"Eindhoven, Netherlands"</span><br />
+          
+            {/* {links.map((link, key) => <span className=".contact-links">
                 <a href={link.url} key={key}>
                   {link.title}
                 </a>
                 {', '}
               </span>)}
           </span>
-          ] <br />
+          ] <br /> */}
           <span className="brackets">
             {`}`} <br />
           </span>

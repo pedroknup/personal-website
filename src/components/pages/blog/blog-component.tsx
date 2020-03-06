@@ -8,14 +8,16 @@ import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { Section } from '../../section/section-component';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
-export interface IHomeComponentProps {}
+interface ISkillsProps {
+  removeHighlight?: (id: string) => void;
+  isHighlighted?: boolean;
+}
 
 const STEPS = 2000;
-export const BlogPage = () => {
+export const BlogPage = (props : ISkillsProps) => {
   return <div className="Blog-container">
-      <Section id="blog" title="Blog">
+      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="blog" title="Blog">
         <span>Blod section</span>
-
       </Section>
     </div>;
 };

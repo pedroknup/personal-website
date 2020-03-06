@@ -10,7 +10,10 @@ const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../../data';
 const { useState } = React;
-export interface IHomeComponentProps {}
+interface ISkillsProps {
+  removeHighlight?: (id: string) => void;
+  isHighlighted?: boolean;
+}
 
 const randomId = () => {
   return (
@@ -21,13 +24,13 @@ const randomId = () => {
   );
 };
 const STEPS = 2000;
-export const SkillsPage = () => {
+export const SkillsPage = (props : ISkillsProps) => {
   const [selectedSkill, setSelectedSkill] = useState(0);
   const skillOnClick = (key: number) => {
     if (key === selectedSkill) setSelectedSkill(-1);
     else setSelectedSkill(key);
   };
-  return <Section id="skills" paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
+  return <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="skills"  paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
       <div className="skills-container">
         <section>
           <span className="title">Front End</span>

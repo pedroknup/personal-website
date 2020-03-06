@@ -4,6 +4,8 @@ interface INavbarItem {
   title: string;
   id: string;
   isSelected?: boolean;
+  shouldHighlight?: boolean;
+  element?: any;
 }
 interface INavbarProps {
   onClick: (id: string) => void;
@@ -15,18 +17,20 @@ const Navbar = (props: INavbarProps) => {
     props.onClick(id);
     const el = document.getElementById(`${id}`);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.scrollIntoView({ behavior: 'auto', block: 'center' });
+      
     } else {
       console.log('Element not found');
     }
   };
+
   return (
     <div className="links">
-      <div className="buttons">
+      {/* <div className="buttons">
         <div className="button red" />
         <div className="button yellow" />
         <div className="button green" />
-      </div>
+      </div> */}
       <div className="container">
         {props.items.map((item, key) => (
           <a

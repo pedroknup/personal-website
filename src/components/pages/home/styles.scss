@@ -1,14 +1,11 @@
 @import '../../../styles/variables.scss';
 
 .home-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: $background;
   -webkit-overflow-scrolling: touch;
   height: 100vh;
+  flex: 1;
+  // margin-left: 300px;
   overflow: auto;
   .intro {
   }
@@ -78,7 +75,6 @@
           width: 100% !important;
         }
       }
-     
     }
   }
 }
@@ -90,4 +86,21 @@
 }
 body {
   overflow: hidden;
+}
+
+.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.container {
+  display:flex;
+  flex-direction: row;
+}
+.left-bar {
+  min-width: 300px;
+  height: 100vh;
+  background-color: $background-dark;
 }

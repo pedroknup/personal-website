@@ -18,25 +18,22 @@ export interface IIntroPageProps {
 import '../../../styles/main.scss';
 
 const STEPS = 2000;
-export const IntroPageComponent = (props:IIntroPageProps) => {
+export const IntroPageComponent = (props: IIntroPageProps) => {
   const [hasLoaded, setHasLoaded] = React.useState(false);
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [hasScrolledInterned, setHasScrolledInterned] = React.useState(false);
   const [hasTimedOut, setHasTimedOut] = React.useState(false);
   const [hasFinishedTyping, setHasFinishedTyping] = React.useState(false);
-  React.useEffect(()=>{
+  React.useEffect(() => {
     setTimeout(() => {
       setHasTimedOut(true);
-      if (hasScrolledInterned)
-        setHasScrolled(true);
+      if (hasScrolledInterned) setHasScrolled(true);
     }, 1000);
-  }, [])
-  
-  
+  }, []);
 
   React.useEffect(
     () => {
-      if (hasFinishedTyping){
+      if (hasFinishedTyping) {
         props.onFinish();
       }
     },
@@ -45,64 +42,64 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
 
   React.useEffect(
     () => {
-      if (props.hasScrolled){
-         setHasScrolled(true);
+      if (props.hasScrolled) {
+        setHasScrolled(true);
       }
     },
     [props.hasScrolled]
   );
-  
 
-  React.useEffect(()=>{
-    if (hasTimedOut){
-      setHasScrolled(true);
-    }else{
-      setHasScrolledInterned(true);
-    }
-  }, [hasScrolledInterned])
+  React.useEffect(
+    () => {
+      if (hasTimedOut) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolledInterned(true);
+      }
+    },
+    [hasScrolledInterned]
+  );
 
   const onScrollHandler = () => {
-     if (hasTimedOut) {
-       setHasScrolled(true);
-     } else {
-       setHasScrolledInterned(true);
-     }
-  }
+    if (hasTimedOut) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolledInterned(true);
+    }
+  };
 
   return (
-    <div
-      onWheel={onScrollHandler}
-      className="intro-container"
-    >
+    <div onWheel={onScrollHandler} className="intro-container">
       <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
         <Typist
           onTypingDone={() => {
             setHasFinishedTyping(true);
           }}
-          avgTypingDelay={hasScrolled ? 0 : 80}
-          cursor={{ hideWhenDone:true, element: '' }}
+          avgTypingDelay={hasScrolled ? 0 : 40}
+          cursor={{ hideWhenDone: true, element: '' }}
           startDelay={1000}
-        >   
-        /* <br />
-            Hi! <br />
+        >
+          // Hi! I’m Pedro Knup, a self-taught software engineer.
+          {/* Hi! <br />
             I'm Pedro Knup
             <br />
             Welcome to my Websute
             <Typist.Backspace count={3} delay={100} />
-            ite <br />
-            */
-            {
-              /* and I'm a Fullstack developer
+          ite <br /> */}
+          <Typist.Backspace count={18} delay={100} />
+          designer
+          <Typist.Backspace count={8} delay={100} />
+          musician
+          {/* and I'm a Fullstack developer
               <Typist.Backspace count={19} delay={100} />
               designer
               <Typist.Backspace count={8} delay={100} />
             musician */}
           <span />
-           
         </Typist>
       </div>
-      
-        {/* {hasFinishedTyping && 
+
+      {/* {hasFinishedTyping && 
        (   <div style={{display:'flex'}}>
          [
       <Typist avgTypingDelay={80}
@@ -117,9 +114,8 @@ export const IntroPageComponent = (props:IIntroPageProps) => {
       </Typist>
        ]
        </div>
-       ) */
-        }
-       {/* <div style={{opacity: hasFinishedTyping ? 1 : 0}} className="soft-transition scroll-down">
+       ) */}
+      {/* <div style={{opacity: hasFinishedTyping ? 1 : 0}} className="soft-transition scroll-down">
           <span>
             Scroll down to continue
             <br />

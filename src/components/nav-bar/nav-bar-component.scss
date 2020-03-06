@@ -2,21 +2,21 @@
 
 .links {
   display: flex;
-  background-color: rgba(46, 46, 46, 0.9) !important;
+  // background-color: rgba(46, 46, 46, 0.9) !important;
+  background-color: $background-dark;
   border-bottom: 1px solid rgb(37, 37, 37) !important;
+  box-shadow: inset -1px -1px 0 #181a1f;
   backdrop-filter: blur(2px);
   z-index: 5;
-  margin-left: -32;
-  margin-right: -32;
   padding: 4px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   font-family: sans-serif;
   font-size: 12px;
-  @media (max-width: #{$screen-sm-min}) {
-    height: 24px;
-  }
+  align-items: center;
+  // @media (max-width: #{$screen-sm-min}) {
+  //   height: 24px;
+  // }
+
+  // background-color: $background-dark;
   .title {
     color: white;
     padding: 0 2px;
@@ -58,18 +58,24 @@
   }
   .container {
     display: flex;
-    width: 100%;
     flex-direction: row;
-    @media (max-width: #{$screen-sm-min}) {
-      display: none !important;
-    }
+    height: 400px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // @media (max-width: #{$screen-sm-min}) {
+    //   display: none !important;
+    // }
     a {
       text-decoration: none;
       color: $foreground;
-      padding: 0 24px;
+      font-size: 20px;
+      min-width: 150px;
+      margin: 0 24px;
+      text-align: center;
+      // padding: 0 24px;
       &.selected {
         color: white;
-        .divider{
+        .divider {
           width: 100% !important;
         }
       }

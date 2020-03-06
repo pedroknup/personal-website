@@ -22,21 +22,31 @@ export interface IHomeComponentProps {}
 //           <a href="#professional">Experiences</a>
 //           <a href="#">Education</a>
 //           <a href="#">Blog</a>
-const initialNavbarItem: INavbarItem[] = [
-  {
-    title: 'About',
-    isSelected: false,
-    id: 'about'
-  },
-  { title: 'Skills', isSelected: false, id: 'skills' },
-  { title: 'Experiences', isSelected: false, id: 'experiences' },
-  { title: 'Education', isSelected: false, id: 'education' },
-  { title: 'Blog', isSelected: false, id: 'blog' }
-];
+
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
 
-
+ const initialNavbarItem: INavbarItem[] = [
+  {
+    title: 'About',
+    isSelected: false,
+    id: 'about', 
+    // element:  <AboutPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} />
+  },
+  { title: 'Skills', isSelected: false, id: 'skills', 
+  // element:  
+  //  <SkillsPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} /> 
+  },
+  { title: 'Experiences', isSelected: false, id: 'experiences', 
+  // element:  <ProfessionalExperiencesPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} /> 
+},
+  { title: 'Education', isSelected: false, id: 'education', 
+  // element:  <EducationPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} />
+ },
+  { title: 'Blog', isSelected: false, id: 'blog',
+  //  element:  <BlogPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about ')} /> 
+  }
+];
 export const HomeComponent = (
   // props: IHomeComponentProps & RouteComponentProps & HomeContainerProps
   props: IHomeComponentProps
@@ -53,13 +63,39 @@ export const HomeComponent = (
   const [previousState, setPreviousState] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
   const [hasScrolled, setHasScrolled] = React.useState(false);
-  const [navBarItems, setNavBarItems] = React.useState(initialNavbarItem);
+  const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
   const [currentPage, setCurrentPage] = React.useState<string>('')
   const setNextState = (nextState: number) => {
     const diff = nextState - currentState;
     if (diff > 0) {
     }
   };
+
+  const removeHighlight = (id:string) => {
+    const navBarItemsTemp = initialNavbarItem;
+    for (let i=0;i<navBarItemsTemp.length; i++){
+      if (navBarItemsTemp[i].id===id){
+        navBarItemsTemp[i].shouldHighlight = false;
+      }
+    }
+    if (navBarItems != navBarItemsTemp){
+      setNavBarItems(navBarItemsTemp);
+    }
+  }
+
+  const isElementSelected = (id:string) => {
+
+   for (let i=0;i< navBarItems.length; i++){
+      if (navBarItems[i].id === id && currentPage === id)
+      {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+ 
 
 
   React.useEffect(() => {
@@ -72,26 +108,28 @@ export const HomeComponent = (
     document.body.addEventListener('touchmove', deactivateDefaultScroll);
 
 
-
-
     return () => {
       document.body.removeEventListener('touchmove', deactivateDefaultScroll);
 
       document.body.removeEventListener('scroll', stoppedScrolling);
     };
   }, []);
-  const setSelectedNavbarItem = (id:string) => {
+  const setSelectedNavbarItem = (id:string, shouldHighlight?: boolean) => {
     const navBarItemsTemp = initialNavbarItem;
     for (let i=0;i<navBarItemsTemp.length; i++){
       if (navBarItemsTemp[i].id===id){
         navBarItemsTemp[i].isSelected = true;
-      }else{
-         navBarItemsTemp[i].isSelected = false;
+        if (shouldHighlight){
+          navBarItems[i].shouldHighlight = true;
+          console.log("setting highglith true for ", id)
+        }
+        }else{
+          navBarItemsTemp[i].isSelected = false;
+          navBarItems[i].shouldHighlight = false;
       }
     }
    
     if (navBarItems != navBarItemsTemp){
-      console.log("setting true for ", id, "obj: ", navBarItemsTemp)
       setNavBarItems(navBarItemsTemp);
     }
   }
@@ -116,6 +154,7 @@ export const HomeComponent = (
 
   const onNavbarItemClick = (id:string) => {
     setHasScrolled(true);
+    setSelectedNavbarItem(id, true)
     if (intro)
     if (intro.current)
     if (container)
@@ -223,105 +262,112 @@ export const HomeComponent = (
     setCurrentPosition(final);
   };
   return (
-    <div
-      ref={container}
-      onScroll={(e)=>{
-      //  console.log(e.clientY - e.currentTarget.getBoundingClientRect().top)
-      }}
-      onWheel={(e) => {
-        setCurrentScrollPosition(window.pageYOffset);
-        if (!hasScrolled) {
-          setHasScrolled(true);
-        }
-        if (isScrolling !== null && isScrolling != undefined) window.clearTimeout(isScrolling);
-        setIsScrolling(
-          setTimeout(() => {
-            runAnimationThroughSteps(internalCurrentPosition);
-          }, 300)
-        );
-        if (intro)
-          if (intro.current)
-            if (container)
-              if (container.current)
-                if (container.current.scrollTop === 0) {
-                  let count = currentPosition + e.deltaY;
-
-                  if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
-                  else if (count < MINIMUM_STEPS && hasScrolledIntro) {
-                    count = 0;
-                  }
-                  if (count < 0) count = 0;
-                  if (count >= MINIMUM_STEPS && !hasScrolledIntro) {
-                    setHasScrolledIntro(true);
-                  }
-                  if (count < MINIMUM_STEPS && hasScrolledIntro) {
-                    count = MINIMUM_STEPS;
-                  }
-                  setCurrentPosition(count);
-                  if (currentPosition >= STEPS) {
-                    if (container) if (container.current) container.current.style.overflow = 'auto';
-                  } else {
-                    if (container)
-                      if (container.current) container.current.style.overflow = 'hidden';
-                  }
-                } else {
-                  container.current.style.overflow = 'auto';
-                }
-      }}
-      id="container"
-      className="home-container"
-    >
+    <div className="main">
+      <div className="container">
       <Navbar onClick={onNavbarItemClick} items={navBarItems} />
-      <div ref={intro} className="intro">
-        <IntroPageComponent
-          hasScrolled={hasScrolled}
-          onFinish={() => {
-            setHasScrolled(true);
+
+        <div
+          ref={container}
+          onScroll={(e)=>{
+          //  console.log(e.clientY - e.currentTarget.getBoundingClientRect().top)
           }}
-        />
-        <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
-          {internalCurrentPosition}
-          <br />
-          {currentPosition}
-          <br />
-          {/* {JSON.stringify(navBarItems)} */}
-        </div>
-        <div ref={aboutPageRef}>
-          <ScrollProgressBar
-            minimum={MINIMUM_STEPS}
-            onChange={(value) => {
-              const total = (value / 100) * STEPS;
-              const rounded = roundUp(total);
-              setInternalCurrentPosition(0);
-              setInternalCurrentPosition(rounded);
-            }}
-            onMouseUp={(value) => {
-              const rounded = Math.round(value);
-              setCurrentPosition((rounded / 100) * STEPS);
-              let currentStep = (rounded / 100) * STEPS;
-              runAnimationThroughSteps(currentStep);
-            }}
-            progress={
-              currentPosition > STEPS
-                ? (STEPS - MINIMUM_STEPS) * 0.1
-                : currentPosition <= MINIMUM_STEPS
-                ? 0
-                : (currentPosition - MINIMUM_STEPS) * 0.1
+          onWheel={(e) => {
+            setCurrentScrollPosition(window.pageYOffset);
+            if (!hasScrolled) {
+              setHasScrolled(true);
             }
-          />
+            if (isScrolling !== null && isScrolling != undefined) window.clearTimeout(isScrolling);
+            setIsScrolling(
+              setTimeout(() => {
+                runAnimationThroughSteps(internalCurrentPosition);
+              }, 300)
+            );
+            if (intro)
+              if (intro.current)
+                if (container)
+                  if (container.current)
+                    if (container.current.scrollTop === 0) {
+                      let count = currentPosition + e.deltaY;
+
+                      if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
+                      else if (count < MINIMUM_STEPS && hasScrolledIntro) {
+                        count = 0;
+                      }
+                      if (count < 0) count = 0;
+                      if (count >= MINIMUM_STEPS && !hasScrolledIntro) {
+                        setHasScrolledIntro(true);
+                      }
+                      if (count < MINIMUM_STEPS && hasScrolledIntro) {
+                        count = MINIMUM_STEPS;
+                      }
+                      setCurrentPosition(count);
+                      if (currentPosition >= STEPS) {
+                        if (container) if (container.current) container.current.style.overflow = 'auto';
+                      } else {
+                        if (container)
+                          if (container.current) container.current.style.overflow = 'hidden';
+                      }
+                    } else {
+                      container.current.style.overflow = 'auto';
+                    }
+          }}
+          id="container"
+          className="home-container"
+        >
+
+          <div ref={intro} className="intro">
+            <IntroPageComponent
+              hasScrolled={hasScrolled}
+              onFinish={() => {
+                setHasScrolled(true);
+              }}
+            />
+            <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
+              {internalCurrentPosition}
+              <br />
+              {currentPosition}
+              <br />
+              {currentPage}
+              {/* {JSON.stringify(navBarItems)} */}
+            </div>
+            <div ref={aboutPageRef}>
+              <ScrollProgressBar
+                minimum={MINIMUM_STEPS}
+                onChange={(value) => {
+                  const total = (value / 100) * STEPS;
+                  const rounded = roundUp(total);
+                  setInternalCurrentPosition(0);
+                  setInternalCurrentPosition(rounded);
+                }}
+                onMouseUp={(value) => {
+                  const rounded = Math.round(value);
+                  setCurrentPosition((rounded / 100) * STEPS);
+                  let currentStep = (rounded / 100) * STEPS;
+                  runAnimationThroughSteps(currentStep);
+                }}
+                progress={
+                  currentPosition > STEPS
+                    ? (STEPS - MINIMUM_STEPS) * 0.1
+                    : currentPosition <= MINIMUM_STEPS
+                    ? 0
+                    : (currentPosition - MINIMUM_STEPS) * 0.1
+                }
+              />
+            </div>
+          </div>
+
+          <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
+            {/* <AboutPage /> */}
+                {/* {navBarItems.map((item)=> { return item.element})} */}
+            <AboutPage  />
+            <SkillsPage />
+            <ProfessionalExperiencesPage />
+            <EducationPage />
+            <BlogPage />
+          <div className="huge"></div>
+          </div>
         </div>
-      </div>
-
-      <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-        {/* <AboutPage /> */}
-
-        <AboutPage />
-        <SkillsPage />
-        <ProfessionalExperiencesPage />
-        <EducationPage />
-        <BlogPage />
-      <div className="huge"></div>
-      </div>
+       </div>
     </div>
   );
 };

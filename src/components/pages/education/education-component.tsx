@@ -10,12 +10,15 @@ const wheelReact = require('wheel-react');
 import { educationalExperiences, IExperience } from '../../../data/experiences';
 import { ExperienceItem } from '../../../components/experience-item';
 const WheelReact = wheelReact.default;
-export interface IHomeComponentProps {}
+interface ISkillsProps {
+  removeHighlight?: (id: string) => void;
+  isHighlighted?: boolean;
+}
 
 const STEPS = 2000;
-export const EducationPage = () => {
+export const EducationPage = (props:ISkillsProps) => {
   return <div className="education-container">
-      <Section paddingColumns={2} id="education" title="Education" description="Academic Career">
+      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} paddingColumns={2} id="education" title="Education" description="Academic Career">
         {educationalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
       </Section>
     </div>;
