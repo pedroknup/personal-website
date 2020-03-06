@@ -11,13 +11,14 @@ const WheelReact = wheelReact.default;
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
+  darkMode: boolean;
 }
 
 const STEPS = 2000;
 export const BlogPage = (props : ISkillsProps) => {
   return <div className="Blog-container">
-      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="blog" title="Blog">
-        <span>Blod section</span>
+      <Section paddingColumns={2} darkMode={props.darkMode} removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="blog" title="Blog">
+        <span>Blog section</span>
       </Section>
     </div>;
 };

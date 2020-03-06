@@ -54,6 +54,7 @@ export const HomeComponent = (
   const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
   const [currentPage, setCurrentPage] = React.useState<string>('')
   const [previousState, setPreviousState] = React.useState<number|undefined>(undefined);
+  const [darkMode, setDarkMode] = React.useState(true)
 
   React.useEffect(()=>{
     let newState = -1;
@@ -141,11 +142,12 @@ export const HomeComponent = (
     const blogY = document.getElementById('blog')?.getBoundingClientRect().y || 0;
     let currentPageStr = '';
     
-    if (aboutY <= 100) currentPageStr = 'about';
-    if (skillsY <= 100) currentPageStr = 'skills';
-    if (experienceY <= 100) currentPageStr = 'experiences';
-    if (educationY <= 100) currentPageStr = 'education';
-    if (blogY <= 100) currentPageStr = 'blog';
+    if (aboutY <= 200) currentPageStr = 'about';
+    if (skillsY <= 150) currentPageStr = 'skills';
+    if (experienceY <= 150 ) currentPageStr = 'experiences';
+    if (educationY <= 150) currentPageStr = 'education';
+    if (educationY <= 250 && experienceY < -200) currentPageStr = 'education';
+    if (blogY <= 150) currentPageStr = 'blog';
     setCurrentPage(currentPageStr)
     setSelectedNavbarItem(currentPageStr);
    
@@ -249,8 +251,8 @@ export const HomeComponent = (
   };
   return (
     <div className="main">
-      <div className="container">
-      <Navbar onClick={onNavbarItemClick} items={navBarItems} />
+      <div className={`container ${darkMode ? '': 'light'}`} >
+      <Navbar darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
 
         <div
           ref={container}
@@ -298,12 +300,15 @@ export const HomeComponent = (
                     }
           }}
           id="container"
-          className="home-container"
+         className={`home-container ${darkMode ? '': 'light'}`}
         >
 
           <div ref={intro} className="intro">
-           
+            <label style={{position: 'absolute', right: 16, top: 8, zIndex: 10, cursor: 'pointer'}} onClick={()=>{
+              setDarkMode(!darkMode);
+            }}>Toggle Dark mode</label>
             <IntroPageComponent
+            darkMode={darkMode}
               currentStep={internalCurrentPosition}
               previousState={previousState}
               key={currentState}
@@ -314,7 +319,7 @@ export const HomeComponent = (
               }} /> 
           
              <br />
-            <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
+            <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 24, right: 16 }}>
               {internalCurrentPosition}
               <br />
               {currentPosition}
@@ -322,6 +327,12 @@ export const HomeComponent = (
               {currentPage}
               <br />
               {currentState}
+              <br />
+              {previousState}
+              <br />
+              educationY {document.getElementById('education')?.getBoundingClientRect().y || 0}
+              <br />
+              experience {document.getElementById('experiences')?.getBoundingClientRect().y || 0}
               <br />
               {previousState}
             </div>
@@ -353,11 +364,11 @@ export const HomeComponent = (
 
           <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
          
-            <AboutPage  />
-            <SkillsPage />
-            <ProfessionalExperiencesPage />
-            <EducationPage />
-            <BlogPage />
+            <AboutPage    darkMode={darkMode}/>
+            <SkillsPage   darkMode={darkMode}/>
+            <ProfessionalExperiencesPage   darkMode={darkMode}/>
+            <EducationPage   darkMode={darkMode}/>
+            <BlogPage   darkMode={darkMode}/>
           <div className="huge"></div>
           </div>
         </div>

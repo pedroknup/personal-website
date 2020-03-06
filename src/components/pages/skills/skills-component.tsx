@@ -13,6 +13,7 @@ const { useState } = React;
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
+  darkMode: boolean;
 }
 
 const randomId = () => {
@@ -30,8 +31,8 @@ export const SkillsPage = (props : ISkillsProps) => {
     if (key === selectedSkill) setSelectedSkill(-1);
     else setSelectedSkill(key);
   };
-  return <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="skills"  paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
-      <div className="skills-container">
+  return <Section darkMode={props.darkMode} removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="skills" paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
+      <div className={`skills-container ${props.darkMode ? '': 'light'}`}>
         <section>
           <span className="title">Front End</span>
           {skillsFront.map((skill) => {

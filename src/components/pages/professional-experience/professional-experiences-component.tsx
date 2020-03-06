@@ -7,13 +7,26 @@ const wheelReact = require('wheel-react');
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
+  darkMode: boolean;
 }
 
-export const ProfessionalExperiencesPage = (props : ISkillsProps) => {
-  return <div className="professional-experiences-container">
-      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="experiences" paddingColumns={2} title="ProfessionalExperiences" description="Professional Career">
+export const ProfessionalExperiencesPage = (props: ISkillsProps) => {
+  return (
+    <div className={`professional-experiences-container ${props.darkMode ? '' : 'light'}`}>
+      <Section
+        darkMode={props.darkMode}
+        removeHighlight={props.removeHighlight}
+        isHighlighted={props.isHighlighted}
+        id="experiences"
+        paddingColumns={2}
+        title="ProfessionalExperiences"
+        description="Professional Career"
+      >
         {/* <span>Professional Experiences section</span> */}
-        {professionalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
+        {professionalExperiences.map((item, key) => (
+          <ExperienceItem {...item} isDark={props.darkMode} key={key} />
+        ))}
       </Section>
-    </div>;
+    </div>
+  );
 };

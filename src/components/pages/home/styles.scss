@@ -2,16 +2,25 @@
 
 .home-container {
   background-color: $background;
+
   -webkit-overflow-scrolling: touch;
   height: 100vh;
   flex: 1;
   // margin-left: 300px;
   overflow: auto;
+  &.light{
+    background-color: $light-background !important;
+    color: $light-foreground;
+    svg {
+      path{
+        fill:  $light-foreground !important;
+      }
+    }
+  }
   .intro {
   }
   .links {
     display: flex;
-    background-color: rgb(46, 46, 46);
     z-index: 5;
     margin-left: -32;
     margin-right: -32;
@@ -82,7 +91,7 @@
 .huge {
   min-height: 2000px;
   min-width: 20px;
-  background-color: $background;
+  // background-color: $background;
 }
 body {
   overflow: hidden;

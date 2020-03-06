@@ -3,10 +3,28 @@
 .section {
   margin: 0 16px 0 32px;
   border-left: 1px solid $border;
-
   position: relative;
-  background-color :$background;
-  &.highlight{
+  // background-color :$background;
+
+  &.light {
+     border-left: 1px solid $light-border;
+    .title {
+      span {
+        background-color: $light-background !important;
+        color: $light-orange-highlight !important;
+      }
+    }
+    .description {
+      background-color: $light-background !important;
+      color: $light-foreground-light !important;
+    }
+    .content {
+      &.padding {
+        border-left: 1px solid $light-border;
+      }
+    }
+  }
+  &.highlight {
     // background-color: $background-light !important;
   }
   .anchor {
@@ -31,11 +49,11 @@
       padding-left: 1px;
       &::before {
         content: '<';
-        color: $foreground;
+        // color: $foreground;
       }
       &::after {
         content: '>';
-        color: $foreground;
+        // color: $foreground;
       }
     }
     &.closing {
@@ -43,7 +61,7 @@
       span {
         &::after {
           content: '/>';
-          color: $foreground;
+          // color: $foreground;
         }
       }
     }

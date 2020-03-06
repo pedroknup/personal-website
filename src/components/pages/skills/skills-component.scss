@@ -21,12 +21,21 @@ $bar-length: 12px;
       color: $red-highlight;
     }
   }
+  &.light {
+    .experience-item.open {
+      background-color: red !important;
+    }
+    .progress-container {
+      background-color: $light-background-dark !important;
+    }
+  }
 }
 
 .skill-item {
   position: relative;
   z-index: 1;
   margin: 8px 0;
+
   &.open {
     &:before {
       content: '';
@@ -60,9 +69,7 @@ $bar-length: 12px;
   .clickable {
     cursor: pointer;
   }
-  span.title {
-    // color: $green-highlight;
-    color: $foreground;
+  span.title-skill {
     width: 100%;
   }
   .content {

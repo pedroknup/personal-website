@@ -1,6 +1,13 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/main.scss';
 .about-container {
+  &.light {
+    .brackets {
+      color: $light-foreground !important;
+      background-color: $light-background !important;
+
+    }
+  }
   .obj {
     white-space: pre-wrap;
     color: $foreground;
@@ -14,13 +21,13 @@
       color: $orange-highlight;
     }
   }
-  a { 
+  a {
     color: $blue-highlight;
   }
-  .contact-links { 
-    color: $foreground
+  .contact-links {
+    color: $foreground;
   }
-  .brackets{
+  .brackets {
     background-color: $background;
     margin-left: -1px;
     padding: 2px 0 2px 1px;

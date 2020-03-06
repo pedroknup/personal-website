@@ -10,6 +10,7 @@ interface ISectionProps {
   id?: string;
   paddingColumns?: number;
   children?: any;
+  darkMode: boolean;
   isHighlighted?: boolean;
   removeHighlight?: (id: string) => void;
 }
@@ -28,7 +29,7 @@ export const Section = (props: ISectionProps) => {
   //   },
   //   [props.isHighlighted]
   // );
-  return <div id={props.id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${props.isHighlighted ? 'highlight' : ''}`}>
+  return <div id={props.id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${props.isHighlighted ? 'highlight' : ''} ${props.darkMode ? '' : 'light'}`}>
       <div className="anchor" />
       <div className="title">
         <span>{title}</span>

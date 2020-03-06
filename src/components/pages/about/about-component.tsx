@@ -12,45 +12,18 @@ const WheelReact = wheelReact.default;
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
+  darkMode: boolean;
 }
 
 interface ILink {
   url: string;
   title: string;
 }
-const links: ILink[] = [
-  {
-    url: '',
-    title: 'phknup@gmail.com'
-  },
-  {
-    url: '',
-    title: 'linkedin'
-  },
-  {
-    url: '',
-    title: 'github'
-  },
-  {
-    url: '',
-    title: 'youtube'
-  },
-
-  {
-    url: '',
-    title: 'instagram'
-  },
-
-  {
-    url: '',
-    title: 'facebook'
-  }
-];
 
 const STEPS = 2000;
 export const AboutPage = (props:ISkillsProps) => {
-  return <div className="about-container">
-      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="about" paddingColumns={2} title="About">
+  return <div className={`about-container ${props.darkMode ? '': 'light'}`}>
+      <Section darkMode={props.darkMode} removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="about" paddingColumns={2} title="About">
         <span className="obj">
           <span className="brackets">
             {`{`} <br />
@@ -66,9 +39,9 @@ export const AboutPage = (props:ISkillsProps) => {
           </span>: <span className="string">"Brazilian"</span>, <br />
           &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
             based
-          </span>: <span className="string">"Eindhoven, Netherlands"</span><br />
-          
-            {/* {links.map((link, key) => <span className=".contact-links">
+          </span>: <span className="string">"Eindhoven, Netherlands"</span>
+          <br />
+          {/* {links.map((link, key) => <span className=".contact-links">
                 <a href={link.url} key={key}>
                   {link.title}
                 </a>

@@ -10,12 +10,45 @@
 .intro-container {
   overflow: auto;
   width: 100%;
-  background-color: $background;
   font-family: Operator Mono;
   padding: 0;
   min-height: 100vh;
   position: relative;
+  &.light {
+    .contact {
+      $light-contact-border: 1px solid $light-border;
+      border-top: $light-contact-border !important;
+      border-bottom: $light-contact-border !important;
+    }
+  }
 
+  .contact {
+    $contact-border: 1px solid $border;
+    margin: auto;
+    text-align: left;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    border-top: $contact-border;
+    padding: 16px 0 16px 32px;
+    border-bottom: $contact-border;
+    div.social-icons {
+      width: 128px;
+      justify-content: space-between;
+      display: flex;
+      margin-bottom: 6px;
+      svg {
+        path {
+          fill: $foreground;
+        }
+      }
+    }
+    span {
+      color: $green-highlight;
+    }
+  }
   .sprite {
     position: absolute;
     transition: opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -115,35 +148,6 @@
   transition: opacity 2s ease;
 }
 
-.contact {
-  $contact-border: 1px solid $border;
-  color: $foreground;
-  margin: auto;
-  text-align: left;
-  font-size: 14px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-top: $contact-border;
-  padding: 16px 0 16px 32px;
-  border-bottom: $contact-border;
-  div.social-icons {
-    width: 128px;
-    justify-content: space-between;
-    display: flex;
-    margin-bottom: 6px;
-    svg {
-      path {
-        fill: $foreground;
-      }
-    }
-  }
-  span {
-    color: $green-highlight;
-  }
-}
-
 .intro {
-  background-color: $background;
+  // background-color: $background;
 }

@@ -23,7 +23,7 @@ export const SkillItem = (props: ISkillItemProps) => {
     <div className={`skill-item ${open ? 'open' : 'closed'}`}>
       <div className="clickable" onClick={toggleOpen}>
         <div className="title-container">
-          <span className="title">{title}</span>
+          <span className="title-skill">{title}</span>
           <span className="icon">
             <span className={`chevron ${open ? '' : 'bottom'}`} />
           </span>

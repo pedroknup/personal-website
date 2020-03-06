@@ -18,6 +18,7 @@ export interface IIntroPageProps {
   hasScrolled: boolean;
   currentStep: number;
   currentState: number;
+  darkMode: boolean;
 }
 
 import '../../../styles/main.scss';
@@ -65,6 +66,7 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
       props.previousState !== 0 ||
       (props.previousState === 0 && props.previousState !== undefined)
     ) {
+      currentT = "];"
       setCurrentText(currentT);
       eraseLastWord(currentT);
     }
@@ -128,25 +130,19 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
     setFinishedErasing(true);
   };
 
-  return (
-    <div onWheel={onScrollHandler} className="intro-container">
+  return <div onWheel={onScrollHandler} className={`intro-container ${props.darkMode ? '' : 'light'}`}>
       <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
-        {props.currentState === 0 && props.previousState == undefined && (
-          <Typist
-            onTypingDone={() => {
+        {props.currentState === 0 && props.previousState == undefined && <Typist onTypingDone={() => {
               setHasFinishedTyping(true);
-            }}
-            avgTypingDelay={hasScrolled ? 0 : 40}
-            cursor={{ hideWhenDone: false, element: '' }}
-            startDelay={props.currentState === 0 ? 1000 : 0}
-          >
-            {props.currentState === 0 && (
-              <span>
+            }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={props.currentState === 0 ? 1000 : 0}>
+            {props.currentState === 0 && <span>
                 Hi! I’m Pedro Knup, a self-taught
                 <br />
-                software engineer.
-              </span>
-            )}
+                [
+                <br />
+                "software engineer", <br />
+                ];
+              </span>}
             {/* {props.currentState === 1 && <Typist.Backspace count={18} delay={100} />}
             {props.currentState === 1 && 'designer'}
             {props.currentState === 2 && <Typist.Backspace count={8} delay={100} />}
@@ -157,74 +153,53 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
               <Typist.Backspace count={8} delay={100} />
             musician */}
             <span />
-          </Typist>
-        )}
-        {props.currentState === 0 && props.previousState !== undefined && (
-          <>
+          </Typist>}
+        {props.currentState === 0 && props.previousState !== undefined && <>
             <span>
               Hi! I’m Pedro Knup, a self-taught
               <br />
-              {currentText}
+              [<br />
             </span>
-            {finishedErasing && (
-              <Typist
-                onTypingDone={() => {
+            {finishedErasing && <Typist onTypingDone={() => {
                   setHasFinishedTyping(true);
-                }}
-                avgTypingDelay={hasScrolled ? 0 : 40}
-                cursor={{ hideWhenDone: false, element: '' }}
-                startDelay={0}
-              >
-                software engineer.
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "software engineer",<br />];
                 <span />
-              </Typist>
-            )}
-          </>
-        )}
-        {props.currentState === 1 && (
-          <>
+              </Typist>}
+          </>}
+        {props.currentState === 1 && <>
             <span>
               Hi! I’m Pedro Knup, a self-taught
               <br />
-              {currentText}
+              [<br />
+              "software engineer",{currentText}
             </span>
-            {finishedErasing && (
-              <Typist
-                onTypingDone={() => {
+            {finishedErasing && <Typist onTypingDone={() => {
                   setHasFinishedTyping(true);
-                }}
-                avgTypingDelay={hasScrolled ? 0 : 40}
-                cursor={{ hideWhenDone: false, element: '' }}
-                startDelay={0}
-              >
-                designer.
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "designer"
+                <br />
+                ];
                 <span />
-              </Typist>
-            )}
-          </>
-        )}
-        {props.currentState === 2 && (
-          <>
+              </Typist>}
+          </>}
+        {props.currentState === 2 && <>
             <span>
               Hi! I’m Pedro Knup, a self-taught
               <br />
-              {currentText}
+              [<br />
+              "software engineer", <br />
+              "designer",{currentText}
             </span>
-            {finishedErasing && (
-              <Typist
-                onTypingDone={() => {
+            {finishedErasing && <Typist onTypingDone={() => {
                   setHasFinishedTyping(true);
-                }}
-                avgTypingDelay={hasScrolled ? 0 : 40}
-                cursor={{ hideWhenDone: false, element: '' }}
-                startDelay={0}
-              >
-                musician.
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "musician"
+                <br />
+                ];
                 <span />
-              </Typist>
-            )}
-          </>
-        )}
+              </Typist>}
+          </>}
       </div>
       <div style={{ opacity: hasFinishedTyping ? 1 : 0 }} className="sprite">
         {/* <img src={getSpriteByStep(props.currentStep)} /> */}
@@ -289,44 +264,14 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
       </div>
       <div className="contact">
         <div className="social-icons">
-          <SocialMediaIconsReact
-            iconSize={10}
-            size={15}
-            backgroundColor="transparent"
-            icon="linkedin"
-            url="https://twitter.com/your-twitter-handle"
-          />
-          <SocialMediaIconsReact
-            iconSize={10}
-            size={15}
-            backgroundColor="transparent"
-            icon="facebook"
-            url="https://twitter.com/your-twitter-handle"
-          />
-          <SocialMediaIconsReact
-            iconSize={10}
-            size={15}
-            backgroundColor="transparent"
-            icon="github"
-            url="https://twitter.com/your-twitter-handle"
-          />
-          <SocialMediaIconsReact
-            iconSize={10}
-            size={15}
-            backgroundColor="transparent"
-            icon="instagram"
-            url="https://twitter.com/your-twitter-handle"
-          />
-          <SocialMediaIconsReact
-            iconSize={10}
-            size={15}
-            backgroundColor="transparent"
-            icon="deviantart"
-            url="https://twitter.com/your-twitter-handle"
-          />
+          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="linkedin" url="https://www.linkedin.com/in/pedroknup" />
+          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="facebook" url="https://www.facebook.com/pedroknup" />
+          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="github" url="https://www.github,com/pedroknup" />
+          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="instagram" url="https://www.instagram.com/pedroknup" />
+          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="deviantart" url="https://www.pedroknup.deviantart.com" />
         </div>
         <div className="signature">
-          made with ♥ by <span>Pedro Knup </span> | ©2020
+          made with <span style={{ color: 'red' }}>♥</span> by <span>Pedro Knup </span> | ©2020
         </div>
         {/* <SocialMediaIconsReact
           backgroundColor="transparent"
@@ -334,6 +279,5 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
           url="https://twitter.com/your-twitter-handle"
         /> */}
       </div>
-    </div>
-  );
+    </div>;
 };

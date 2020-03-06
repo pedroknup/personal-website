@@ -9,6 +9,7 @@ interface INavbarItem {
 }
 interface INavbarProps {
   onClick: (id: string) => void;
+  darkMode: boolean;
   items: INavbarItem[];
 }
 
@@ -18,14 +19,13 @@ const Navbar = (props: INavbarProps) => {
     const el = document.getElementById(`${id}`);
     if (el) {
       el.scrollIntoView({ behavior: 'auto', block: 'center' });
-      
     } else {
       console.log('Element not found');
     }
   };
 
   return (
-    <div className="links">
+    <div className={`links ${props.darkMode ? '' : 'light'}`}>
       {/* <div className="buttons">
         <div className="button red" />
         <div className="button yellow" />
@@ -43,7 +43,7 @@ const Navbar = (props: INavbarProps) => {
             }}
           >
             {item.title}
-            <div className="divider"></div>
+            <div className="divider" />
           </a>
         ))}
         {/* <a className="selected" href="#">About</a>

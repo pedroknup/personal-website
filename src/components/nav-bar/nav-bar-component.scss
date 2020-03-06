@@ -4,7 +4,6 @@
   display: flex;
   // background-color: rgba(46, 46, 46, 0.9) !important;
   background-color: $background-dark;
-  border-bottom: 1px solid rgb(37, 37, 37) !important;
   box-shadow: inset -1px -1px 0 #181a1f;
   backdrop-filter: blur(2px);
   z-index: 5;
@@ -12,6 +11,23 @@
   font-family: sans-serif;
   font-size: 12px;
   align-items: center;
+  &.light {
+    background-color: $light-background-dark;
+    box-shadow: none;
+    border-right: 1px solid #dbdbdc;
+    .container{
+      a{
+        color: $light-foreground !important;
+        &:hover{
+           color: black !important;
+        }
+      }
+      .divider{
+          background-color: black !important;
+      }
+
+    }
+  }
   // @media (max-width: #{$screen-sm-min}) {
   //   height: 24px;
   // }

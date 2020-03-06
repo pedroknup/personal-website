@@ -13,13 +13,14 @@ const WheelReact = wheelReact.default;
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
+  darkMode: boolean;
 }
 
 const STEPS = 2000;
 export const EducationPage = (props:ISkillsProps) => {
   return <div className="education-container">
-      <Section removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} paddingColumns={2} id="education" title="Education" description="Academic Career">
-        {educationalExperiences.map((item, key) => <ExperienceItem {...item} key={key} />)}
+      <Section darkMode={props.darkMode}  removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} paddingColumns={2} id="education" title="Education" description="Academic Career">
+        {educationalExperiences.map((item, key) => <ExperienceItem isDark={props.darkMode} {...item} key={key} />)}
       </Section>
     </div>;
 };
