@@ -10,10 +10,13 @@ const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
 const sticky = require('react-sticky');
 const { StickyContainer, Sticky } = sticky;
+const socialMediaIcons = require('social-media-icons-react');
+const { SocialMediaIconsReact } = socialMediaIcons;
 export interface IIntroPageProps {
   onFinish: () => void;
   previousState?: number;
   hasScrolled: boolean;
+  currentStep: number;
   currentState: number;
 }
 
@@ -28,12 +31,17 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
   const [hasFinishedTyping, setHasFinishedTyping] = React.useState(false);
   const [currentText, setCurrentText] = React.useState('');
   const [finishedErasing, setFinishedErasing] = React.useState(false);
+  const [imageSrc, setImageSrc] = React.useState('');
+
   React.useEffect(() => {
     setTimeout(() => {
       setHasTimedOut(true);
       if (hasScrolledInterned) setHasScrolled(true);
     }, 1000);
     let currentT = '';
+    if (props.previousState !== undefined) {
+      setHasFinishedTyping(true);
+    }
     if (props.currentState === 0) {
       if (props.previousState === 1) {
         currentT = 'designer';
@@ -53,7 +61,10 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
         currentT = 'software engineer';
       }
     }
-    if (props.previousState !== 0 || (props.previousState === 0 && props.previousState !== undefined)) {
+    if (
+      props.previousState !== 0 ||
+      (props.previousState === 0 && props.previousState !== undefined)
+    ) {
       setCurrentText(currentT);
       eraseLastWord(currentT);
     }
@@ -99,9 +110,16 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
     }
   };
 
+  const getSpriteByStep = (step: number) => {
+    if (step === 0) step = 500;
+    const img = require(`../../../assets/sprite/sprite-${step}.png`);
+    console.log(img);
+    return img;
+  };
+
   const eraseLastWord = async (word: string) => {
     console.log('word', word, 'current', currentText);
-    const sleepTime = word === 'software engineer' ? 20 : 40;
+    const sleepTime = word === 'software engineer' ? 30 : 50;
     while (word !== '') {
       word = word.slice(0, word.length - 1);
       await sleep(sleepTime);
@@ -208,7 +226,114 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
           </>
         )}
       </div>
-
+      <div style={{ opacity: hasFinishedTyping ? 1 : 0 }} className="sprite">
+        {/* <img src={getSpriteByStep(props.currentStep)} /> */}
+        <span
+          style={{
+            opacity:
+              props.currentStep === 0
+                ? 1
+                : props.currentStep === 100
+                ? 0.9
+                : props.currentStep === 200
+                ? 0.7
+                : props.currentStep === 300
+                ? 0.5
+                : props.currentStep === 400
+                ? 0.3
+                : 0
+          }}
+        >
+          Software Engineer
+        </span>
+        <span
+          style={{
+            opacity:
+              props.currentStep === 200
+                ? 0.3
+                : props.currentStep === 300
+                ? 0.5
+                : props.currentStep === 400
+                ? 0.7
+                : props.currentStep === 500
+                ? 1
+                : props.currentStep === 600
+                ? 0.7
+                : props.currentStep === 700
+                ? 0.5
+                : props.currentStep === 800
+                ? 0.3
+                : 0
+          }}
+        >
+          Designer
+        </span>
+        <span
+          style={{
+            opacity:
+              props.currentStep === 600
+                ? 0.3
+                : props.currentStep === 700
+                ? 0.5
+                : props.currentStep === 800
+                ? 0.7
+                : props.currentStep === 900
+                ? 0.9
+                : props.currentStep === 1000
+                ? 1
+                : 0
+          }}
+        >
+          Musician
+        </span>
+      </div>
+      <div className="contact">
+        <div className="social-icons">
+          <SocialMediaIconsReact
+            iconSize={10}
+            size={15}
+            backgroundColor="transparent"
+            icon="linkedin"
+            url="https://twitter.com/your-twitter-handle"
+          />
+          <SocialMediaIconsReact
+            iconSize={10}
+            size={15}
+            backgroundColor="transparent"
+            icon="facebook"
+            url="https://twitter.com/your-twitter-handle"
+          />
+          <SocialMediaIconsReact
+            iconSize={10}
+            size={15}
+            backgroundColor="transparent"
+            icon="github"
+            url="https://twitter.com/your-twitter-handle"
+          />
+          <SocialMediaIconsReact
+            iconSize={10}
+            size={15}
+            backgroundColor="transparent"
+            icon="instagram"
+            url="https://twitter.com/your-twitter-handle"
+          />
+          <SocialMediaIconsReact
+            iconSize={10}
+            size={15}
+            backgroundColor="transparent"
+            icon="deviantart"
+            url="https://twitter.com/your-twitter-handle"
+          />
+        </div>
+        <div className="signature">
+          made with ♥ by <span>Pedro Knup </span> | ©2020
+        </div>
+        {/* <SocialMediaIconsReact
+          backgroundColor="transparent"
+          icon="email"
+          url="https://twitter.com/your-twitter-handle"
+        /> */}
+      </div>
     </div>
   );
 };

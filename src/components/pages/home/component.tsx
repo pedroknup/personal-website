@@ -53,9 +53,9 @@ export const HomeComponent = (
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
   const [currentPage, setCurrentPage] = React.useState<string>('')
-  const [previousState, setPreviousState] = React.useState<number|undefined>(undefined)
+  const [previousState, setPreviousState] = React.useState<number|undefined>(undefined);
+
   React.useEffect(()=>{
-    setPreviousState(currentState);
     let newState = -1;
     if (internalCurrentPosition <= STEPS/4){
       newState = 0
@@ -64,9 +64,13 @@ export const HomeComponent = (
     }else {
       newState = 2
     }
-    if (newState != currentState)
-      setCurrentState(newState)
+    if (newState != currentState && !(previousState===undefined && newState === 0))
+      setPreviousState(currentState);
+      setCurrentState(newState);
   }, [internalCurrentPosition])
+
+
+
 
   const removeHighlight = (id:string) => {
     const navBarItemsTemp = initialNavbarItem;
@@ -118,7 +122,6 @@ export const HomeComponent = (
         navBarItemsTemp[i].isSelected = true;
         if (shouldHighlight){
           navBarItems[i].shouldHighlight = true;
-          console.log("setting highglith true for ", id)
         }
         }else{
           navBarItemsTemp[i].isSelected = false;
@@ -165,6 +168,18 @@ export const HomeComponent = (
     }, 500);
   };
 
+  React.useEffect(()=>{
+    if (currentState === undefined){
+      console.log('initial')
+    } else   if (currentState === 0){
+      console.log('0')
+    }else   if (currentState === 1){
+      console.log('1')
+    }else   if (currentState === 2){
+      console.log('2')
+    }
+  },[currentState])
+
   React.useEffect(
     () => {
       setInternalCurrentPosition(0);
@@ -199,32 +214,6 @@ export const HomeComponent = (
   function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-
-  const getColorForPercentage = (pct: number) => {
-    const percentColors = [
-      { pct: 0.0, color: { r: 0xff, g: 0x00, b: 0 } },
-      { pct: 0.5, color: { r: 0xff, g: 0xff, b: 0 } },
-      { pct: 1.0, color: { r: 0x00, g: 0xff, b: 0 } }
-    ];
-    for (var i = 1; i < percentColors.length - 1; i++) {
-      if (pct < percentColors[i].pct) {
-        break;
-      }
-    }
-    var lower = percentColors[i - 1];
-    var upper = percentColors[i];
-    var range = upper.pct - lower.pct;
-    var rangePct = (pct - lower.pct) / range;
-    var pctLower = 1 - rangePct;
-    var pctUpper = rangePct;
-    var color = {
-      r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-      g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-      b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-    };
-    return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-    // or output as hex if preferred
-  };
 
   const runAnimationThroughSteps = async (from: number) => {
     let currentStep = roundUp(from);
@@ -315,6 +304,7 @@ export const HomeComponent = (
           <div ref={intro} className="intro">
            
             <IntroPageComponent
+              currentStep={internalCurrentPosition}
               previousState={previousState}
               key={currentState}
               currentState={currentState}
@@ -323,7 +313,7 @@ export const HomeComponent = (
                 setHasScrolled(true);
               }} /> 
           
-            
+             <br />
             <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
               {internalCurrentPosition}
               <br />

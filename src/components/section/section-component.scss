@@ -2,7 +2,7 @@
 
 .section {
   margin: 0 16px 0 32px;
-  border-left: 1px solid #ffffff08;
+  border-left: 1px solid $border;
 
   position: relative;
   background-color :$background;
@@ -20,7 +20,7 @@
     &.big {
     }
     &.padding {
-      border-left: 1px solid #ffffff08;
+      border-left: 1px solid $border;
     }
   }
   .title {
