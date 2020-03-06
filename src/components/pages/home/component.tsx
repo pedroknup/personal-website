@@ -17,11 +17,6 @@ const sticky = require('react-sticky');
 const { StickyContainer, Sticky } = sticky;
 const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
-//  <a className="selected" href="#">About</a>
-//           <a href="#">Skills</a>
-//           <a href="#professional">Experiences</a>
-//           <a href="#">Education</a>
-//           <a href="#">Blog</a>
 
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
@@ -31,24 +26,18 @@ const STEPS = 1000;
     title: 'About',
     isSelected: false,
     id: 'about', 
-    // element:  <AboutPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} />
   },
   { title: 'Skills', isSelected: false, id: 'skills', 
-  // element:  
-  //  <SkillsPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} /> 
   },
   { title: 'Experiences', isSelected: false, id: 'experiences', 
-  // element:  <ProfessionalExperiencesPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} /> 
 },
   { title: 'Education', isSelected: false, id: 'education', 
-  // element:  <EducationPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about')} />
  },
   { title: 'Blog', isSelected: false, id: 'blog',
   //  element:  <BlogPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about ')} /> 
   }
 ];
 export const HomeComponent = (
-  // props: IHomeComponentProps & RouteComponentProps & HomeContainerProps
   props: IHomeComponentProps
 ) => {
   const [currentScrollPosition, setCurrentScrollPosition] = React.useState(0);
@@ -60,16 +49,24 @@ export const HomeComponent = (
   const introPageRef = React.useRef<HTMLDivElement>(null);
   const aboutPageRef = React.useRef<HTMLDivElement>(null);
   const [internalCurrentPosition, setInternalCurrentPosition] = React.useState(0);
-  const [previousState, setPreviousState] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState<any | undefined>(undefined);
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
   const [currentPage, setCurrentPage] = React.useState<string>('')
-  const setNextState = (nextState: number) => {
-    const diff = nextState - currentState;
-    if (diff > 0) {
+  const [previousState, setPreviousState] = React.useState<number|undefined>(undefined)
+  React.useEffect(()=>{
+    setPreviousState(currentState);
+    let newState = -1;
+    if (internalCurrentPosition <= STEPS/4){
+      newState = 0
+    }else if (internalCurrentPosition > STEPS/4 && internalCurrentPosition < STEPS/4*3){
+      newState = 1;
+    }else {
+      newState = 2
     }
-  };
+    if (newState != currentState)
+      setCurrentState(newState)
+  }, [internalCurrentPosition])
 
   const removeHighlight = (id:string) => {
     const navBarItemsTemp = initialNavbarItem;
@@ -107,7 +104,7 @@ export const HomeComponent = (
       }
     document.body.addEventListener('touchmove', deactivateDefaultScroll);
 
-
+    setPreviousState(undefined)
     return () => {
       document.body.removeEventListener('touchmove', deactivateDefaultScroll);
 
@@ -316,19 +313,27 @@ export const HomeComponent = (
         >
 
           <div ref={intro} className="intro">
+           
             <IntroPageComponent
+              previousState={previousState}
+              key={currentState}
+              currentState={currentState}
               hasScrolled={hasScrolled}
               onFinish={() => {
                 setHasScrolled(true);
-              }}
-            />
+              }} /> 
+          
+            
             <div style={{ color: 'white', opacity: 0.1, position: 'fixed', top: 16, right: 16 }}>
               {internalCurrentPosition}
               <br />
               {currentPosition}
               <br />
               {currentPage}
-              {/* {JSON.stringify(navBarItems)} */}
+              <br />
+              {currentState}
+              <br />
+              {previousState}
             </div>
             <div ref={aboutPageRef}>
               <ScrollProgressBar
@@ -357,8 +362,7 @@ export const HomeComponent = (
           </div>
 
           <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-            {/* <AboutPage /> */}
-                {/* {navBarItems.map((item)=> { return item.element})} */}
+         
             <AboutPage  />
             <SkillsPage />
             <ProfessionalExperiencesPage />
