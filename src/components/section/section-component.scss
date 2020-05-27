@@ -59,8 +59,8 @@
     &.closing {
       // text-align: right;
       span {
-        &::after {
-          content: '/>';
+        &::before {
+          content: '</';
           // color: $foreground;
         }
       }

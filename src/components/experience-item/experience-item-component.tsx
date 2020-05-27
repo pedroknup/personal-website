@@ -30,6 +30,10 @@ export const ExperienceItem = (props: IExperienceItemProps) => {
           <div className="name">{`//${'*'} ${props.description}`}</div>
         </div>
       </div>
-      <div className={`content3 ${isOpen ? 'open' : ''}`}>{props.content.content}</div>
+      <div className={`content3 ${isOpen ? 'open' : ''}`}>
+        {props.content.content.split('\n').map((item: string, i: number) => {
+          return <p key={i}>{item}</p>;
+        })}
+      </div>
     </div>;
 };

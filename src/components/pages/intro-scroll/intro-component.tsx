@@ -22,16 +22,17 @@ export interface IIntroPageProps {
 }
 
 import '../../../styles/main.scss';
-import personalData from '../../../data/index';
 
 const STEPS = 2000;
 export const IntroPageComponent = (props: IIntroPageProps) => {
+  const [hasLoaded, setHasLoaded] = React.useState(false);
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [hasScrolledInterned, setHasScrolledInterned] = React.useState(false);
   const [hasTimedOut, setHasTimedOut] = React.useState(false);
   const [hasFinishedTyping, setHasFinishedTyping] = React.useState(false);
   const [currentText, setCurrentText] = React.useState('');
   const [finishedErasing, setFinishedErasing] = React.useState(false);
+  const [imageSrc, setImageSrc] = React.useState('');
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -130,36 +131,137 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
   };
 
   return <div onWheel={onScrollHandler} className={`intro-container ${props.darkMode ? '' : 'light'}`}>
-      <div className="profile-pic">
-        <img src={personalData.profilePic} />
-      </div>
       <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
-        {hasFinishedTyping && <span>/*</span>}
-        <span  style={{ marginLeft: hasFinishedTyping ? 15 : 0, display: 'block' }}>
-          {props.currentState === 0 && props.previousState == undefined && <Typist onTypingDone={() => {
-                setHasFinishedTyping(true);
-              }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={props.currentState === 0 ? 1000 : 0}>
-              {props.currentState === 0 && <span>
-                  Hi! I’m Pedro Knup
-                  <br />
-                  I love coding and creating creative content :)
-                  <br />
-                </span>}
-              {/* {props.currentState === 1 && <Typist.Backspace count={18} delay={100} />}
-              {props.currentState === 1 && 'designer'}
-              {props.currentState === 2 && <Typist.Backspace count={8} delay={100} />}
-              {props.currentState === 2 && 'musician'} */}
-              {/* and I'm a Fullstack developer
-                <Typist.Backspace count={19} delay={100} />
-                designer
-                <Typist.Backspace count={8} delay={100} />
-              musician */}
-              <span />
-            </Typist>}
-        </span>
-        {hasFinishedTyping && <span>/*</span>}
+        {props.currentState === 0 && props.previousState == undefined && <Typist onTypingDone={() => {
+              setHasFinishedTyping(true);
+            }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={props.currentState === 0 ? 1000 : 0}>
+            {props.currentState === 0 && <span>
+                Hi! I’m Pedro Knup, a self-taught
+                <br />
+                [
+                <br />
+                "software engineer", <br />
+                ];
+              </span>}
+            {/* {props.currentState === 1 && <Typist.Backspace count={18} delay={100} />}
+            {props.currentState === 1 && 'designer'}
+            {props.currentState === 2 && <Typist.Backspace count={8} delay={100} />}
+            {props.currentState === 2 && 'musician'} */}
+            {/* and I'm a Fullstack developer
+              <Typist.Backspace count={19} delay={100} />
+              designer
+              <Typist.Backspace count={8} delay={100} />
+            musician */}
+            <span />
+          </Typist>}
+        {props.currentState === 0 && props.previousState !== undefined && <>
+            <span>
+              Hi! I’m Pedro Knup, a self-taught
+              <br />
+              [<br />
+            </span>
+            {finishedErasing && <Typist onTypingDone={() => {
+                  setHasFinishedTyping(true);
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "software engineer",<br />];
+                <span />
+              </Typist>}
+          </>}
+        {props.currentState === 1 && <>
+            <span>
+              Hi! I’m Pedro Knup, a self-taught
+              <br />
+              [<br />
+              "software engineer",{currentText}
+            </span>
+            {finishedErasing && <Typist onTypingDone={() => {
+                  setHasFinishedTyping(true);
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "designer"
+                <br />
+                ];
+                <span />
+              </Typist>}
+          </>}
+        {props.currentState === 2 && <>
+            <span>
+              Hi! I’m Pedro Knup, a self-taught
+              <br />
+              [<br />
+              "software engineer", <br />
+              "designer",{currentText}
+            </span>
+            {finishedErasing && <Typist onTypingDone={() => {
+                  setHasFinishedTyping(true);
+                }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={0}>
+                "musician"
+                <br />
+                ];
+                <span />
+              </Typist>}
+          </>}
       </div>
-
+      <div style={{ opacity: hasFinishedTyping ? 1 : 0 }} className="sprite">
+        {/* <img src={getSpriteByStep(props.currentStep)} /> */}
+        <span
+          style={{
+            opacity:
+              props.currentStep === 0
+                ? 1
+                : props.currentStep === 100
+                ? 0.9
+                : props.currentStep === 200
+                ? 0.7
+                : props.currentStep === 300
+                ? 0.5
+                : props.currentStep === 400
+                ? 0.3
+                : 0
+          }}
+        >
+          Software Engineer
+        </span>
+        <span
+          style={{
+            opacity:
+              props.currentStep === 200
+                ? 0.3
+                : props.currentStep === 300
+                ? 0.5
+                : props.currentStep === 400
+                ? 0.7
+                : props.currentStep === 500
+                ? 1
+                : props.currentStep === 600
+                ? 0.7
+                : props.currentStep === 700
+                ? 0.5
+                : props.currentStep === 800
+                ? 0.3
+                : 0
+          }}
+        >
+          Designer
+        </span>
+        <span
+          style={{
+            opacity:
+              props.currentStep === 600
+                ? 0.3
+                : props.currentStep === 700
+                ? 0.5
+                : props.currentStep === 800
+                ? 0.7
+                : props.currentStep === 900
+                ? 0.9
+                : props.currentStep === 1000
+                ? 1
+                : 0
+          }}
+        >
+          Musician
+        </span>
+      </div>
       <div className="contact">
         <div className="social-icons">
           <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="linkedin" url="https://www.linkedin.com/in/pedroknup" />
