@@ -117,7 +117,7 @@ export const HomeComponent = (
   return (
     <div className="main">
       <div className={`container ${darkMode ? '': 'light'}`} >
-      <Navbar darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
+      <Navbar setDarkMode={setDarkMode} darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
 
         <div
           ref={container}
@@ -155,9 +155,7 @@ export const HomeComponent = (
         >
 
           <div ref={intro} className="intro">
-            <label style={{position: 'absolute', right: 16, top: 8, zIndex: 10, cursor: 'pointer'}} onClick={()=>{
-              setDarkMode(!darkMode);
-            }}>Toggle Dark mode</label>
+            
             <IntroPageComponent
             darkMode={darkMode}
               currentStep={0}

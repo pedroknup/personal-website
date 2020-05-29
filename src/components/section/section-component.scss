@@ -1,4 +1,9 @@
 @import '../../styles/main.scss';
+@media only screen and (max-width: 768px){
+ .section{
+    margin: 0 8px 0 16px !important;
+ }
+}
 
 .section {
   margin: 0 16px 0 32px;
@@ -35,6 +40,11 @@
   .content {
     margin-left: 32px;
     padding-bottom: 32px;
+    @media only screen and (max-width: 768px){
+      margin-left: 18px;
+      padding-bottom: 18px;
+    }
+
     &.big {
     }
     &.padding {

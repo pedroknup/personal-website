@@ -252,7 +252,7 @@ export const HomeComponent = (
   return (
     <div className="main">
       <div className={`container ${darkMode ? '': 'light'}`} >
-      <Navbar darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
+      {/* <Navbar darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} /> */}
 
         <div
           ref={container}

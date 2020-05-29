@@ -1,4 +1,6 @@
 import * as React from 'react';
+const hamburgerArrow = require('react-animated-burgers');
+const { HamburgerArrow } = hamburgerArrow;
 import './nav-bar-component.scss';
 interface INavbarItem {
   title: string;
@@ -9,11 +11,17 @@ interface INavbarItem {
 }
 interface INavbarProps {
   onClick: (id: string) => void;
+  setDarkMode: (state: boolean) => void;
   darkMode: boolean;
   items: INavbarItem[];
 }
 
 const Navbar = (props: INavbarProps) => {
+  const [isActive, setIsActive] = React.useState(false)
+  React.useEffect(() => {
+    setIsActive(false);
+  }, [props.darkMode])
+
   const onClick = (id: string) => {
     props.onClick(id);
     const el = document.getElementById(`${id}`);
@@ -24,36 +32,43 @@ const Navbar = (props: INavbarProps) => {
     }
   };
 
-  return (
-    <div className={`links ${props.darkMode ? '' : 'light'}`}>
-      {/* <div className="buttons">
-        <div className="button red" />
-        <div className="button yellow" />
-        <div className="button green" />
-      </div> */}
-      <div className="container">
-        {props.items.map((item, key) => (
-          <a
-            href="#"
-            className={item.isSelected ? 'selected' : ''}
-            key={key}
-            onClick={(e) => {
-              e.preventDefault();
-              onClick(item.id);
-            }}
-          >
-            {item.title}
-            <div className="divider" />
-          </a>
-        ))}
-        {/* <a className="selected" href="#">About</a>
-          <a href="#">Skills</a>
-          <a href="#professional">Experiences</a>
-          <a href="#">Education</a>
-          <a href="#">Blog</a> */}
+  return <div>
+      <div className={`${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'} hamburger-icon`}>
+        <HamburgerArrow buttonWidth={36} onClick={() => {
+            setIsActive(!isActive);
+          }} isActive={isActive} />
       </div>
-    </div>
-  );
+
+      <div className={`navbar links ${isActive ? 'is-active' : ''}`}>
+        {/* <div className="buttons">
+          <div className="button red" />
+          <div className="button yellow" />
+          <div className="button green" />
+        </div> */}
+        <div className="container">
+          {props.items.map((item, key) => (
+            <a
+              href="#"
+              className={item.isSelected ? 'selected' : ''}
+              key={key}
+              onClick={(e) => {
+                e.preventDefault();
+                setIsActive(false);
+                onClick(item.id);
+              }}
+            >
+              {item.title}
+              <div className="divider" />
+            </a>
+          ))}
+          <label style={{ position: 'absolute', textAlign: 'center', right: 0, bottom: 24, left: 0, zIndex: 10, cursor: 'pointer' }} onClick={() => {
+              props.setDarkMode(!props.darkMode);
+            }}>
+            Toggle Dark mode
+          </label>
+        </div>
+      </div>
+    </div>;
 };
 
 export { INavbarItem, Navbar };
