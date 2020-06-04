@@ -11,7 +11,7 @@ import operatorRegular from './assets/fonts/OperatorMono/OperatorMonoBookRegular
 
 createGlobalStyle`
     @font-face {
-        font-family: 'Operator Mono';
+        font-family: Operator Mono;
         src: url(${operatorRegular}) format('opentype');
         font-weight: normal;
         font-style: normal;

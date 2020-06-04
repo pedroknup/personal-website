@@ -55,7 +55,7 @@ export const AboutPage = (props:ISkillsProps) => {
           </span>
         </span>
         <br />
-        <span>{personalData.bio}</span>
+        <span className="bio">{personalData.bio}</span>
         <br />
         <br />
       </Section>

@@ -39,7 +39,7 @@ const Navbar = (props: INavbarProps) => {
           }} isActive={isActive} />
       </div>
 
-      <div className={`navbar links ${isActive ? 'is-active' : ''}`}>
+      <div className={`navbar links ${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'}`}>
         {/* <div className="buttons">
           <div className="button red" />
           <div className="button yellow" />
@@ -61,7 +61,7 @@ const Navbar = (props: INavbarProps) => {
               <div className="divider" />
             </a>
           ))}
-          <label style={{ position: 'absolute', textAlign: 'center', right: 0, bottom: 24, left: 0, zIndex: 10, cursor: 'pointer' }} onClick={() => {
+          <label className="toggle-dark" onClick={() => {
               props.setDarkMode(!props.darkMode);
             }}>
             Toggle Dark mode

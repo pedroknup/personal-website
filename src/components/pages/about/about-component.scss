@@ -5,7 +5,9 @@
     .brackets {
       color: $light-foreground !important;
       background-color: $light-background !important;
-
+    }
+    .bio{
+    background-color: $light-background !important;
     }
   }
   .obj {
@@ -26,6 +28,11 @@
   }
   .contact-links {
     color: $foreground;
+  }
+  .bio{
+    background-color: $background;
+    padding-left: 2px;
+    margin-left: -1px;
   }
   .brackets {
     background-color: $background;

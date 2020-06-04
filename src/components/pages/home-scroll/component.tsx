@@ -33,7 +33,7 @@ const STEPS = 1000;
 },
   { title: 'Education', isSelected: false, id: 'education', 
  },
-  { title: 'Blog', isSelected: false, id: 'blog',
+  { title: 'Videos', isSelected: false, id: 'blog',
   //  element:  <BlogPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about ')} /> 
   }
 ];

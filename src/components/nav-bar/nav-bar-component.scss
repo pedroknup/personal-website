@@ -29,14 +29,14 @@
     }
 
   }
-  &-light{
+  &.light{
      >div>span{
-      background-color: $foreground !important;
+      background-color: $foreground-light !important;
       &::after{
-        background-color: $foreground !important;
+        background-color: $foreground-light !important;
       }
       &::before{
-        background-color: $foreground !important;
+        background-color: $foreground-light !important;
       }
     }
   }
@@ -95,6 +95,9 @@
       .divider{
           background-color: black !important;
       }
+      .toggle-dark{
+        color:  $light-foreground !important;
+      }
 
     }
   }
@@ -151,6 +154,15 @@
     // @media (max-width: #{$screen-sm-min}) {
     //   display: none !important;
     // }
+  .toggle-dark{
+    position: absolute;
+    text-align: center;
+    right: 0;
+    bottom: 24px;
+    left: 0;
+    z-index: 10;
+    cursor: pointer
+  }
     a {
       text-decoration: none;
       color: $foreground;
