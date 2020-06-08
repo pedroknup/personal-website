@@ -19,6 +19,9 @@ $bar-length: 12px;
     }
     .title {
       color: $red-highlight;
+      background: $background;
+      margin-left: -2px;
+      padding-left: 2px;
     }
   }
   &.light {
@@ -27,6 +30,9 @@ $bar-length: 12px;
     }
     .progress-container {
       background-color: $light-background-dark !important;
+    }
+    section > .title {
+       background: $light-background;
     }
   }
 }
@@ -48,10 +54,17 @@ $bar-length: 12px;
       left: -4px;
       z-index: -1;
       border-radius: 4px;
+      background-color: $background;
     }
     border-radius: 4px;
   }
   &.close {
+  }
+  &.light{
+    &.open:before{
+      background-color: $light-background !important;
+       border: 1px solid $light-foreground-light;
+    }
   }
   .title-container {
     display: flex;

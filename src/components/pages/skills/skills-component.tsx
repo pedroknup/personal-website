@@ -36,25 +36,25 @@ export const SkillsPage = (props : ISkillsProps) => {
         <section>
           <span className="title">Front End</span>
           {skillsFront.map((skill) => {
-            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
+            return <SkillItem darkMode={props.darkMode} key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Back End</span>
           {skillsBack.map((skill) => {
-            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
+            return <SkillItem darkMode={props.darkMode} key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Mobile</span>
           {skillsMobile.map((skill) => {
-            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
+            return <SkillItem darkMode={props.darkMode} key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
         <section>
           <span className="title">Others</span>
           {skillsOther.map((skill) => {
-            return <SkillItem key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
+            return <SkillItem darkMode={props.darkMode} key={skill.id} id={skill.id} onClick={skillOnClick} open={skill.id === selectedSkill} title={skill.name} content={skill.content} progress={skill.progress} />;
           })}
         </section>
       </div>

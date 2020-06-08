@@ -39,11 +39,9 @@ export const Section = (props: ISectionProps) => {
         {description ? <div>
             <br />
             <span className="description">
-              {` /*`}
               {/* <span className="description" style={{ marginLeft: 64 }}>{`${description}`}</span> */}
-              <span className="description" style={{ margin: '0 16px' }}>{`${description}   `}</span>
+              <span className="description" style={{ margin: '0 16px' }}>{` /*${description}   */`}</span>
               {/* <br /> */}
-              {` */`}
               <br />
             </span>
           </div> : ''}

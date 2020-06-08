@@ -1,6 +1,6 @@
 @import '../../../styles/variables.scss';
 
-@media only screen and (max-width: 768px){
+@media (max-width: 768px){
   .experience-item {
     padding-left: 21px !important;
   }
@@ -18,7 +18,7 @@
   .toggle {
     width: 24px;
     min-width: 24px;
-    @media only screen and (max-width: 768px){
+    @media (max-width: 768px){
       width: 21px;
       min-width: 21px;
       margin-left: -2px;
