@@ -38,7 +38,7 @@ const skillsFront: ISkillItem[] = [
 const skillsBack: ISkillItem[] = [
   {
     id: 5,
-    name: 'Node',
+    name: 'NodeJS',
     content:
       `I've been intensively using NodeJS for my projects. For Web services, I like to use ExpressJS with TypeScript and some object-relational mapping framework, such as Loopback, TypeORM, Mongoose etc. For tests I use Jest.`,
     progress: 90
