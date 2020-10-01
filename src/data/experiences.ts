@@ -98,7 +98,7 @@ Technologies used:
     icon: 'https://i.imgur.com/lkhhta0.png',
     defaultOpened: true,
     content: {
-      content: `I work widely throughout the IoT development range, from device level communication to a Dashboard Web App, making sure the connection between the devices and cloud, which can be made in many different ways, is smooth and reliable.
+      content: `I worked widely throughout the IoT development range, from device level communication to a Dashboard Web App, making sure the connection between the devices and cloud, which can be made in many different ways, is smooth and reliable.
 
 Technologies used:
 - React, JavaScript, ES6, LESS, NodeJS, ExpressJS, GraphQL, MongoDB, Webpack, Jest, Mocha, Code editors plugin development (VSC and Atom).`,
@@ -106,7 +106,7 @@ Technologies used:
     }
   },
   {
-    title: 'Beakend Developer',
+    title: 'Backend Developer',
     date: 'Jul/2020 - Now',
     description: 'CowManager B.V.',
     link: 'www.google.com',
