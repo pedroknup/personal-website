@@ -92,7 +92,7 @@ Technologies used:
 
   {
     title: 'Fullstack Developer',
-    date: 'Oct/2019 - Now',
+    date: 'Oct/2019 - Jun/2020',
     description: 'Pycom Ltd.',
     link: 'www.google.com',
     icon: 'https://i.imgur.com/lkhhta0.png',
@@ -102,6 +102,18 @@ Technologies used:
 
 Technologies used:
 - React, JavaScript, ES6, LESS, NodeJS, ExpressJS, GraphQL, MongoDB, Webpack, Jest, Mocha, Code editors plugin development (VSC and Atom).`,
+      items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
+    }
+  },
+  {
+    title: 'Beakend Developer',
+    date: 'Jul/2020 - Now',
+    description: 'CowManager B.V.',
+    link: 'www.google.com',
+    icon: 'https://i.imgur.com/3fIF7HW.png',
+    defaultOpened: false,
+    content: {
+      content: '',
       items: [{ title: 'title1', text: 'content' }, { title: 'title2', text: 'content' }]
     }
   }

@@ -10,28 +10,28 @@ const skillsFront: ISkillItem[] = [
     id: 0,
     name: 'HTML+JS+CSS',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I like to play with those languages since I was a kid. I'm always challenging myself creating different layouts scenarios and keeping up-to-date with the design trends. I consider my html+css skills advanced.`,
     progress: 95
   },
   {
     id: 1,
     name: 'React',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I've been studying and working with React intensively. I'm constantly following the new releases of it. On my React projects, I like to use Redux (or context), Typescript and SCSS.`,
     progress: 92
   },
   {
     id: 2,
     name: 'Vue',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      'Just curious. I stopped studying it after I met ReactJS.',
     progress: 70
   },
   {
     id: 3,
     name: 'Angular 2',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      '',
     progress: 40
   }
 ];
@@ -40,70 +40,70 @@ const skillsBack: ISkillItem[] = [
     id: 5,
     name: 'Node',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I've been intensively using NodeJS for my projects. For Web services, I like to use ExpressJS with TypeScript and some object-relational mapping framework, such as Loopback, TypeORM, Mongoose etc. For tests I use Jest.`,
     progress: 90
   },
   {
     id: 4,
     name: '.NET',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database)`,
     progress: 85
   },
   {
     id: 6,
     name: 'Relational DB',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I've been working with relational databases since I started programming (10 years ago). I consider my database knowledges advanced.`,
     progress: 83
   },
   {
     id: 7,
     name: 'NoSQL DB',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      'Sometimes I use a NoSQL database in some project. Normally I use MongoDB when I am working on a Serverless application or when the DB structure is relatively simple and will store a big amount of data. ',
     progress: 60
   },
   {
     id: 8,
     name: 'Docker',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `Docker made my life easier. I'm using for almost every project I'm working on`,
     progress: 60
   },
   {
     id: 9,
     name: 'Microsoft Azure',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+    `I use Azure to host some personal projects. Serverless applications, CI/CD pipelines, hosting, function apps and so on. `,
     progress: 50
   },
   {
     id: 10,
     name: 'Java',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      'Ew',
     progress: 45
   },
   {
     id: 11,
     name: 'Google Firebase',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I used Firebase to host some web apps and also for a serverless application.`,
     progress: 40
   },
   {
     id: 12,
     name: 'AWS',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+    `I used AWS to host my biggest Mobile App I have made (Cabe+1). But I switched to Azure due the Azure plan that I got.`,
     progress: 20
   },
   {
     id: 13,
     name: 'PHP',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      '',
     progress: 20
   },
 ];
@@ -113,35 +113,35 @@ const skillsMobile: ISkillItem[] = [
     id: 14,
     name: 'React Native',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `I've been studying React Native since 2018 and I used it for some freelance projects. I'm able to build native mobile application in an awesome speed.`,
     progress: 90
   },
   {
     id: 15,
     name: 'Xamarin',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      `With my knowledge on C#, I was quickly building rich and well written mobile native applications. It was what I needed for mobile development. But nowadays I switched to React Native.`,
     progress: 60
   },
   {
     id: 16,
     name: 'Flutter',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+      '',
     progress: 40
   },
   {
     id: 17,
     name: 'Android',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+     `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
     progress: 40
   },
   {
     id: 18,
     name: 'iOS',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
+    `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
     progress: 20
   }
 ];
@@ -149,38 +149,45 @@ const skillsMobile: ISkillItem[] = [
 const skillsOther: ISkillItem[] = [
   {
     id: 19,
-    name: 'React Native',
+    name: 'Photoshop & Illustrator',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
-    progress: 90
+     `I am a photography/design enthusiast. I have solid knowledge on photo manipulation and graphics creation (logo, banners, flyers, UI design etc).`,
+    progress: 95
   },
   {
     id: 20,
-    name: 'Xamarin',
+    name: 'Git',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
-    progress: 60
+      `I follow the git best practices (by Github). `,
+    progress: 90
   },
   {
     id: 21,
-    name: 'Flutter',
+    name: 'Illustration',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
-    progress: 40
+    `I like to draw since I was a kid. Usually I work with graphite, colored pencils, nankin and aquarela. I discovered the digital painting in a few years ago and I loved it too.`,
+    progress: 70
   },
   {
     id: 22,
-    name: 'Android',
+    name: 'Scrum',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
-    progress: 40
+     `I've been working with scrum in the past 3 years. Usually it's based on 2 weeks sprints with daily stand-up, retrospective and planning scrum meetings. I enjoyed pretty much the Jeff Sutherlands' book: "Scrum: The Art of Doing Twice the Work in Half the Time".`,
+    progress: 50
   },
   {
     id: 23,
-    name: 'iOS',
+    name: 'Audiovisual Production',
     content:
-      'Integer non mauris mattis, volutpat odio sit amet, malesuada lorem. Sed semper ndit libero sed facilisis. Curabitur fringilla nisl ac pharetra semper. Etiamsed nisl tortor',
-    progress: 20
+    `I used to make music and produce them on Reaper. I recorded every instrument and proper mixed on DAW. I also liked record myself playing some music in some instrument and upload it to my social networks (Youtube and Facebook). I've also directed some amateur short-films.`,
+    progress: 50
+  },
+  {
+    id: 23,
+    name: '3D Modeling',
+    content:
+    `Another hobby I found because of my curiosity. When I was a kid, I used to love cars and that motivated me to learn 3D modelling. I chose Autodesk 3D Studio Max and spent many hours on learning. I loved it, it's relaxing and stress reliever for me. I have a solid knowledge on geometric modeling (non-organic) and a little bit of animation.`,
+    progress: 30
   }
 ];
 

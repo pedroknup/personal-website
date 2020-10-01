@@ -24,7 +24,7 @@ export const youtubeVideos: IVideo[] = [
   { 
     title: 'DIY Brooder with Arduino', 
     date: '18/11/2016', 
-    description: `Video of a homemade brooder that I did with my friend Guilherme Pontello. We used Arduino Uno
+    description: `Video of a homemade brooder that I did with my friend Guilherme Pontello. We used an Arduino Uno
   Dimmer, Lamp 60w, Sensor DHT1, 2 small pc coolers, LCD Nokia 5110, Styrofoam box 21L `, 
     embedded: '<iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/6KZX-v6N1KI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 
     link: 'https://www.youtube.com/watch?v=6KZX-v6N1KI' 
