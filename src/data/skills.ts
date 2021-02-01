@@ -24,8 +24,8 @@ const skillsFront: ISkillItem[] = [
     id: 2,
     name: 'Vue',
     content:
-      'Just curious. I stopped studying it after I met ReactJS.',
-    progress: 70
+      'I haven\'t had a solid experience it with so far. But I know how it works and its fundamentals',
+    progress: 40
   },
   {
     id: 3,
@@ -47,15 +47,15 @@ const skillsBack: ISkillItem[] = [
     id: 4,
     name: '.NET',
     content:
-     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database)`,
-    progress: 85
+     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services)`,
+    progress: 75
   },
   {
     id: 6,
     name: 'Relational DB',
     content:
-      `I've been working with relational databases since I started programming (10 years ago). I consider my database knowledges advanced.`,
-    progress: 83
+      `I've been working with relational databases since I started programming (10 years ago). I consider my database knowledge advanced.`,
+    progress: 70
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const skillsBack: ISkillItem[] = [
     id: 8,
     name: 'Docker',
     content:
-      `Docker made my life easier. I'm using for almost every project I'm working on`,
+      `Docker made my life easier. I've been using it for almost every project I'm working on`,
     progress: 60
   },
   {
@@ -76,34 +76,27 @@ const skillsBack: ISkillItem[] = [
     name: 'Microsoft Azure',
     content:
     `I use Azure to host some personal projects. Serverless applications, CI/CD pipelines, hosting, function apps and so on. `,
-    progress: 50
+    progress: 20
   },
   {
     id: 10,
     name: 'Java',
     content:
       'Ew',
-    progress: 45
+    progress: 20
   },
   {
     id: 11,
     name: 'Google Firebase',
     content:
       `I used Firebase to host some web apps and also for a serverless application.`,
-    progress: 40
+    progress: 20
   },
   {
     id: 12,
     name: 'AWS',
     content:
     `I used AWS to host my biggest Mobile App I have made (Cabe+1). But I switched to Azure due the Azure plan that I got.`,
-    progress: 20
-  },
-  {
-    id: 13,
-    name: 'PHP',
-    content:
-      '',
     progress: 20
   },
 ];
@@ -113,7 +106,7 @@ const skillsMobile: ISkillItem[] = [
     id: 14,
     name: 'React Native',
     content:
-      `I've been studying React Native since 2018 and I used it for some freelance projects. I'm able to build native mobile application in an awesome speed.`,
+      `I've been studying React Native since 2018 and I used it for some freelance projects. I'm able to build native mobile application at an awesome speed.`,
     progress: 90
   },
   {
@@ -159,13 +152,13 @@ const skillsOther: ISkillItem[] = [
     name: 'Git',
     content:
       `I follow the git best practices (by Github). `,
-    progress: 90
+    progress: 85
   },
   {
     id: 21,
     name: 'Illustration',
     content:
-    `I like to draw since I was a kid. Usually I work with graphite, colored pencils, nankin and aquarela. I discovered the digital painting in a few years ago and I loved it too.`,
+    `I like to draw since I was a kid. Usually I work with graphite, markers, oil & acrylic painting, nankin and watercolor. I got to know digital painting a few years ago and I loved it too.`,
     progress: 70
   },
   {
@@ -179,14 +172,14 @@ const skillsOther: ISkillItem[] = [
     id: 23,
     name: 'Audiovisual Production',
     content:
-    `I used to make music and produce them on Reaper. I recorded every instrument and proper mixed on DAW. I also liked record myself playing some music in some instrument and upload it to my social networks (Youtube and Facebook). I've also directed some amateur short-films.`,
+    `I used to make music and produce them on Reaper/Logic Pro. I recorded every instrument and proper mixed on DAW. I also liked record myself playing some music in some instrument and upload it to my social networks (Youtube and Facebook). I've also directed some amateur short-films.`,
     progress: 50
   },
   {
     id: 23,
     name: '3D Modeling',
     content:
-    `Another hobby I found because of my curiosity. When I was a kid, I used to love cars and that motivated me to learn 3D modelling. I chose Autodesk 3D Studio Max and spent many hours on learning. I loved it, it's relaxing and stress reliever for me. I have a solid knowledge on geometric modeling (non-organic) and a little bit of animation.`,
+    `Another hobby out from my curiosity. I used to car fanatic when I was a kid and that motivated me to learn 3D modelling. I chose Autodesk 3D Studio Max and spent many hours on learning. I loved it, it's relaxing and stress reliever for me. I have a solid knowledge on geometric modeling (non-organic) and a little bit of animation.`,
     progress: 30
   }
 ];
