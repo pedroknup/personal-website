@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/main.scss';
+.about-container {
+  &.light {
+    .brackets {
+      color: $light-foreground !important;
+      background-color: $light-background !important;
+    }
+    .bio {
+      background-color: $light-background !important;
+    }
+  }
+  .obj {
+    white-space: pre-wrap;
+    color: $foreground;
+    .property {
+      color: $red-highlight;
+    }
+    .string {
+      color: $green-highlight;
+    }
+    .number {
+      color: $orange-highlight;
+    }
+    .bio {
+      background-color: $background;
+      display: block;
+      max-width: 50vw;
+      margin-left: 32px;
+      padding-left: 32px;
+      border-left: 1px solid $border;
+      @media (max-width: 768px) {
+        max-width: 100vw;
+      }
+    }
+  }
+  a {
+    color: $blue-highlight;
+  }
+  .contact-links {
+    color: $foreground;
+  }
+
+  .brackets {
+    background-color: $background;
+    margin-left: -1px;
+    padding: 2px 0 2px 1px;
+  }
+}

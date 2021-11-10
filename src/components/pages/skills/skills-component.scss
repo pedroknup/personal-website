@@ -1,0 +1,108 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/main.scss';
+$bar-length: 12px;
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  section {
+    min-width: 24%;
+    max-width: 24%;
+    @media (max-width: #{$screen-md-min}) {
+      min-width: 46%;
+      max-width: 46%;
+    }
+    @media (max-width: #{$screen-sm-min}) {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .title {
+      color: $red-highlight;
+      background: $background;
+      margin-left: -2px;
+      padding-left: 2px;
+    }
+  }
+  &.light {
+    .experience-item.open {
+      background-color: red !important;
+    }
+    .progress-container {
+      background-color: $light-background-dark !important;
+    }
+    section > .title {
+       background: $light-background;
+    }
+  }
+}
+
+.skill-item {
+  position: relative;
+  z-index: 1;
+  margin: 8px 0;
+
+  &.open {
+    &:before {
+      content: '';
+      flex: 1;
+      border: 1px solid $foreground-light;
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      z-index: -1;
+      border-radius: 4px;
+      background-color: $background;
+    }
+    border-radius: 4px;
+  }
+  &.close {
+  }
+  &.light{
+    &.open:before{
+      background-color: $light-background !important;
+       border: 1px solid $light-foreground-light;
+    }
+  }
+  .title-container {
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      .chevron {
+        color: white;
+      }
+      .title {
+        color: white;
+      }
+    }
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  span.title-skill {
+    width: 100%;
+  }
+  .content {
+    font-size: 12px;
+  }
+
+  .icon {
+    margin-right: 6px;
+    text-align: right;
+  }
+  .progress-container {
+    background-color: $foreground;
+    width: 100%;
+    height: $bar-length;
+    position: relative;
+    margin: 4px 0;
+    .bar {
+      width: 90%;
+      height: $bar-length;
+      background-color: $green;
+    }
+  }
+}

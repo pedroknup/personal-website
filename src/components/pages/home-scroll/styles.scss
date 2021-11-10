@@ -1,0 +1,114 @@
+@import '../../../styles/variables.scss';
+
+.home-container {
+  background-color: $background;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  flex: 1;
+  overflow: auto;
+  overflow-x: hidden;
+  &.light {
+    background-color: $light-background !important;
+    color: $light-foreground;
+    svg {
+      path {
+        fill: $light-foreground !important;
+      }
+    }
+  }
+  .intro {
+  }
+  .links {
+    display: flex;
+    z-index: 5;
+    margin-left: -32;
+    margin-right: -32;
+    padding: 4px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    .title {
+      color: white;
+      padding: 0 2px;
+      font-weight: 500;
+      width: 80px;
+      margin-left: 4px;
+    }
+    .buttons {
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .button {
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        &.red {
+          background-color: rgb(179, 49, 49);
+          &:hover {
+            background-color: red;
+          }
+        }
+        &.yellow {
+          background-color: rgb(204, 204, 45);
+          &:hover {
+            background-color: yellow;
+          }
+        }
+        &.green {
+          background-color: rgb(45, 97, 45);
+          &:hover {
+            background-color: green;
+          }
+        }
+      }
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+    }
+    a {
+      text-decoration: none;
+      color: $foreground;
+      padding: 0 24px;
+      &.selected {
+        color: red;
+        .divider {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.huge {
+  min-height: 2000px;
+  min-width: 20px;
+  // background-color: $background;
+}
+body {
+  overflow: hidden;
+}
+
+.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.left-bar {
+  min-width: 300px;
+  height: 100vh;
+  background-color: $background-dark;
+}
