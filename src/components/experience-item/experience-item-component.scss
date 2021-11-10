@@ -1,0 +1,140 @@
+@import '../../styles/variables.scss';
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding-left: 21px !important;
+  }
+}
+
+.experience-item {
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: -2px;
+  padding-left: 2px;
+  padding: 6px 0;
+  margin-left: -66px;
+  padding-left: 42px;
+  display: inline-flex;
+  width: calc(100% + 64px);
+  margin-right: -32px;
+  .main-content {
+    padding: 6px 0;
+    display: inline-flex;
+    width: 100%;
+    margin-left: -2px;
+    padding-left: 2px;
+    padding: 6px 0;
+    padding-left: 28px;
+    display: inline-flex;
+    width: calc(100% + 64px);
+    margin-right: -32px;
+  }
+  &.light {
+    &.open {
+      background-color: $light-skill-bg !important;
+    }
+  }
+  &.open {
+    background-color: $background-light-through;
+  }
+
+  a,
+  a:visited {
+    color: $green-highlight;
+  }
+
+  .project-title {
+    color: $blue-highlight;
+  }
+
+  .wrapper {
+    display: inline-flex;
+  }
+
+  .toggle {
+    width: 24px;
+    min-width: 24px;
+    @media (max-width: 768px) {
+      width: 21px;
+      min-width: 21px;
+      margin-left: -2px;
+    }
+  }
+
+  .picture {
+    margin-right: 8px;
+    img {
+      min-width: 100px;
+      min-height: 60px;
+      max-height: 60px;
+    }
+  }
+  .content2 {
+    .date {
+      // color: $orange-highlight;
+      color: $green-highlight;
+    }
+    .title {
+      color: $blue-highlight;
+      max-width: calc(100vw - 400px);
+      @media (max-width: 768px) {
+        // display: block;
+        max-width: calc(100vw - 200px);
+      }
+    }
+    .name {
+      // color: $green-highlight;
+      color: $foreground-light;
+      max-width: calc(100vw - 400px);
+      @media (max-width: 768px) {
+        // display: block;
+        max-width: calc(100vw - 200px);
+      }
+    }
+  }
+  .content3 {
+    margin: 6px 0;
+    display: none;
+    word-break: break-word;
+    padding-right: 12px;
+    max-width: 50vw;
+    @media (max-width: 768px) {
+      margin-left: 24px;
+      max-width: 90vw;
+      padding: 0 8px;
+    }
+    &.open {
+      display: block;
+    }
+  }
+}
+
+.chevron2::before {
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 7px;
+  position: relative;
+  top: 22px;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron2.right:before {
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+.chevron2.bottom:before {
+  top: 22px;
+  transform: rotate(135deg);
+}
+
+.chevron2.left:before {
+  transform: rotate(-135deg);
+}

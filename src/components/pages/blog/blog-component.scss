@@ -1,0 +1,50 @@
+@import '../../../styles/variables.scss';
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding-left: 21px !important;
+  }
+}
+
+.blog-container {
+  &.light {
+    &.open {
+      background-color: $light-skill-bg !important;
+    }
+  }
+  &.open {
+    background-color: $background-light-through;
+  }
+  .toggle {
+    width: 24px;
+    min-width: 24px;
+    @media (max-width: 768px) {
+      width: 21px;
+      min-width: 21px;
+      margin-left: -2px;
+    }
+  }
+
+  img {
+    width: 400px;
+    max-width: 100%;
+  }
+
+  iframe {
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    width: 400px;
+  }
+
+  .date {
+    // color: $orange-highlight;
+    color: $green-highlight;
+  }
+  .title {
+    color: $blue-highlight;
+  }
+  .name {
+    // color: $green-highlight;
+    color: $foreground-light;
+  }
+}
