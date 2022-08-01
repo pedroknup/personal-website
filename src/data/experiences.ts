@@ -17,7 +17,7 @@ interface IExperience {
 const educationalExperiences: IExperience[] = [
   {
     title: 'Computer Technician integrated to Highschool',
-    date: 'Jan/2018 - Aug/2018',
+    date: 'Jan/2011 - Dec/2013',
     description: 'CEFET-MG',
     icon: 'https://i.imgur.com/FyWA7ar.png',
     link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
@@ -28,7 +28,7 @@ const educationalExperiences: IExperience[] = [
   },
   {
     title: 'Computer Engineering',
-    date: 'Sep/2018 - Mar/2019',
+    date: 'Jan/2015 - Mar/2019',
     icon: 'https://i.imgur.com/zQnU30s.png',
     description: 'Universidade Federal de Itajubá (UNIFEI)',
     link: 'www.google.com',
@@ -42,6 +42,16 @@ Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
 ];
 
 const professionalExperiences: IExperience[] = [
+  {
+    title: 'IT Intern',
+    date: 'Jan/2014 - July/2014',
+    description: 'CEFET-MG',
+    icon: 'https://i.imgur.com/FyWA7ar.png',
+    link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
+    content: {
+      content: `As an intern, I was responsible for the maintenance of the computer labs and the school's network. I also developed a web app to control the access of the labs.`
+    }
+  },
   {
     title: 'Developer freelancer',
     date: 'Jan/2014 - Jan/2018',
@@ -126,7 +136,10 @@ Technologies used:
     icon: 'https://i.imgur.com/3fIF7HW.png',
     defaultOpened: false,
     content: {
-      content: ''
+      content: `Maintenance of the company\'s web service and database. 
+      
+Technologies used:
+- .NET Core, MSSQL, Entity Framework and Azure.`
     }
   },
   {
@@ -139,8 +152,8 @@ Technologies used:
     content: {
       content: `Member of the Media.Monks' Google team.
 
-Technologies used:
-- Vue (2.0 & 3.0), SASS, GSAP, Glue, Webpack.`,
+Technologies used so far:
+- Vue (2.0 & 3.0), Lit, React, Angular, Redux, SASS, GSAP, Glue, Webpack, TypeScript and Kintaro. `,
       items: [
         {
           title: 'Google Cloud: Engage Sessions',
