@@ -8,7 +8,59 @@ interface IMedia {
 
 export const youtubeVideos: IMedia[] = [
   {
-    title: 'Self Portrait',
+    title: 'Portrait',
+    date: 'Jul/2022',
+    description: `Digital painting.`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35d397e3-81ed-4bcc-85cb-ac124314ba7d/dfae51y-f5ef14ea-af72-4f90-be99-97b071105cb0.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM1ZDM5N2UzLTgxZWQtNGJjYy04NWNiLWFjMTI0MzE0YmE3ZFwvZGZhZTUxeS1mNWVmMTRlYS1hZjcyLTRmOTAtYmU5OS05N2IwNzExMDVjYjAuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DA1beao7srOLrqThrXAULXf2-aeheYHNT3L6QTZu6YM"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/292261285-792568011907125-6172925146088569516-N-924448534'
+  },
+  {
+    title: 'Portrait',
+    date: 'Apr/2022',
+    description: `Digital painting.`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35d397e3-81ed-4bcc-85cb-ac124314ba7d/dfae51u-3419fd24-5d4a-4dad-9f50-6ab6e34db96f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM1ZDM5N2UzLTgxZWQtNGJjYy04NWNiLWFjMTI0MzE0YmE3ZFwvZGZhZTUxdS0zNDE5ZmQyNC01ZDRhLTRkYWQtOWY1MC02YWI2ZTM0ZGI5NmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ES4uun3HOHlXlhvYLDVi39Op3KYPLyblXhJSKVnFCXY"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/277809711-178149664536998-9005332530753544547-N-924448530'
+  },
+  {
+    title: 'Portrait',
+    date: 'Mar/2022',
+    description: `Digital painting.`,
+    content: '<img src="https://i.imgur.com/JD5gpZk.jpg"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/277429545-659420638659920-5581041103468036149-N-924448521'
+  },
+  {
+    title: 'Portrait',
+    date: 'Feb/2022',
+    description: `Oil on canvas.`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35d397e3-81ed-4bcc-85cb-ac124314ba7d/dfae51i-ed9b369b-0d6b-4dbb-b8b8-6ae1043c1772.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM1ZDM5N2UzLTgxZWQtNGJjYy04NWNiLWFjMTI0MzE0YmE3ZFwvZGZhZTUxaS1lZDliMzY5Yi0wZDZiLTRkYmItYjhiOC02YWUxMDQzYzE3NzIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Ndb1sVK12NZEegT3d15uDZRujZq6jPEfVzjwImOsGYk"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/274385034-468483011586064-7387903728332042162-N-924448518'
+  },
+  {
+    title: 'Portrait',
+    date: 'Jan/2022',
+    description: `Digital painting.`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35d397e3-81ed-4bcc-85cb-ac124314ba7d/dfae51h-06d20b88-cef6-468c-9e0b-47437054397e.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM1ZDM5N2UzLTgxZWQtNGJjYy04NWNiLWFjMTI0MzE0YmE3ZFwvZGZhZTUxaC0wNmQyMGI4OC1jZWY2LTQ2OGMtOWUwYi00NzQzNzA1NDM5N2UuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YfCrL4etMBMgU5sPuGpNZue928ybGl-lIycAN1903TQ"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/271570586-1106279486850060-3552055307044785554-N-924448517'
+  },
+  {
+    title: 'Portrait',
+    date: 'Mar/2021',
+    description: `Digital painting.`,
+    content: '<img src="https://i.imgur.com/hq1NH7r.jpg"/>',
+    link:
+      'https://www.deviantart.com/pedroknup/art/182525908-487075972730319-91462458562350711-N-924448515'
+  },
+  {
+    title: 'Portrait',
     date: 'Mar/2021',
     description: `Self portrait. Oil on canvas.`,
     content:
