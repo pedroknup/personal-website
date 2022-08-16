@@ -185,7 +185,9 @@ export const HomeComponent = (
             <ProfessionalExperiencesPage   darkMode={darkMode}/>
             <EducationPage   darkMode={darkMode}/>
             <BlogPage   darkMode={darkMode}/>
-          <div className="huge"></div>
+          <div className="huge">
+              <h2>Thanks for visiting my website :)</h2>
+          </div>
           </div>
         </div>
        </div>
