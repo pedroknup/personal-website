@@ -13,21 +13,27 @@ const skillsFront: ISkillItem[] = [
     progress: 90
   },
   {
-    id: 1,
-    name: 'React',
-    content: `I've been studying and working with React intensively. I'm constantly following the new releases of it. On my React projects, I like to use Redux (or context), Typescript and SCSS.`,
-    progress: 80
-  },
-  {
     id: 2,
     name: 'Vue',
     content: `At my current job at Media.Monks, I've been using Vue intensively.`,
-    progress: 65
+    progress: 80
+  },
+  {
+    id: 1,
+    name: 'React',
+    content: `I've been studying and working with React intensively. I'm constantly following the new releases of it. On my React projects, I like to use Redux (or context), Typescript and SCSS.`,
+    progress: 70
   },
   {
     id: 3,
-    name: 'Webpack',
+    name: 'Webpack ',
     content: `I'm able to configure the build tool to better satisfy the project's requirements.`,
+    progress: 70
+  },
+  {
+    id: 4,
+    name: 'Lit',
+    content: `I've been working with Lit quite a lot recently `,
     progress: 60
   },
   {
@@ -41,7 +47,7 @@ const skillsFront: ISkillItem[] = [
     name: 'AngularJS + Angular 2',
     content:
       "I haven't had a solid experience it with so far. But I know how it works and its fundamentals",
-    progress: 40
+    progress: 50
   }
 ];
 const skillsBack: ISkillItem[] = [
@@ -53,17 +59,17 @@ const skillsBack: ISkillItem[] = [
     progress: 90
   },
   {
-    id: 4,
-    name: '.NET',
-    content:
-     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services)`,
-    progress: 75
-  },
-  {
     id: 6,
     name: 'Relational DB',
     content:
       `I've been working with relational databases since I started programming (10 years ago). I consider my database knowledge advanced.`,
+    progress: 80
+  },
+  {
+    id: 4,
+    name: '.NET',
+    content:
+     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services)`,
     progress: 70
   },
   {
@@ -71,7 +77,7 @@ const skillsBack: ISkillItem[] = [
     name: 'NoSQL DB',
     content:
       'Sometimes I use a NoSQL database in some project. Normally I use MongoDB when I am working on a Serverless application or when the DB structure is relatively simple and will store a big amount of data. ',
-    progress: 60
+    progress: 70
   },
   {
     id: 8,
@@ -130,14 +136,14 @@ const skillsMobile: ISkillItem[] = [
     name: 'Flutter',
     content:
       '',
-    progress: 40
+    progress: 30
   },
   {
     id: 17,
     name: 'Android',
     content:
      `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
-    progress: 40
+    progress: 30
   },
   {
     id: 18,
