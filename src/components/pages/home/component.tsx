@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { RouteComponentProps } from 'react-router';
-// import { withRouter } from 'react-router-dom';
 import './styles.scss';
 import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { IntroPageComponent } from '../intro';
@@ -12,9 +11,6 @@ import { ProfessionalExperiencesPage } from '../professional-experience';
 import { AboutPage } from '../about';
 import { BlogPage } from '../blog';
 import { INavbarItem, Navbar } from '../../../components/nav-bar/nav-bar-component';
-const sticky = require('react-sticky');
-const { StickyContainer, Sticky } = sticky;
-const wheelReact = require('wheel-react');
 export interface IHomeComponentProps {}
 
 const MINIMUM_STEPS = 0;
@@ -33,12 +29,9 @@ const STEPS = 1000;
   { title: 'Education', isSelected: false, id: 'education', 
  },
   { title: 'Artworks', isSelected: false, id: 'blog',
-  //  element:  <BlogPage removeHighlight={removeHighlight} isHighlighted={isElementSelected('about ')} /> 
   }
 ];
-export const HomeComponent = (
-  props: IHomeComponentProps
-) => {
+export const HomeComponent = () => {
   const [currentPosition, setCurrentPosition] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState(false);
    const isScrollingRef = React.useRef(false);
@@ -49,7 +42,6 @@ export const HomeComponent = (
   const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
   const [previousState, setPreviousState] = React.useState<number|undefined>(undefined);
   const [darkMode, setDarkMode] = React.useState(true)
-  const [currentPage, setCurrentPage] = React.useState<string>('')
 
 
   React.useEffect(() => {
@@ -80,44 +72,48 @@ export const HomeComponent = (
   }
 
   const onScroll = React.useCallback(() => {
-     if (isScrollingRef.current) {
+    if (isScrollingRef.current) {
       return;
     }
 
-    const aboutY = document.getElementById('about')?.getBoundingClientRect().y || 0;
-    const skillsY = document.getElementById('skills')?.getBoundingClientRect().y || 0;
-    const educationY = document.getElementById('education')?.getBoundingClientRect().y || 0;
-    const experienceY = document.getElementById('experiences')?.getBoundingClientRect().y || 0;
-    const blogY = document.getElementById('blog')?.getBoundingClientRect().y || 0;
+    const getElementY = (id: string) => {
+      const element = document.getElementById(id);
+      return element ? element.getBoundingClientRect().y : 0;
+    };
+
+    const SCROLL_THRESHOLD = 200;
+    const aboutY = getElementY('about');
+    const skillsY = getElementY('skills');
+    const educationY = getElementY('education');
+    const experienceY = getElementY('experiences');
+    const blogY = getElementY('blog');
+
     let currentPageStr = '';
-    
-    if (aboutY <= 200) currentPageStr = 'about';
-    if (skillsY <= 150) currentPageStr = 'skills';
-    if (experienceY <= 150 ) currentPageStr = 'experiences';
-    if (educationY <= 150) currentPageStr = 'education';
-    if (educationY <= 250 && experienceY < -200) currentPageStr = 'education';
-    if (blogY <= 150) currentPageStr = 'blog';
+
+    if (aboutY <= SCROLL_THRESHOLD) currentPageStr = 'about';
+    if (skillsY <= SCROLL_THRESHOLD - 50) currentPageStr = 'skills';
+    if (experienceY <= SCROLL_THRESHOLD - 50) currentPageStr = 'experiences';
+    if (educationY <= SCROLL_THRESHOLD - 50) currentPageStr = 'education';
+    if (educationY <= SCROLL_THRESHOLD + 50 && experienceY < -200) currentPageStr = 'education';
+    if (blogY <= SCROLL_THRESHOLD - 50) currentPageStr = 'blog';
 
     setSelectedNavbarItem(currentPageStr);
-    setCurrentPage(currentPageStr)
   }, []);
 
   const onNavbarItemClick = (id:string) => {
     setHasScrolled(true);
     setIsScrolling(true);
 
-    if (intro)
-    if (intro.current)
-    if (container)
-    if (container.current)
-    if (container.current.scrollTop === 0) {
-      if (container) if (container.current) container.current.style.overflow = 'auto';
+    if (intro && intro.current && container && container.current && container.current.scrollTop === 0) {
+      if (container && container.current) {
+        container.current.style.overflow = 'auto';
+      }
     }
 
     setTimeout(() => {
-      const el = document.getElementById(`${id}`);
-      if (el) {
-        el.scrollIntoView({ behavior: 'auto' });
+      const navBarElement = document.getElementById(`${id}`);
+      if (navBarElement) {
+        navBarElement.scrollIntoView({ behavior: 'auto' });
       } else {
         console.log('Element not found');
       }
@@ -128,6 +124,28 @@ export const HomeComponent = (
     }, 1000);
   };
 
+  const onWheelHandler = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (!hasScrolled) {
+      setHasScrolled(true);
+    }
+
+    if (intro && intro.current && container && container.current && container.current.scrollTop === 0) {
+      let count = currentPosition + event.deltaY;
+      if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
+      else if (count < MINIMUM_STEPS && hasScrolledIntro) {
+        count = 0;
+      }
+      if (count < 0) count = 0;
+      if (count >= MINIMUM_STEPS && !hasScrolledIntro) {
+        setHasScrolledIntro(true);
+      }
+      if (count < MINIMUM_STEPS && hasScrolledIntro) {
+        count = MINIMUM_STEPS;
+      }
+      setCurrentPosition(count);
+      container.current.style.overflow = 'auto';
+    }
+  }
 
   return (
     <div className="main">
@@ -135,38 +153,13 @@ export const HomeComponent = (
       <Navbar setDarkMode={setDarkMode} darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
         <div
           ref={container}
-          onWheel={(e) => {
-            if (!hasScrolled) {
-              setHasScrolled(true);
-            }
-            if (intro)
-              if (intro.current)
-                if (container)
-                  if (container.current)
-                    if (container.current.scrollTop === 0) {
-                      let count = currentPosition + e.deltaY;
-
-                      if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
-                      else if (count < MINIMUM_STEPS && hasScrolledIntro) {
-                        count = 0;
-                      }
-                      if (count < 0) count = 0;
-                      if (count >= MINIMUM_STEPS && !hasScrolledIntro) {
-                        setHasScrolledIntro(true);
-                      }
-                      if (count < MINIMUM_STEPS && hasScrolledIntro) {
-                        count = MINIMUM_STEPS;
-                      }
-                      setCurrentPosition(count);
-                      container.current.style.overflow = 'auto';
-                    }
-          }}
+          onWheel={onWheelHandler}
           id="container"
          className={`home-container ${darkMode ? '': 'light'}`}
         >
           <div ref={intro} className="intro">
             <IntroPageComponent
-            darkMode={darkMode}
+              darkMode={darkMode}
               currentStep={0}
               previousState={previousState}
               key={0}
@@ -175,7 +168,6 @@ export const HomeComponent = (
               onFinish={() => {
                 setHasScrolled(true);
               }} /> 
-          
              <br />
           </div>
 
