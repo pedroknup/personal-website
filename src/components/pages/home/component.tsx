@@ -1,12 +1,9 @@
 import * as React from 'react';
 
-import { RouteComponentProps } from 'react-router';
 import './styles.scss';
-import { ScrollProgressBar } from '../../scroll-progress-bar';
 import { IntroPageComponent } from '../intro';
 import { SkillsPage } from '../skills';
 import { EducationPage } from '../education';
-import { Section } from '../../section';
 import { ProfessionalExperiencesPage } from '../professional-experience';
 import { AboutPage } from '../about';
 import { BlogPage } from '../blog';
@@ -65,7 +62,6 @@ export const HomeComponent = () => {
       return {...item, isSelected: false, shouldHighlight: false}
     });
 
-    
     if (navBarItems != navBarItemsTemp){
       setNavBarItems(navBarItemsTemp);
     }
