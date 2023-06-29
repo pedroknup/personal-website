@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Typist from 'react-typist';
-import './intro-component.scss';
 const socialMediaIcons = require('social-media-icons-react');
 const { SocialMediaIconsReact } = socialMediaIcons;
+import './intro.style.scss';
 
 export interface IIntroPageProps {
   onFinish: () => void;

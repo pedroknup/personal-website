@@ -6,29 +6,28 @@ import { EducationPage } from '../../components/education';
 import { ProfessionalExperiencesPage } from '../../components/professional-experience';
 import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
-import { INavbarItem, Navbar } from '../../components/nav-bar/nav-bar-component';
-import './styles.scss';
+import { INavbarItem, Navbar } from '../../components/nav-bar';
+
+import './home-page.style.scss';
+
 export interface IHomeComponentProps {}
 
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
 const SCROLL_TIMEOUT = 1000;
 
- const initialNavbarItem: INavbarItem[] = [
+const initialNavbarItem: INavbarItem[] = [
   {
     title: 'About',
     isSelected: false,
     id: 'about',
   },
-  { title: 'Skills', isSelected: false, id: 'skills',
-  },
-  { title: 'Experiences', isSelected: false, id: 'experiences',
-  },
-  { title: 'Education', isSelected: false, id: 'education',
-  },
-  { title: 'Artworks', isSelected: false, id: 'blog',
-  }
+  { title: 'Skills', isSelected: false, id: 'skills'},
+  { title: 'Experiences', isSelected: false, id: 'experiences'},
+  { title: 'Education', isSelected: false, id: 'education'},
+  { title: 'Artworks', isSelected: false, id: 'blog'}
 ];
+
 export const HomeComponent = () => {
   const [currentPosition, setCurrentPosition] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState(false);

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import './section-component.scss';
+import './section.style.scss';
 
 const defaultPadding = 32;
+
 interface ISectionProps {
   title: string;
   description?: string;
@@ -13,6 +14,7 @@ interface ISectionProps {
   isHighlighted?: boolean;
   removeHighlight?: (id: string) => void;
 }
+
 export const Section = (props: ISectionProps) => {
   const { title, children, description, padding, paddingColumns} = props;
   return <div id={props.id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${props.isHighlighted ? 'highlight' : ''} ${props.darkMode ? '' : 'light'}`}>

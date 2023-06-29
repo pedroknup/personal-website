@@ -1,5 +1,6 @@
-@import 'variables';
-@import 'main';
+@import '../../styles/variables.scss';
+@import '../../styles/main.scss';
+
 .intro-text {
   margin-top: 32px;
   &.finished {

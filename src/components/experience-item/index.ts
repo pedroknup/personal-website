@@ -1,1 +1,1 @@
-export * from "./experience-item-component"
+export * from "./experience-item.component"

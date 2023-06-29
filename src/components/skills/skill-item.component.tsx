@@ -1,8 +1,7 @@
 import * as React from 'react';
-import './skills-component.scss';
-import { Section } from '../section/section-component';
+import './skills.style.scss';
+
 export interface IHomeComponentProps {}
-const { useState, useEffect } = React;
 
 interface ISkillItemProps {
   title: string;

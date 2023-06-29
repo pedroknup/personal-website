@@ -1,7 +1,7 @@
 import * as React from 'react';
 const hamburgerArrow = require('react-animated-burgers');
 const { HamburgerArrow } = hamburgerArrow;
-import './nav-bar-component.scss';
+import './nav-bar.style.scss';
 interface INavbarItem {
   title: string;
   id: string;

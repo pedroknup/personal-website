@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { youtubeVideos } from '../../data/youtube';
-import { Section } from '../section/section-component';
-import './blog-component.scss';
+import { Section } from '../section';
+import './blog.style.scss';
 
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;

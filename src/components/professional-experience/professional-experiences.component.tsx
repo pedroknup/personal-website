@@ -1,8 +1,9 @@
 import * as React from 'react';
-import './professional-experiences-component.scss';
-import { Section } from '../section/section-component';
+import { Section } from '../section';
 import { ExperienceItem } from '../experience-item';
 import { professionalExperiences } from '../../data/experiences';
+import './professional-experiences.style.scss';
+
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;

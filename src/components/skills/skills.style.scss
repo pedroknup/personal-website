@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'main';
+@import '../../styles/variables.scss';
+@import '../../styles/main.scss';
 $bar-length: 12px;
 .skills-container {
   display: flex;

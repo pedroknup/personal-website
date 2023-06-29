@@ -1,4 +1,5 @@
-@import 'variables';
+@import '../../styles/variables.scss';
+@import '../../styles/main.scss';
 
 @media (max-width: 768px) {
   .experience-item {

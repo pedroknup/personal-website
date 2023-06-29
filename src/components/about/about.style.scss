@@ -1,5 +1,6 @@
-@import 'variables';
-@import 'main';
+@import '../../styles/variables.scss';
+@import '../../styles/main.scss';
+
 .about-container {
   &.light {
     .brackets {

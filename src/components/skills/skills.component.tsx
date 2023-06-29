@@ -1,30 +1,16 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router';
-// import { withRouter } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import './skills-component.scss';
-import { ScrollProgressBar } from '../scroll-progress-bar';
-import { Section } from '../section/section-component';
-import { SkillItem } from './skill-item-component';
-const wheelReact = require('wheel-react');
-const WheelReact = wheelReact.default;
+import { Section } from '../section';
+import { SkillItem } from './skill-item.component';
 import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../data';
 const { useState } = React;
+import './skills.style.scss';
+
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;
   darkMode: boolean;
 }
 
-const randomId = () => {
-  return (
-    '_' +
-    Math.random()
-      .toString(36)
-      .substr(2, 9)
-  );
-};
-const STEPS = 2000;
 export const SkillsPage = (props : ISkillsProps) => {
   const [selectedSkill, setSelectedSkill] = useState(0);
   const skillOnClick = (key: number) => {

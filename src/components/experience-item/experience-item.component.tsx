@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { RouteComponentProps } from 'react-router';
-// import { withRouter } from 'react-router-dom';
-import './experience-item-component.scss';
+import './experience-item.style.scss';
 import { IExperience } from '../../data/experiences';
-const wheelReact = require('wheel-react');
-const WheelReact = wheelReact.default;
 const { useState } = React;
 export interface IExperienceItemProps extends IExperience {
   isDark: boolean;
@@ -39,7 +35,7 @@ export const ExperienceItem = (props: IExperienceItemProps) => {
         <div>
         <br/>
 
-        Projects Highlights: 
+        Projects Highlights:
         {props.content.items?.map((item: any, i: number) => {
           return <p key={i}><span className="project-title">{item.title}</span>: <span dangerouslySetInnerHTML={ {__html: item.content}}></span></p>;
         })}

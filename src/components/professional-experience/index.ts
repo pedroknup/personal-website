@@ -1,1 +1,1 @@
-export * from './professional-experiences-component'
+export * from './professional-experiences.component'
