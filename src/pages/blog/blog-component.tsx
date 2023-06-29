@@ -1,12 +1,8 @@
 import * as React from 'react';
-
-import { RouteComponentProps } from 'react-router';
-// import { withRouter } from 'react-router-dom';
+import { youtubeVideos } from '../../data/youtube';
+import { Section } from '../../components/section/section-component';
 import './blog-component.scss';
-import { youtubeVideos } from '../../../data/youtube';
-import { Section } from '../../section/section-component';
-const wheelReact = require('wheel-react');
-const WheelReact = wheelReact.default;
+
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;
   isHighlighted?: boolean;

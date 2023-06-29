@@ -1,37 +1,38 @@
 import * as React from 'react';
 
-import './styles.scss';
 import { IntroPageComponent } from '../intro';
 import { SkillsPage } from '../skills';
 import { EducationPage } from '../education';
 import { ProfessionalExperiencesPage } from '../professional-experience';
 import { AboutPage } from '../about';
 import { BlogPage } from '../blog';
-import { INavbarItem, Navbar } from '../../../components/nav-bar/nav-bar-component';
+import { INavbarItem, Navbar } from '../../components/nav-bar/nav-bar-component';
+import './styles.scss';
 export interface IHomeComponentProps {}
 
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
+const SCROLL_TIMEOUT = 1000;
 
  const initialNavbarItem: INavbarItem[] = [
   {
     title: 'About',
     isSelected: false,
-    id: 'about', 
+    id: 'about',
   },
-  { title: 'Skills', isSelected: false, id: 'skills', 
+  { title: 'Skills', isSelected: false, id: 'skills',
   },
-  { title: 'Experiences', isSelected: false, id: 'experiences', 
-},
-  { title: 'Education', isSelected: false, id: 'education', 
- },
+  { title: 'Experiences', isSelected: false, id: 'experiences',
+  },
+  { title: 'Education', isSelected: false, id: 'education',
+  },
   { title: 'Artworks', isSelected: false, id: 'blog',
   }
 ];
 export const HomeComponent = () => {
   const [currentPosition, setCurrentPosition] = React.useState(0);
   const [isScrolling, setIsScrolling] = React.useState(false);
-   const isScrollingRef = React.useRef(false);
+  const isScrollingRef = React.useRef(false);
   const [hasScrolledIntro, setHasScrolledIntro] = React.useState(false);
   const container = React.useRef<HTMLDivElement>(null);
   const intro = React.useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ export const HomeComponent = () => {
   React.useEffect(() => {
     document.body.addEventListener('scroll', onScroll, true);
     setPreviousState(undefined);
-    
+
     return () => {
       document.body.removeEventListener('scroll', onScroll);
     };
@@ -117,7 +118,7 @@ export const HomeComponent = () => {
     }, 50);
      setTimeout(() => {
        setIsScrolling(false);
-    }, 1000);
+     }, SCROLL_TIMEOUT);
   };
 
   const onWheelHandler = (event: React.WheelEvent<HTMLDivElement>) => {
@@ -163,7 +164,7 @@ export const HomeComponent = () => {
               hasScrolled={hasScrolled}
               onFinish={() => {
                 setHasScrolled(true);
-              }} /> 
+              }} />
              <br />
           </div>
 

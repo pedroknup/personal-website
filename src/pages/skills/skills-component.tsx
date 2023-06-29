@@ -3,12 +3,12 @@ import { RouteComponentProps } from 'react-router';
 // import { withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import './skills-component.scss';
-import { ScrollProgressBar } from '../../scroll-progress-bar';
-import { Section } from '../../section/section-component';
+import { ScrollProgressBar } from '../../components/scroll-progress-bar';
+import { Section } from '../../components/section/section-component';
 import { SkillItem } from './skill-item-component';
 const wheelReact = require('wheel-react');
 const WheelReact = wheelReact.default;
-import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../../data';
+import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../data';
 const { useState } = React;
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './skills-component.scss';
-import { Section } from '../../section/section-component';
+import { Section } from '../../components/section/section-component';
 export interface IHomeComponentProps {}
 const { useState, useEffect } = React;
 

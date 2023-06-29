@@ -1,12 +1,25 @@
-@import '../../../styles/variables.scss';
+@import '../../styles/variables';
+
+.debug {
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  color: red;
+  z-index: 100;
+}
+
+body {
+  font-size: 16px;
+}
 
 .home-container {
   background-color: $background;
+
   -webkit-overflow-scrolling: touch;
   height: 100vh;
   flex: 1;
+  // margin-left: 300px;
   overflow: auto;
-  overflow-x: hidden;
   &.light {
     background-color: $light-background !important;
     color: $light-foreground;
@@ -18,6 +31,7 @@
   }
   .intro {
   }
+
   .links {
     display: flex;
     z-index: 5;
@@ -88,9 +102,16 @@
 }
 
 .huge {
-  min-height: 2000px;
+  min-height: 1500px;
   min-width: 20px;
   // background-color: $background;
+  position: relative;
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 body {
   overflow: hidden;
