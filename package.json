@@ -1,15 +1,8 @@
 {
-  "name": "react-redux-typescript-boilerplate",
+  "name": "pedro-knup-personal-website",
   "version": "0.0.1",
   "private": true,
-  "description": "A frontend boilerplate with React, Redux and Typescript",
-  "keywords": [
-    "react",
-    "redux",
-    "typescript",
-    "boilerplate",
-    "todomvc"
-  ],
+  "description": "Pedro Knup personal website",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
@@ -103,5 +96,8 @@
     "tls": "0.0.1",
     "typesafe-actions": "^5.1.0",
     "wheel-react": "^1.0.3"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
