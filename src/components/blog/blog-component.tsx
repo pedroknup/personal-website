@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { youtubeVideos } from '../../data/youtube';
-import { Section } from '../../components/section/section-component';
+import { Section } from '../section/section-component';
 import './blog-component.scss';
 
 interface ISkillsProps {

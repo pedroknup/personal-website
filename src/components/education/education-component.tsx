@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Section } from '../../components/section/section-component';
+import { Section } from '../section/section-component';
 import { educationalExperiences } from '../../data/experiences';
-import { ExperienceItem } from '../../components/experience-item';
+import { ExperienceItem } from '../experience-item';
 import './education-component.scss';
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;

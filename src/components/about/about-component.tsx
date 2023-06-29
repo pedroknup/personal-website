@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './about-component.scss';
-import { Section } from '../../components/section/section-component';
+import { Section } from '../section/section-component';
 import personalData from '../../data';
 interface ISkillsProps {
   removeHighlight?: (id: string) => void;

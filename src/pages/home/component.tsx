@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { IntroPageComponent } from '../intro';
-import { SkillsPage } from '../skills';
-import { EducationPage } from '../education';
-import { ProfessionalExperiencesPage } from '../professional-experience';
-import { AboutPage } from '../about';
-import { BlogPage } from '../blog';
+import { IntroPageComponent } from '../../components/intro';
+import { SkillsPage } from '../../components/skills';
+import { EducationPage } from '../../components/education';
+import { ProfessionalExperiencesPage } from '../../components/professional-experience';
+import { AboutPage } from '../../components/about';
+import { BlogPage } from '../../components/blog';
 import { INavbarItem, Navbar } from '../../components/nav-bar/nav-bar-component';
 import './styles.scss';
 export interface IHomeComponentProps {}
