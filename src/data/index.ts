@@ -6,7 +6,13 @@ const personalData = {
   nationality: 'Brazilian',
   based: 'Utrecht, Netherlands',
   position: 'Senior Web Developer',
-  bio: `I'm a creative and experienced developer with a solid experience in web development. I like to push the web development to its limits by working with cutting edge technologies and doing stuff that nobody else is doing. That, aligned with my passion for art and creation, allows me to constantly develop & deliver wowing web apps.`,
+  bio: `As a software engineer with 9 years of professional experience, I specialize in web development and have a strong background in Javascript and its libraries such as NodeJS, VueJS, and ReactJS.
+
+My passion for creating engaging and interactive designs has led me to focus on honing my frontend development skills, utilizing libraries such as GSAP and ThreeJS to push the boundaries of web development. 
+
+Additionally, I am an IoT enthusiast and am constantly looking for ways to integrate IoT technology into my projects. 
+
+I am eager to take on new challenges and am constantly looking for ways to improve my skills and stay up to date with the latest technologies.`,
   profilePic: 'https://i.imgur.com/BKdVBZL.png',
   email: 'phknup@gmail.com',
   social: [
@@ -24,7 +30,7 @@ const personalData = {
       name: 'Twitter',
       url: '#',
       icon: 'twitter'
-    },
+    }
   ]
 };
 

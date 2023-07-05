@@ -31,7 +31,7 @@ const skillsFront: ISkillItem[] = [
     progress: 70
   },
   {
-    id: 4,
+    id: 100,
     name: 'Lit',
     content: `I've been working with Lit quite a lot recently `,
     progress: 60
@@ -46,7 +46,7 @@ const skillsFront: ISkillItem[] = [
     id: 5,
     name: 'AngularJS + Angular 2',
     content:
-      "I haven't had a solid experience it with so far. But I know how it works and its fundamentals",
+      "I haven't had a solid experience it with so far. But I know how it works and its fundamentals and I prefer to avoid it",
     progress: 50
   }
 ];
@@ -62,28 +62,35 @@ const skillsBack: ISkillItem[] = [
     id: 6,
     name: 'Relational DB',
     content:
-      `I've been working with relational databases since I started programming (10 years ago). I consider my database knowledge advanced.`,
+      `I've been working with relational databases since I started programming (15 years ago). I consider my database knowledge advanced.`,
     progress: 80
   },
   {
-    id: 4,
+    id: 400,
     name: '.NET',
     content:
-     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services)`,
+     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services). I haven't worked with .NET since the release of .NET Core 3.`,
     progress: 70
   },
   {
     id: 7,
     name: 'NoSQL DB',
     content:
-      'Sometimes I use a NoSQL database in some project. Normally I use MongoDB when I am working on a Serverless application or when the DB structure is relatively simple and will store a big amount of data. ',
+      'Normally I use MongoDB when I am working on a Serverless application or when the DB structure is relatively simple and will store a big amount of data. ',
     progress: 70
   },
   {
     id: 8,
     name: 'Docker',
     content:
-      `Docker made my life easier. I've been using it for almost every project I'm working on`,
+      `Docker makes our lives easier. I've been using it for almost every project I'm working on`,
+    progress: 70
+  },
+  {
+    id: 9,
+    name: 'Google Cloud Platform',
+    content:
+    `At my work at Media.Monks, we used a lot of GCP to host and implement apps for Google (Google Cloud and Youtube), from Cloud functions, CI/CD pipelines and app hosting.`,
     progress: 50
   },
   {
@@ -94,24 +101,24 @@ const skillsBack: ISkillItem[] = [
     progress: 20
   },
   {
-    id: 10,
-    name: 'Java',
-    content:
-      'Ew :D',
-    progress: 20
-  },
-  {
     id: 11,
     name: 'Google Firebase',
     content:
-      `I used Firebase to host some web apps and also for a serverless application.`,
+      `I used Firebase to host some web apps when I did freelancing and at my work at Media.Monks.`,
+    progress: 40
+  },
+  {
+    id: 10,
+    name: 'Java',
+    content:
+      'I only worked with Java during highschool and university. I am not a Java expert, but I am able to understand and write Java code.',
     progress: 20
   },
   {
     id: 12,
     name: 'AWS',
     content:
-    `I used AWS to host my biggest Mobile App I have made (Cabe+1). But I switched to Azure due the cheaper Azure plan I got.`,
+    `I used AWS to host the biggest Mobile App I have made (Cabe+1). But I switched to Azure due the cheaper Azure plan I got.`,
     progress: 20
   },
 ];
@@ -135,7 +142,7 @@ const skillsMobile: ISkillItem[] = [
     id: 16,
     name: 'Flutter',
     content:
-      '',
+      `Not much solid experience with Flutter but I've written some simple and functional apps with it.`,
     progress: 30
   },
   {
@@ -143,7 +150,7 @@ const skillsMobile: ISkillItem[] = [
     name: 'Android',
     content:
      `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
-    progress: 30
+    progress: 20
   },
   {
     id: 18,

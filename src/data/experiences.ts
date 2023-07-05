@@ -43,17 +43,25 @@ Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
 
 const professionalExperiences: IExperience[] = [
   {
-    title: 'Frontend Developer - Google Team',
-    date: 'Feb/2021 - Now',
+    title: 'Senior Front end ',
+    date: 'Apr/2023 - Now',
     description: 'Media.Monks',
     link: 'www.mediamonks.com',
     icon: 'https://i.imgur.com/YUOlc25.jpg',
     defaultOpened: true,
     content: {
-      content: `Member of the Media.Monks' Google team.
-
-Technologies used so far:
-- Vue (2.0 & 3.0), Lit, React, Angular, Redux, SASS, GSAP, Glue, Webpack, TypeScript and Kintaro. `,
+      content: ''
+    }
+  },
+  {
+    title: 'Frontend Developer',
+    date: 'Feb/2021 - Feb/2023',
+    description: 'Media.Monks',
+    link: 'www.mediamonks.com',
+    icon: 'https://i.imgur.com/YUOlc25.jpg',
+    defaultOpened: true,
+    content: {
+      content: `As a frontend developer at Media.Monks, I specialize in creating immersive web applications for Google using the latest frontend technologies. Some of the notable projects I've worked on include the Chromebook Retail app (2021 and 2022), Google Cloud Chess.com showcase, Exhibit Zero (GM's showcase at CES 2022), Google Cloud Engage Sessions (an interactive live stream platform for Google Cloud), and the Pixel 6 launch campaign.`,
       items: [
         {
           title: 'Google Cloud - Chess.com',
@@ -78,6 +86,17 @@ Technologies used so far:
     }
   },
   {
+    title: 'Backend Developer',
+    date: 'Jul/2020 - Feb/2021',
+    description: 'CowManager B.V.',
+    link: 'https://www.cowmanager.com/en-us/',
+    icon: 'https://i.imgur.com/3fIF7HW.png',
+    defaultOpened: false,
+    content: {
+      content: `Responsible for maintaining a web service and its underlying database. Involved in monitoring and troubleshooting any issues that may arise, as well as implementing new features and updates to the web service, web client app, and database, working closely with the development team to ensure that all changes are properly tested and deployed.`
+    }
+  },
+  {
     title: 'Fullstack Developer',
     date: 'Oct/2019 - Jun/2020',
     description: 'Pycom Ltd.',
@@ -85,10 +104,8 @@ Technologies used so far:
     icon: 'https://i.imgur.com/lkhhta0.png',
     defaultOpened: false,
     content: {
-      content: `I worked widely throughout the IoT development range, from device level communication to a Dashboard Web App, making sure the connection between the devices and cloud, which can be made in many different ways, is smooth and reliable.
-
-Technologies used:
-- React, JavaScript, ES6, LESS, NodeJS, ExpressJS, GraphQL, MongoDB, Webpack, Jest, Mocha, Code editors plugin development (VSC and Atom).`
+      content: `As a Full Stack Developer at Pycom, I was responsible for a variety of tasks including the development of MicroPython-based device-level communication and a Dashboard Web App. My main focus was on ensuring seamless and reliable connections between devices and the cloud. I was responsible for the integration of devices and the cloud, as well as maintaining the stability of these connections. Additionally, I was in charge of the Pymakr extension which is an IDE for the Pycom boards, in VSCode and Atom, and lead the development of Pymakr 2, the latest version.As a Full Stack Developer at Pycom, I was responsible for a variety of tasks including the development of MicroPython-based device-level communication and a Dashboard Web App. My main focus was on ensuring seamless and reliable connections between devices and the cloud. I was responsible for the integration of devices and the cloud, as well as maintaining the stability of these connections. Additionally, I was in charge of the Pymakr extension which is an IDE for the Pycom boards, in VSCode and Atom, and lead the development of Pymakr 2, the latest version.
+`
     }
   },
   {
@@ -98,11 +115,7 @@ Technologies used:
     link: 'https://webbio.nl/',
     icon: 'https://i.imgur.com/76CEHlw.png',
     content: {
-      content: `As a front-end developer, my function was to build Web Applications using ReactJS. Through daily scrum stand-up, I aimed to deliver a well-written code in due time following the best practices in the whole development process. 
-        
-        Technologies used:
-- React, JavaScript, ES6, TypeScript, SASS, Redux, Swagger, Formik.
-        `,
+      content: `As a front-end developer intern at Webbio, my primary responsibility was designing and building web applications using ReactJS. I participated in daily scrum meetings to ensure the timely delivery of well-written code, adhering to industry best practices throughout the development process. Additionally, I also provided mentorship to my intern colleagues.`,
       items: [
         {
           title: 'Black friday Nederland',
@@ -118,10 +131,7 @@ Technologies used:
     description: 'Clubpetro',
     link: 'https://novo.clubpetro.com/',
     content: {
-      content: `As a Full Stack developer, I was assigned to completely recreate the main product of the company (web app, database and web service), choosing the technologies and languages, designing the new database structure, app's layout, web service and also mentoring my colleagues.
-      \n
-      Technologies used:
-- .NET, React, MSSQL, TypeScript, SASS, Vue, Web Components`
+      content: `As a full-stack engineer at ClubPetro, I was tasked with completely rebuilding the company's primary product, including the web app, database, and web service. I was responsible for selecting the appropriate technologies and languages, designing the new database structure, the layout of the app, and the web service. Additionally, I provided mentorship to my colleagues throughout the project, until I left the company to move to the Netherlands.`
     }
   },
   {
@@ -131,12 +141,9 @@ Technologies used:
     icon: 'https://i.imgur.com/DfyY23C.png',
     link: 'http://www.vale.com/EN/Pages/default.aspx',
     content: {
-      content: `At Vale I worked as a full-stack developer using technologies such as .NET MVC, RESTful Web Services with .NET Framework, small web applications using VueJS. 
+      content: `At Vale, I worked as a full-stack developer, utilizing technologies such as .NET MVC, RESTful Web Services with .NET Framework, and small web applications using VueJS. 
 
-I developed a smart Telegram bot (learns and recognizes user usage patterns to automate the delivery of information for them), also in C#. I also had a solid experience with SQL Server, where I worked optimizing queries, developing procedures, functions, triggers, jobs, etc. 
-
-Technologies used:
-- .NET Core & Framework, MSSQL, Entity Framework, Power BI, Microsoft DevOps, Telegram API, VueJS, Web Components`
+I developed a smart Telegram bot to automate the delivery of information to users (mostly managers, directors, and stockholders), using C#. Additionally, I had extensive experience with SQL Server, including optimization of queries, development of procedures, functions, triggers, and jobs.`
     }
   },
   {
@@ -146,10 +153,8 @@ Technologies used:
     icon: 'https://i.imgur.com/kthsc9S.jpg',
     link: 'http://www.google.com',
     content: {
-      content: `I delivered dozens of web, mobile and windows apps. Apps for restaurants, movie theaters, supermarkets, schools and hotels. 
-
-Technologies used:
-- .NET Core & Framework, MSSQL & MySQL, MongoDB, Entity Framework, JQuery, Google Firebase, Xamarin, VueJS, NodeJS.`
+      content: `I delivered dozens of web, mobile, and windows apps. Apps for restaurants, movie theaters, supermarkets, schools, and hotels.I delivered dozens of web, mobile, and windows apps. Apps for restaurants, movie theaters, supermarkets, schools, and hotels.
+`
     }
   },
   {
@@ -159,7 +164,7 @@ Technologies used:
     icon: 'https://i.imgur.com/FyWA7ar.png',
     link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
     content: {
-      content: `As an intern, I was responsible for the maintenance of the computer labs and the school's network. I also developed a web app to control the access of the labs.`
+      content: `As an IT intern, I was responsible for providing technical assistance to faculty and students at the college, including troubleshooting and resolving various computer and software-related issues. Additionally, I was in charge of maintaining and updating the college's IT infrastructure, which included servers, networking equipment, and other hardware. One of the key projects I worked on was the development of a Redmine Server for internal usage, which aimed to improve project management and collaboration among the college staff.`
     }
   }
 ];

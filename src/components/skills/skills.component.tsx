@@ -17,7 +17,7 @@ export const SkillsPage = (props : ISkillsProps) => {
     if (key === selectedSkill) setSelectedSkill(-1);
     else setSelectedSkill(key);
   };
-  return <Section darkMode={props.darkMode} removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="skills" paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks">
+  return <Section darkMode={props.darkMode} removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} id="skills" paddingColumns={2} title="Skills" description="My favorite and most relevant tools and frameworks -and how comfortable and confident I am working with them-">
       <div className={`skills-container ${props.darkMode ? '': 'light'}`}>
         <section>
           <span className="title">Front End</span>
