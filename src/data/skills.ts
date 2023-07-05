@@ -191,7 +191,7 @@ const skillsOther: ISkillItem[] = [
     progress: 50
   },
   {
-    id: 23,
+    id: 24,
     name: '3D Modeling',
     content:
     `Another hobby out from my curiosity. I used to car fanatic when I was a kid and that motivated me to learn 3D modelling. I chose Autodesk 3D Studio Max and spent many hours on learning. I loved it, it's relaxing and stress reliever for me. I have a solid knowledge on geometric modeling (non-organic) and a little bit of animation.`,
@@ -199,4 +199,92 @@ const skillsOther: ISkillItem[] = [
   }
 ];
 
-export { skillsFront, skillsBack, skillsMobile, skillsOther };
+const skillsCV = [
+  {
+    section: 'Front-end',
+    items: [
+      {
+        name: 'VueJS (2 & 3)', 
+        icon: '',
+      },
+      {
+        name: 'ReactJS & React Native',
+        icon: '',
+      },
+      {
+        name: 'LitJS',
+        icon: '',
+      },
+      {
+        name: 'Build tools (Webpack, Rollup, Vite)',
+        icon: '',
+      },
+      {
+        name: 'Interactive App (gsap, pixijs, threejs)',
+        icon: '',
+      }
+    ]
+  },
+  {
+    section: 'Back-end',
+    items: [
+      {
+        name: 'NodeJS (ExpressJS)',
+        icon: '',
+      },
+      {
+        name: 'Python',
+        icon: '',
+      },
+      {
+        name: 'C# (.NET Core & Framework)',
+        icon: '',
+      },
+    ]
+  },
+  {
+    section: 'Mobile',
+    items: [
+      {
+        name: 'React Native',
+        icon: '',
+      },
+      {
+        name: 'Flutter',
+        icon: '',
+      },
+    ]
+  },
+  {
+    section: 'Database',
+    items: [
+      {
+        name: 'SQL (MySQL, PostgreSQL, MSSQL)',
+        icon: '',
+      },
+      {
+        name: 'NoSQL (MongoDB, Firebase)',
+        icon: '',
+      },
+    ]
+  },
+  {
+    section: 'Cloud',
+    items: [
+      {
+        name: 'Google Cloud Platform',
+        icon: '',
+      },
+      {
+        name: 'Google Firebase',
+        icon: '',
+      },
+      {
+        name: 'AWS',
+        icon: '',
+      },
+    ]
+  },
+]
+
+export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV };

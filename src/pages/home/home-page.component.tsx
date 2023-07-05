@@ -9,6 +9,7 @@ import { BlogPage } from '../../components/blog';
 import { INavbarItem, Navbar } from '../../components/nav-bar';
 
 import './home-page.style.scss';
+import { CvModal } from '../../components/cv';
 
 export interface IHomeComponentProps {}
 
@@ -20,12 +21,12 @@ const initialNavbarItem: INavbarItem[] = [
   {
     title: 'About',
     isSelected: false,
-    id: 'about',
+    id: 'about'
   },
-  { title: 'Skills', isSelected: false, id: 'skills'},
-  { title: 'Experiences', isSelected: false, id: 'experiences'},
-  { title: 'Education', isSelected: false, id: 'education'},
-  { title: 'Artworks', isSelected: false, id: 'blog'}
+  { title: 'Skills', isSelected: false, id: 'skills' },
+  { title: 'Experiences', isSelected: false, id: 'experiences' },
+  { title: 'Education', isSelected: false, id: 'education' },
+  { title: 'Artworks', isSelected: false, id: 'blog' }
 ];
 
 export const HomeComponent = () => {
@@ -37,9 +38,9 @@ export const HomeComponent = () => {
   const intro = React.useRef<HTMLDivElement>(null);
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
-  const [previousState, setPreviousState] = React.useState<number|undefined>(undefined);
-  const [darkMode, setDarkMode] = React.useState(true)
-
+  const [previousState, setPreviousState] = React.useState<number | undefined>(undefined);
+  const [darkMode, setDarkMode] = React.useState(true);
+  const [showCv, setShowCv] = React.useState(false);
 
   React.useEffect(() => {
     document.body.addEventListener('scroll', onScroll, true);
@@ -54,18 +55,18 @@ export const HomeComponent = () => {
     isScrollingRef.current = isScrolling;
   });
 
-  const setSelectedNavbarItem = (id:string, shouldHighlight?: boolean) => {
-    const navBarItemsTemp = initialNavbarItem.map(item => {
-      if (item.id === id){
-        return {...item, isSelected: true, shouldHighlight }
+  const setSelectedNavbarItem = (id: string, shouldHighlight?: boolean) => {
+    const navBarItemsTemp = initialNavbarItem.map((item) => {
+      if (item.id === id) {
+        return { ...item, isSelected: true, shouldHighlight };
       }
-      return {...item, isSelected: false, shouldHighlight: false}
+      return { ...item, isSelected: false, shouldHighlight: false };
     });
 
-    if (navBarItems != navBarItemsTemp){
+    if (navBarItems != navBarItemsTemp) {
       setNavBarItems(navBarItemsTemp);
     }
-  }
+  };
 
   const onScroll = React.useCallback(() => {
     if (isScrollingRef.current) {
@@ -96,11 +97,17 @@ export const HomeComponent = () => {
     setSelectedNavbarItem(currentPageStr);
   }, []);
 
-  const onNavbarItemClick = (id:string) => {
+  const onNavbarItemClick = (id: string) => {
     setHasScrolled(true);
     setIsScrolling(true);
 
-    if (intro && intro.current && container && container.current && container.current.scrollTop === 0) {
+    if (
+      intro &&
+      intro.current &&
+      container &&
+      container.current &&
+      container.current.scrollTop === 0
+    ) {
       if (container && container.current) {
         container.current.style.overflow = 'auto';
       }
@@ -113,11 +120,11 @@ export const HomeComponent = () => {
       } else {
         console.log('Element not found');
       }
-       setSelectedNavbarItem(id, true)
+      setSelectedNavbarItem(id, true);
     }, 50);
-     setTimeout(() => {
-       setIsScrolling(false);
-     }, SCROLL_TIMEOUT);
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, SCROLL_TIMEOUT);
   };
 
   const onWheelHandler = (event: React.WheelEvent<HTMLDivElement>) => {
@@ -125,7 +132,13 @@ export const HomeComponent = () => {
       setHasScrolled(true);
     }
 
-    if (intro && intro.current && container && container.current && container.current.scrollTop === 0) {
+    if (
+      intro &&
+      intro.current &&
+      container &&
+      container.current &&
+      container.current.scrollTop === 0
+    ) {
       let count = currentPosition + event.deltaY;
       if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
       else if (count < MINIMUM_STEPS && hasScrolledIntro) {
@@ -141,17 +154,22 @@ export const HomeComponent = () => {
       setCurrentPosition(count);
       container.current.style.overflow = 'auto';
     }
-  }
+  };
 
   return (
     <div className="main">
-      <div className={`container ${darkMode ? '': 'light'}`} >
-      <Navbar setDarkMode={setDarkMode} darkMode={darkMode} onClick={onNavbarItemClick} items={navBarItems} />
+      <div className={`container ${darkMode ? '' : 'light'}`}>
+        <Navbar
+          setDarkMode={setDarkMode}
+          darkMode={darkMode}
+          onClick={onNavbarItemClick}
+          items={navBarItems}
+        />
         <div
           ref={container}
           onWheel={onWheelHandler}
           id="container"
-         className={`home-container ${darkMode ? '': 'light'}`}
+          className={`home-container ${darkMode ? '' : 'light'}`}
         >
           <div ref={intro} className="intro">
             <IntroPageComponent
@@ -163,22 +181,33 @@ export const HomeComponent = () => {
               hasScrolled={hasScrolled}
               onFinish={() => {
                 setHasScrolled(true);
-              }} />
-             <br />
+              }}
+            />
+            <br />
           </div>
+          {showCv && (
+            <CvModal
+              onClose={() => {
+                setShowCv(false);
+              }}
+            />
+          )}
 
           <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-            <AboutPage    darkMode={darkMode}/>
-            <SkillsPage   darkMode={darkMode}/>
-            <ProfessionalExperiencesPage   darkMode={darkMode}/>
-            <EducationPage   darkMode={darkMode}/>
-            <BlogPage   darkMode={darkMode}/>
-          <div className="huge">
+            <AboutPage darkMode={darkMode} />
+            <SkillsPage darkMode={darkMode} />
+            <ProfessionalExperiencesPage darkMode={darkMode} />
+            <EducationPage darkMode={darkMode} />
+            <BlogPage darkMode={darkMode} />
+            <div className="huge">
               <h2>Thanks for visiting my website :)</h2>
-          </div>
+            </div>
           </div>
         </div>
-       </div>
+      </div>
+      <button className="cv-button-wrapper" onClick={() => setShowCv(true)}>
+        Curriculum Vitae
+      </button>
     </div>
   );
 };
