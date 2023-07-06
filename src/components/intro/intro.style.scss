@@ -62,21 +62,7 @@
       color: $green-highlight;
     }
   }
-  .sprite {
-    position: absolute;
-    transition: opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    left: 32px;
-    // bottom: 300px;
-    bottom: 392px;
-    span {
-      min-width: 200px;
-      position: absolute;
-      left: 0;
-    }
-    img {
-      width: 80px;
-    }
-  }
+
   .scroll-down {
     margin-left: 32px;
     span {

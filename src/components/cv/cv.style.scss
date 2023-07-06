@@ -18,7 +18,7 @@ $main-color: #f5cd38;
   background-color: white;
   overflow: scroll;
   font-family: 'Montserrat', sans-serif;
-  z-index: 1;
+  z-index: 10;
 
   &__header {
     position: sticky;
@@ -152,6 +152,9 @@ $main-color: #f5cd38;
       &__item {
         display: flex;
         gap: 8px;
+        a {
+          color: white;
+        }
       }
 
       &__skill {
@@ -209,8 +212,19 @@ $main-color: #f5cd38;
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background-color: #f5cd38;
+        background-color: white;
         display: flex;
+
+        img {
+          width: 26px;
+          height: auto;
+          height: 26px;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.8;
+        }
       }
       &__timeline-bar {
         position: absolute;

@@ -28,12 +28,9 @@ export const CvModal = ({ onClose }: ICvProps) => {
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
       '_blank'
     );
-
-    
   };
 
-  return (
-    <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''}`}>
+  return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''}`}>
       <div className="cv-modal__header">
         <div className="cv-modal__header__image">
           <img src={personalData.profilePic} alt="profile" />
@@ -54,12 +51,16 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div>
             <h3>Contact</h3>
             <div className="cv-modal__content__contact__item">
-              <div className="cv-modal__content__contact__item__title">E</div>
-              <div className="cv-modal__content__contact__item__content">{personalData.email}</div>
+              {/* <div className="cv-modal__content__contact__item__title">E</div> */}
+              <div className="cv-modal__content__contact__item__content">
+                Email: {personalData.email}
+              </div>
             </div>
             <div className="cv-modal__content__contact__item">
-              <div className="cv-modal__content__contact__item__title">A</div>
-              <div className="cv-modal__content__contact__item__content">{personalData.based}</div>
+              {/* <div className="cv-modal__content__contact__item__title">A</div> */}
+              <div className="cv-modal__content__contact__item__content">
+                Based in {personalData.based}
+              </div>
             </div>
           </div>
           <div>
@@ -67,8 +68,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
             <div>
               {personalData.social.map((social, key) => (
                 <div key={`social-item-${key}`} className="cv-modal__content__contact__item">
-                  <div className="cv-modal__content__contact__item__title">{social.name}</div>
-                  <div className="cv-modal__content__contact__item__content">{social.url}</div>
+                  <a href={social.url} target="_blank" className="cv-modal__content__contact__item__title">{social.name}</a>
                 </div>
               ))}
             </div>
@@ -76,12 +76,8 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div>
             <h3>Skills</h3>
             <div className="gapped-list">
-              {skillsCV.map((section, key) => (
-                <div className="cv-modal__content__contact__skill">
-                  <div
-                    key={`skill-cv-item-${key}`}
-                    className="cv-modal__content__contact__skill__section"
-                  >
+              {skillsCV.map((section, key) => <div className="cv-modal__content__contact__skill">
+                  <div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
                     {section.section}
                   </div>
                   <ul className="cv-modal__content__contact__skill__section__content">
@@ -96,15 +92,16 @@ export const CvModal = ({ onClose }: ICvProps) => {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
         <div className="cv-modal__content__section">
           <div className="cv-modal__content__section__timeline-bar" />
           <div className="cv-modal__content__section__title__wrapper">
-            <div className="cv-modal__content__section__timeline__icon" />
+            <div className="cv-modal__content__section__timeline__icon">
+              <img src={'assets/suitcase-icon.png'} />
+            </div>
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
           {professionalExperiences.map((experience, key) => (
@@ -124,7 +121,9 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div className="cv-modal__content__section__divider" />
 
           <div className="cv-modal__content__section__title__wrapper">
-            <div className="cv-modal__content__section__timeline__icon" />
+            <div className="cv-modal__content__section__timeline__icon">
+              <img src={'assets/education.png'} />
+            </div>
             <div className="cv-modal__content__section__title">Education</div>
           </div>
 
@@ -152,6 +151,5 @@ export const CvModal = ({ onClose }: ICvProps) => {
           CLOSE
         </button>
       </div>
-    </div>
-  );
+    </div>;
 };

@@ -4,7 +4,7 @@ const personalData = {
   name: 'Pedro Knup',
   age: 28,
   nationality: 'Brazilian',
-  based: 'Utrecht, Netherlands',
+  based: 'Amersfoort, NL',
   position: 'Senior Web Developer',
   bio: `As a software engineer with 9 years of professional experience, I specialize in web development and have a strong background in Javascript and its libraries such as NodeJS, VueJS, and ReactJS.
 
@@ -18,17 +18,22 @@ I am eager to take on new challenges and am constantly looking for ways to impro
   social: [
     {
       name: 'Github',
-      url: '#',
+      url: 'https://github.com/pedroknup',
       icon: 'github'
     },
     {
       name: 'Linkedin',
-      url: '#',
+      url: 'https://www.linkedin.com/in/pedroknup/',
       icon: 'linkedin'
     },
     {
-      name: 'Twitter',
-      url: '#',
+      name: 'Instagram',
+      url: 'http://instagram.com/pedroknup',
+      icon: 'twitter'
+    },
+    {
+      name: 'DeviantArt',
+      url: 'https://www.deviantart.com/pedroknup',
       icon: 'twitter'
     }
   ]

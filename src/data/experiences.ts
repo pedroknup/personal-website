@@ -109,7 +109,7 @@ const professionalExperiences: IExperience[] = [
     }
   },
   {
-    title: 'Frontend Developer',
+    title: 'Frontend Developer Intern',
     date: 'Mar/2019 - Oct/2019',
     description: 'Webbio B.V',
     link: 'https://webbio.nl/',

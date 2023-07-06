@@ -46,6 +46,10 @@ export const HomeComponent = () => {
     document.body.addEventListener('scroll', onScroll, true);
     setPreviousState(undefined);
 
+    if (window.location.pathname === '/resume') {
+      setShowCv(true);
+    }
+
     return () => {
       document.body.removeEventListener('scroll', onScroll);
     };
@@ -54,6 +58,14 @@ export const HomeComponent = () => {
   React.useEffect(() => {
     isScrollingRef.current = isScrolling;
   });
+
+  React.useEffect(() => {
+    if (showCv){
+      window.history.pushState({}, '', '/resume');
+    } else {
+      window.history.pushState({}, '', '/');
+    }
+  }, [showCv]);
 
   const setSelectedNavbarItem = (id: string, shouldHighlight?: boolean) => {
     const navBarItemsTemp = initialNavbarItem.map((item) => {
