@@ -43,11 +43,11 @@ const skillsFront: ISkillItem[] = [
     progress: 60
   },
   {
-    id: 5,
+    id: 512,
     name: 'AngularJS + Angular 2',
     content:
       "I haven't had a solid experience it with so far. But I know how it works and its fundamentals and I prefer to avoid it",
-    progress: 50
+    progress: 20
   }
 ];
 const skillsBack: ISkillItem[] = [
