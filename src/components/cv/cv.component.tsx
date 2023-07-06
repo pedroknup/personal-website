@@ -4,6 +4,7 @@ import personalData, { skillsCV } from '../../data';
 import './cv.style.scss';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 
+
 interface ICvProps {
   onClose: () => void;
 }
@@ -24,10 +25,10 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
   const handleOnDownload = () => {
     // download https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
-    window.open(
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-      '_blank'
-    );
+    // window.open(
+    //   pdfFile,
+    //   '_blank'
+    // );
   };
 
   return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''}`}>
