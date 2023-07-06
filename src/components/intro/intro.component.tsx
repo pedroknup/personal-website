@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typist from 'react-typist';
-const socialMediaIcons = require('social-media-icons-react');
+const socialMediaIcons = require('../../lib/social-media-icons-react');
 const { SocialMediaIconsReact } = socialMediaIcons;
 import './intro.style.scss';
 
