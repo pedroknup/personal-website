@@ -25,10 +25,10 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
   const handleOnDownload = () => {
     // download https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
-    // window.open(
-    //   pdfFile,
-    //   '_blank'
-    // );
+    window.open(
+      '/Pedro-Knup-resume-23-06.pdf',
+      '_blank'
+    );
   };
 
   return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''}`}>
@@ -101,7 +101,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div className="cv-modal__content__section__timeline-bar" />
           <div className="cv-modal__content__section__title__wrapper">
             <div className="cv-modal__content__section__timeline__icon">
-              <img src={'assets/suitcase-icon.png'} />
+              <img src={'/suitcase-icon.png'}/>
             </div>
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
@@ -126,7 +126,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
           <div className="cv-modal__content__section__title__wrapper">
             <div className="cv-modal__content__section__timeline__icon">
-              <img src={'assets/education.png'} />
+              <img src={'/education.png'} />
             </div>
             <div className="cv-modal__content__section__title">Education</div>
           </div>

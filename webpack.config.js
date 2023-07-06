@@ -18,6 +18,7 @@ module.exports = {
     app: './main.tsx'
   },
   output: {
+    publicPath: '/',
     path: outPath,
     filename: isProduction ? '[contenthash].js' : '[hash].js',
     chunkFilename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js'
@@ -193,14 +194,15 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: sourcePath,
+    // contentBase: sourcePath,
     hot: true,
     inline: true,
     historyApiFallback: {
       disableDotRule: true
     },
     stats: 'minimal',
-    clientLogLevel: 'warning'
+    clientLogLevel: 'warning',
+    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'build')],
   },
   // https://webpack.js.org/configuration/devtool/
   devtool: isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map',
