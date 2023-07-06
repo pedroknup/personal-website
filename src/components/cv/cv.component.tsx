@@ -4,17 +4,16 @@ import personalData, { skillsCV } from '../../data';
 import './cv.style.scss';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 
-
 interface ICvProps {
   onClose: () => void;
 }
 
 export const CvModal = ({ onClose }: ICvProps) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleOnScroll = (event: any) => {
     const { scrollTop } = event.target;
-    console.log('scrollTop', scrollTop);
 
     if (scrollTop > 0) {
       setHasScrolled(true);
@@ -24,14 +23,26 @@ export const CvModal = ({ onClose }: ICvProps) => {
   };
 
   const handleOnDownload = () => {
-    // download https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
     window.open(
       '/Pedro-Knup-resume-23-06.pdf',
       '_blank'
     );
   };
 
-  return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''}`}>
+  const handleOnClose = () => {
+    setIsOpen(false);
+    setTimeout(() => {
+      onClose();
+    }, 320);
+  };
+
+  React.useEffect(()=> {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 10);
+  }, [])
+
+  return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="cv-modal__header">
         <div className="cv-modal__header__image">
           <img src={personalData.profilePic} alt="profile" />
@@ -151,7 +162,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
         <button onClick={handleOnDownload} className="cv-modal__close-button">
           DOWNLOAD
         </button>
-        <button onClick={onClose} className="cv-modal__close-button">
+        <button onClick={handleOnClose} className="cv-modal__close-button">
           CLOSE
         </button>
       </div>

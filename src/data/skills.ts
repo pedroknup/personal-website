@@ -94,7 +94,7 @@ const skillsBack: ISkillItem[] = [
     progress: 50
   },
   {
-    id: 9,
+    id: 90,
     name: 'Microsoft Azure',
     content:
     `I use Azure to host some personal projects. Serverless applications, CI/CD pipelines, hosting, function apps and so on. `,

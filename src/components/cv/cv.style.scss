@@ -20,6 +20,18 @@ $main-color: #f5cd38;
   font-family: 'Montserrat', sans-serif;
   z-index: 10;
 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s, transform 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+    transform: translateX(0);
+  }
+
   &__header {
     position: sticky;
     display: flex;

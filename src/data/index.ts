@@ -22,7 +22,7 @@ I am eager to take on new challenges and am constantly looking for ways to impro
       icon: 'github'
     },
     {
-      name: 'Linkedin',
+      name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/pedroknup/',
       icon: 'linkedin'
     },
