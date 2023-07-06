@@ -4,6 +4,7 @@
   "private": true,
   "description": "Pedro Knup personal website",
   "main": "index.js",
+  "homepage": "https://pedroknup.github.io/personal-website/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
