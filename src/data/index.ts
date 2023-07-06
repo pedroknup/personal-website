@@ -4,7 +4,7 @@ const personalData = {
   name: 'Pedro Knup',
   age: 28,
   nationality: 'Brazilian',
-  based: 'Amersfoort, NL',
+  based: 'Amersfoort, NL.',
   position: 'Senior Web Developer',
   bio: `As a software engineer with 9 years of professional experience, I specialize in web development and have a strong background in Javascript and its libraries such as NodeJS, VueJS, and ReactJS.
 

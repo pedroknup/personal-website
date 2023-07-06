@@ -168,7 +168,6 @@ $main-color: #f5cd38;
           &__content {
             padding-inline-start: 33px;
             margin-block: 0;
-            // margin-left: 16px;
           }
         }
       }
@@ -255,6 +254,15 @@ $main-color: #f5cd38;
 
         &__content {
           text-align: justify;
+        }
+
+        &__skills {
+          margin-top: 8px;
+
+          strong {
+            font-weight: bold;
+            opacity: 0.6;
+          }
         }
 
         &__location {

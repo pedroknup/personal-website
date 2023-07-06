@@ -12,6 +12,7 @@ interface IExperience {
       content: string;
     }[];
   };
+  skills?: string[];
 }
 
 const educationalExperiences: IExperience[] = [
@@ -43,7 +44,7 @@ Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
 
 const professionalExperiences: IExperience[] = [
   {
-    title: 'Senior Front end ',
+    title: 'Senior Frontend Developer',
     date: 'Apr/2023 - Now',
     description: 'Media.Monks',
     link: 'www.mediamonks.com',
@@ -55,7 +56,7 @@ const professionalExperiences: IExperience[] = [
   },
   {
     title: 'Frontend Developer',
-    date: 'Feb/2021 - Feb/2023',
+    date: 'Feb/2021 - Mar/2023',
     description: 'Media.Monks',
     link: 'www.mediamonks.com',
     icon: 'https://i.imgur.com/YUOlc25.jpg',
@@ -83,7 +84,22 @@ const professionalExperiences: IExperience[] = [
             'Interactive live stream platform for Google Cloud that allows the presenters to interact with the audience with live quizzes, polls, reactions etc.'
         }
       ]
-    }
+    },
+    skills: [
+      'Back-end Development',
+      'python',
+      'VueJS',
+      'ReactJS',
+      'LitJS',
+      'AngularJS',
+      'NodeJS',
+      'GreenSock Animation Platform (GSAP)',
+      'Glue',
+      'ReduxJS',
+      'Front-end Development',
+      'Scrum',
+      'TypeScript'
+    ]
   },
   {
     title: 'Backend Developer',
@@ -94,7 +110,10 @@ const professionalExperiences: IExperience[] = [
     defaultOpened: false,
     content: {
       content: `Responsible for maintaining a web service and its underlying database. Involved in monitoring and troubleshooting any issues that may arise, as well as implementing new features and updates to the web service, web client app, and database, working closely with the development team to ensure that all changes are properly tested and deployed.`
-    }
+    },
+    skills: [
+      'Microsoft Azure', 'VueJS', 'Scrum', 'Microsoft SQL Server', 'Entity Framework', '.NET Framework'
+    ]
   },
   {
     title: 'Fullstack Developer',
@@ -106,7 +125,10 @@ const professionalExperiences: IExperience[] = [
     content: {
       content: `As a Full Stack Developer at Pycom, I was responsible for a variety of tasks including the development of MicroPython-based device-level communication and a Dashboard Web App. My main focus was on ensuring seamless and reliable connections between devices and the cloud. I was responsible for the integration of devices and the cloud, as well as maintaining the stability of these connections. Additionally, I was in charge of the Pymakr extension which is an IDE for the Pycom boards, in VSCode and Atom, and lead the development of Pymakr 2, the latest version.As a Full Stack Developer at Pycom, I was responsible for a variety of tasks including the development of MicroPython-based device-level communication and a Dashboard Web App. My main focus was on ensuring seamless and reliable connections between devices and the cloud. I was responsible for the integration of devices and the cloud, as well as maintaining the stability of these connections. Additionally, I was in charge of the Pymakr extension which is an IDE for the Pycom boards, in VSCode and Atom, and lead the development of Pymakr 2, the latest version.
 `
-    }
+    },
+    skills: [
+      'ES6', 'Webpack', 'Jest', 'Mocha (JavaScript Framework)', 'GraphQL', 'Code editors plugin development (VSC and Atom)', 'ReactJS', 'NodeJS', 'Scrum', 'MongoDB'
+    ]
   },
   {
     title: 'Frontend Developer Intern',
@@ -122,7 +144,8 @@ const professionalExperiences: IExperience[] = [
           content: `Amazingly fast and responsive app for the Dutch Black Friday. Even though there are a lot of stores and products in there, we did a great job making sure the website is super fast and has a great SEO score, even though it's a WPA ;) Go <a href="https://www.blackfridaynederland.nl/" target="_blank">check it out</a> with your own eyes.`
         }
       ]
-    }
+    },
+    skills: [' Redux', 'Swagger', 'Formik', 'ES6', 'ReactJS', 'Scrum', 'TypeScript']
   },
   {
     title: 'Fullstack Developer',
@@ -132,7 +155,10 @@ const professionalExperiences: IExperience[] = [
     link: 'https://novo.clubpetro.com/',
     content: {
       content: `As a full-stack engineer at ClubPetro, I was tasked with completely rebuilding the company's primary product, including the web app, database, and web service. I was responsible for selecting the appropriate technologies and languages, designing the new database structure, the layout of the app, and the web service. Additionally, I provided mentorship to my colleagues throughout the project, until I left the company to move to the Netherlands.`
-    }
+    },
+    skills: [
+      'VueJS', 'ReactJS', 'Scrum', 'Microsoft SQL Server', 'Entity Framework', '.NET Framework', 'TypeScript'
+    ]
   },
   {
     title: 'Computer Engineering Intern',
@@ -144,7 +170,8 @@ const professionalExperiences: IExperience[] = [
       content: `At Vale, I worked as a full-stack developer, utilizing technologies such as .NET MVC, RESTful Web Services with .NET Framework, and small web applications using VueJS. 
 
 I developed a smart Telegram bot to automate the delivery of information to users (mostly managers, directors, and stockholders), using C#. Additionally, I had extensive experience with SQL Server, including optimization of queries, development of procedures, functions, triggers, and jobs.`
-    }
+    },
+    skills: ['Web Services', 'Node.js', 'HTML', 'Microsoft SQL Server', 'SQL']
   },
   {
     title: 'Developer freelancer',
@@ -155,7 +182,10 @@ I developed a smart Telegram bot to automate the delivery of information to user
     content: {
       content: `I delivered dozens of web, mobile, and windows apps. Apps for restaurants, movie theaters, supermarkets, schools, and hotels.I delivered dozens of web, mobile, and windows apps. Apps for restaurants, movie theaters, supermarkets, schools, and hotels.
 `
-    }
+    },
+    skills: [
+      'Google Firebase', 'Xamarin', 'VanillaJS', 'VueJS', 'NodeJS', 'jQuery', 'MySQL', 'Entity Framework', '.NET Framework', 'MongoDB'
+    ]
   },
   {
     title: 'IT Intern',
@@ -165,7 +195,10 @@ I developed a smart Telegram bot to automate the delivery of information to user
     link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
     content: {
       content: `As an IT intern, I was responsible for providing technical assistance to faculty and students at the college, including troubleshooting and resolving various computer and software-related issues. Additionally, I was in charge of maintaining and updating the college's IT infrastructure, which included servers, networking equipment, and other hardware. One of the key projects I worked on was the development of a Redmine Server for internal usage, which aimed to improve project management and collaboration among the college staff.`
-    }
+    },
+    skills: [
+      'Network Administration', 'IT Hardware Support', 'Front-end Development', 'Scrum', 'Web Services'
+    ]
   }
 ];
 

@@ -116,6 +116,9 @@ export const CvModal = ({ onClose }: ICvProps) => {
               <div className="cv-modal__content__section__item__content">
                 {experience.content.content}
               </div>
+              {experience.skills && (<div className="cv-modal__content__section__item__skills">
+                <strong>Skills:</strong> {experience.skills?.join(' · ')}.
+              </div>)}
             </div>
           ))}
           <div className="cv-modal__content__section__divider" />
