@@ -24,7 +24,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
   const handleOnDownload = () => {
     window.open(
-      '/Pedro-Knup-resume-23-06.pdf',
+      '/personal-website/Pedro-Knup-resume-23-06.pdf',
       '_blank'
     );
   };
@@ -112,7 +112,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div className="cv-modal__content__section__timeline-bar" />
           <div className="cv-modal__content__section__title__wrapper">
             <div className="cv-modal__content__section__timeline__icon">
-              <img src={'/suitcase-icon.png'}/>
+              <img src={'/personal-website/suitcase-icon.png'}/>
             </div>
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
@@ -137,7 +137,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
           <div className="cv-modal__content__section__title__wrapper">
             <div className="cv-modal__content__section__timeline__icon">
-              <img src={'/education.png'} />
+              <img src={'/personal-website/education.png'} />
             </div>
             <div className="cv-modal__content__section__title">Education</div>
           </div>
