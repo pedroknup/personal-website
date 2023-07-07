@@ -4,7 +4,7 @@
   "private": true,
   "description": "Pedro Knup personal website",
   "main": "index.js",
-  "homepage": "https://pedroknup.github.io/personal-website/",
+  "homepage": "https://pedroknup.github.io/personal-website/#",
   "scripts": {
     "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",

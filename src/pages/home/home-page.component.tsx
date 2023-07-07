@@ -7,6 +7,7 @@ import { ProfessionalExperiencesPage } from '../../components/professional-exper
 import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
 import { INavbarItem, Navbar } from '../../components/nav-bar';
+import { useLocation } from 'react-router-dom';
 
 import './home-page.style.scss';
 import { CvModal } from '../../components/cv';
@@ -46,7 +47,7 @@ export const HomeComponent = () => {
     document.body.addEventListener('scroll', onScroll, true);
     setPreviousState(undefined);
 
-    if (window.location.pathname === '/resume') {
+    if (window.location.hash.includes('/resume')) {
       setShowCv(true);
     }
 
@@ -59,13 +60,16 @@ export const HomeComponent = () => {
     isScrollingRef.current = isScrolling;
   });
 
-  React.useEffect(() => {
-    // if (showCv){
-    //   window.history.pushState({}, '', '/personal-website/resume');
-    // } else {
-    //   window.history.pushState({}, '', '/personal-website/');
-    // }
-  }, [showCv]);
+  React.useEffect(
+    () => {
+      if (showCv){
+        window.history.pushState({}, '', '/personal-website/#/resume');
+      } else {
+        window.history.pushState({}, '', '/personal-website/#');
+      }
+    },
+    [showCv]
+  );
 
   const setSelectedNavbarItem = (id: string, shouldHighlight?: boolean) => {
     const navBarItemsTemp = initialNavbarItem.map((item) => {
