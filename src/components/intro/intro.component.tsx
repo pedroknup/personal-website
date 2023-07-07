@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Typist from 'react-typist';
-const socialMediaIcons = require('../../lib/social-media-icons-react');
-const { SocialMediaIconsReact } = socialMediaIcons;
+import { SocialIcon } from 'react-social-icons';
 import './intro.style.scss';
 
 export interface IIntroPageProps {
@@ -62,11 +61,11 @@ export const IntroPageComponent = (props: IIntroPageProps) => {
 
       <div className="contact">
         <div className="social-icons">
-          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="linkedin" url="https://www.linkedin.com/in/pedroknup" />
-          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="facebook" url="https://www.facebook.com/pedroknup" />
-          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="github" url="https://www.github,com/pedroknup" />
-          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="instagram" url="https://www.instagram.com/pedroknup" />
-          <SocialMediaIconsReact iconSize={10} size={15} backgroundColor="transparent" icon="deviantart" url="https://www.pedroknup.deviantart.com" />
+          <SocialIcon  bgColor="transparent"  target='_blank' url="https://www.linkedin.com/in/pedroknup" />
+          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.facebook.com/pedroknup" />
+          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.github,com/pedroknup" />
+          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.instagram.com/pedroknup" />
+          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.pedroknup.deviantart.com" />
         </div>
         <div className="signature">
           made with <span style={{ color: 'red' }}>♥</span> by <span>Pedro Knup </span> | ©2021

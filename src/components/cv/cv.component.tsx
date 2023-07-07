@@ -3,6 +3,8 @@ import personalData, { skillsCV } from '../../data';
 
 import './cv.style.scss';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
+// import _ from 'lodash';
+
 
 interface ICvProps {
   onClose: () => void;
@@ -12,15 +14,31 @@ export const CvModal = ({ onClose }: ICvProps) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const handleOnScroll = (event: any) => {
-    const { scrollTop } = event.target;
+  const debounce = <T extends any[]>(func: (...args: T) => void, delay: number) => {
+   let timerId: ReturnType<typeof setTimeout>;
 
-    if (scrollTop > 0) {
-      setHasScrolled(true);
-    } else {
-      setHasScrolled(false);
-    }
+  return (...args: T) => {
+    if (timerId) clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      func.apply(null, args);
+    }, delay);
   };
+};
+
+  const handleOnScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const scrollTop = e.currentTarget.scrollTop;
+    // updateScrollState(scrollTop);
+  };
+
+  // const updateScrollState = _.debounce((scrollTop: number) => {
+  //      if (scrollTop > 0) {
+  //       setHasScrolled(true);
+  //     } else {
+  //       setHasScrolled(false);
+  //     }
+  //   }, 100);
+
 
   const handleOnDownload = () => {
     window.open(

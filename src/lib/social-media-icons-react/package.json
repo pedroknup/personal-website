@@ -31,8 +31,7 @@
     "name": "David McQuillan"
   },
   "dependencies": {
-    "react-svg": "^10.0.19",
-    "svg-path-bounds": "^1.0.1"
+    "react-svg": "^10.0.19"
   },
   "description": "React JS Package for easy creation and highly customizable Social Media Icons",
   "devDependencies": {
