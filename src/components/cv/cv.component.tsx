@@ -3,7 +3,7 @@ import personalData, { skillsCV } from '../../data';
 
 import './cv.style.scss';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
-// import _ from 'lodash';
+import _ from 'lodash';
 
 
 interface ICvProps {
@@ -28,16 +28,16 @@ export const CvModal = ({ onClose }: ICvProps) => {
 
   const handleOnScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const scrollTop = e.currentTarget.scrollTop;
-    // updateScrollState(scrollTop);
+    updateScrollState(scrollTop);
   };
 
-  // const updateScrollState = _.debounce((scrollTop: number) => {
-  //      if (scrollTop > 0) {
-  //       setHasScrolled(true);
-  //     } else {
-  //       setHasScrolled(false);
-  //     }
-  //   }, 100);
+  const updateScrollState = _.debounce((scrollTop: number) => {
+       if (scrollTop > 0) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    }, 100);
 
 
   const handleOnDownload = () => {
