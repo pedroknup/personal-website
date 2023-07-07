@@ -42,7 +42,8 @@ export const CvModal = ({ onClose }: ICvProps) => {
     }, 10);
   }, [])
 
-  return <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+  return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
+  <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="cv-modal__header">
         <div className="cv-modal__header__image">
           <img src={personalData.profilePic} alt="profile" />
@@ -158,13 +159,14 @@ export const CvModal = ({ onClose }: ICvProps) => {
           ))}
         </div>
       </div>
-      <div className="cv-modal__close-button-wrapper">
-        <button onClick={handleOnDownload} className="cv-modal__close-button">
-          DOWNLOAD
-        </button>
-        <button onClick={handleOnClose} className="cv-modal__close-button">
-          CLOSE
-        </button>
-      </div>
-    </div>;
+    </div>
+    <div className="cv-modal__close-button-wrapper">
+      <button onClick={handleOnDownload} className="cv-modal__close-button">
+        DOWNLOAD
+      </button>
+      <button onClick={handleOnClose} className="cv-modal__close-button">
+        CLOSE
+      </button>
+    </div>
+  </div>;
 };

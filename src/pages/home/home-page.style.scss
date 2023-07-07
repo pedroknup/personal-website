@@ -138,7 +138,7 @@ body {
   position: fixed;
   top: 8px;
   right: 12px;
-  background-color: $background-dark;  
+  background-color: $background-dark;
   z-index: 0;
   color: $foreground;
   box-shadow: none;
@@ -147,9 +147,12 @@ body {
   padding: 4px 8px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: $background-dark;
     color: $foreground;
   }
-  
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

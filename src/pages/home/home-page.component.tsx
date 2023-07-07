@@ -60,11 +60,11 @@ export const HomeComponent = () => {
   });
 
   React.useEffect(() => {
-    if (showCv){
-      window.history.pushState({}, '', '/resume');
-    } else {
-      window.history.pushState({}, '', '/');
-    }
+    // if (showCv){
+    //   window.history.pushState({}, '', '/personal-website/resume');
+    // } else {
+    //   window.history.pushState({}, '', '/personal-website/');
+    // }
   }, [showCv]);
 
   const setSelectedNavbarItem = (id: string, shouldHighlight?: boolean) => {
