@@ -1,4 +1,5 @@
 @import '../../styles/main.scss';
+
 @media (max-width: 768px) {
   .section {
     margin: 0 8px 0 16px !important;
@@ -14,79 +15,85 @@
 
   &.light {
     border-left: 1px solid $light-border;
+
     .title {
       span {
         background-color: $light-background !important;
         color: $light-orange-highlight !important;
       }
     }
+
     .description {
       background-color: $light-background !important;
       color: $light-foreground-light !important;
     }
+
     .content {
       &.padding {
         border-left: 1px solid $light-border;
       }
     }
   }
-  &.highlight {
-    // background-color: $background-light !important;
-  }
+
   .anchor {
     position: absolute;
     top: 0px;
     left: 0;
   }
+
   .content {
     margin-left: 32px;
     padding-bottom: 32px;
+
     @media (max-width: 768px) {
       margin-left: 18px;
       padding-bottom: 18px;
     }
 
-    &.big {
-    }
     &.padding {
       border-left: 1px solid $border;
     }
   }
+
   .title {
     span {
       color: $orange-highlight;
       background-color: $background;
       margin-left: -1px;
       padding-left: 1px;
+
       &::before {
         content: '<';
-        // color: $foreground;
       }
+
       &::after {
         content: '>';
-        // color: $foreground;
       }
     }
+
     &.closing {
-      // text-align: right;
+
       span {
         &::before {
           content: '</';
-          // color: $foreground;
         }
       }
     }
   }
+
   .description {
     margin-left: -13px;
     display: flex;
     background-color: $background;
+    color: $foreground-light;
+
     &::before {
+
       content: none;
     }
+
     &::after {
       content: none;
     }
-    color: $foreground-light;
   }
 }

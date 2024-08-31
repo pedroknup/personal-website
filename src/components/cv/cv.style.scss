@@ -97,15 +97,18 @@ $main-color: #f5cd38;
   }
 
   .position {
+    transition: all 0.3s ease-in-out;
+
     &-wrapper {
       display: flex;
       gap: 16px;
       align-items: baseline;
     }
-    transition: all 0.3s ease-in-out;
+
     &.expanded {
       opacity: 1;
     }
+
     &.collapsed {
       opacity: 0;
       font-size: 14px;
