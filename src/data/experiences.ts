@@ -269,4 +269,4 @@ Vale S.A. is one of the world's largest mining companies, known for its dedicati
   }
 ];
 
-export { professionalExperiences, Experience as IExperience, educationalExperiences };
+export { professionalExperiences, Experience, educationalExperiences };
