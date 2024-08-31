@@ -10,25 +10,25 @@ const skillsFront: SkillItem[] = [
     id: 0,
     name: 'HTML, JavaScript, CSS',
     content: `My journey with HTML, JavaScript, and CSS began in my early years and has evolved significantly over time. I consistently challenge myself by designing diverse layouts and staying abreast of the latest design trends. My proficiency in HTML and CSS is advanced.`,
-    progress: 90
+    progress: 100
   },
   {
     id: 1,
     name: 'React',
     content: `I have a deep understanding of React, having worked intensively with it. I stay updated with its latest releases and incorporate tools such as Redux (or Context), TypeScript, and SCSS in my React projects.`,
-    progress: 90
+    progress: 95
   },
   {
     id: 2,
     name: 'Vue.js',
     content: `I have extensive experience with Vue.js, utilizing it in various projects to build dynamic and responsive user interfaces.`,
-    progress: 80
+    progress: 90
   },
   {
     id: 3,
     name: 'Webpack',
     content: `I am proficient in configuring Webpack to meet the specific needs of a project, ensuring optimal build performance and output.`,
-    progress: 70
+    progress: 80
   },
   {
     id: 100,
@@ -64,6 +64,18 @@ const skillsBack: SkillItem[] = [
     progress: 80
   },
   {
+    id: 9,
+    name: 'Google Cloud Platform',
+    content: `At Media.Monks, I extensively utilized Google Cloud Platform for hosting and implementing applications across various Google services, including Cloud Functions, CI/CD pipelines, and app hosting.`,
+    progress: 80
+  },
+  {
+    id: 90,
+    name: 'Microsoft Azure DevOps',
+    content: `I have extensively used Azure DevOps for my personal projects and at most of the clients, specially at Rabobank.`,
+    progress: 80
+  },
+  {
     id: 400,
     name: '.NET',
     content: `I have a robust background in .NET, including both .NET Core (v1.0 & v2.0) and the .NET Framework. I have managed large-scale projects involving extensive data processing. My experience with .NET has not extended beyond .NET Core 3.`,
@@ -80,18 +92,6 @@ const skillsBack: SkillItem[] = [
     name: 'Docker',
     content: `Docker is a key tool in my development workflow, and I integrate it into nearly every project to streamline development and deployment processes.`,
     progress: 70
-  },
-  {
-    id: 9,
-    name: 'Google Cloud Platform',
-    content: `At Media.Monks, I extensively utilized Google Cloud Platform for hosting and implementing applications across various Google services, including Cloud Functions, CI/CD pipelines, and app hosting.`,
-    progress: 80
-  },
-  {
-    id: 90,
-    name: 'Microsoft Azure DevOps',
-    content: `I have extensively used Azure DevOps for my personal projects and at most of the clients, specially at Rabobank.`,
-    progress: 80
   },
   {
     id: 11,

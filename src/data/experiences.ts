@@ -2,16 +2,16 @@ import { Experience } from "../../types/experience";
 
 const educationalExperiences: Experience[] = [
   {
-    title: 'Computer Engineering',
+    title: 'Computer Engineering (ongoing)',
     date: 'Jan/2015 - Mar/2019',
     icon: 'https://i.imgur.com/zQnU30s.png',
     description: 'Universidade Federal de Itajubá (UNIFEI)',
     link: 'www.google.com',
     content: {
-      content: `Programming Logic Monitor with a workload of 32h monthly. Advisor: Wandré Nunes Veloso. Programming Logic Monitor with a workload of 32h monthly. Advisor: Claudia Izeki.
+      content: `              During my time at UNIFEI, I was always involved in extra-curricular activities such as the Robotics team (Drummonsters), Programing Marathon, elected Computer Engineering representant, part of junior enterprises and Academic support class teacher: Programming Logic Monitor with a workload of 32h monthly. Advisor: Wandré Nunes Veloso. Programming Logic Monitor with a workload of 32h monthly. Advisor: Claudia Izeki.
 Algorithms and Data structures Monitor with a workload of 32h monthly. Advisor: Claudia Izeki.
 
-Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
+Volunteer jobs (junior enterprises): Up Consultoria JR and FEJEMG as IT consultant`
     }
   },
   {
@@ -22,7 +22,7 @@ Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
     link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
     content: {
       content:
-        'Computer technician integrated to Highschool. From programing logic, data structure and databases to electronics and electrics.'
+        'Computer technician integrated to Highschool. From programming logic, data structure and databases to electronics and electrics.'
     }
   }
 ];
@@ -36,7 +36,7 @@ const professionalExperiences: Experience[] = [
     icon: 'https://i.imgur.com/27l1d7y.png',
     defaultOpened: true,
     content: {
-      content: `As a JavaScript Consultant at Rabobank, I play a key role in the development and maintenance of a sophisticated React and Node.js application that utilizes the Backstage framework developed by Spotify. My responsibilities include full-stack development, DevOps tasks, and close collaboration with the Product Owner to design and architect new features for the software catalog application.
+      content: `              As a JavaScript Consultant at Rabobank, I play a key role in the development and maintenance of a sophisticated React and Node.js application that utilizes the Backstage framework developed by Spotify. My responsibilities include full-stack development, DevOps tasks, and close collaboration with the Product Owner to design and architect new features for the software catalog application.
 
       I work extensively with various teams to ensure consistency and standardization across the software catalog, which involves delivering high-quality code, writing comprehensive unit tests, creating detailed documentation, and presenting updates and progress to stakeholders and departmental teams. Additionally, I provide mentorship to junior and mid-level colleagues, guiding them in best practices and helping them grow their skills in both technical and professional aspects.`
     }
@@ -48,15 +48,12 @@ const professionalExperiences: Experience[] = [
     link: 'www.mediamonks.com',
     icon: 'https://i.imgur.com/YUOlc25.jpg',
     content: {
-      content: `
-             Media.Monks is a leading creative production company with focus on complex digital products for global enterprises. I was responsible for multiple complex web applications for Google and General Motors. Notable projects I worked on include Chromebook Retail App, Google Gloud Chess, General Motors' CES 2022 showcase, Pixel 6 launch and Google Cloud Engage sessions.
+      content: `              Media.Monks is a leading creative production company with focus on complex digital products for global enterprises. I was responsible for multiple complex web applications for Google and General Motors. Notable projects I worked on include Chromebook Retail App, Google Gloud Chess, General Motors' CES 2022 showcase, Pixel 6 launch and Google Cloud Engage sessions.
              In my scrum team, I emphasized code reviews and frequently engaged pair programming to ensure quality. I contributed to backend development using Python when required. I also actively participated in knowledge sharing sessions where I talked about new frontend technologies and showcased my personal projects.
              Worked closely with Project Managers (PMs), Producers, and Quality Assurance (QA) engineers, fostering effective collaboration and communication across the project lifecycle.
              Lead the development of the Chromebook Retail app for the 2022 and 2023 versions. I took on the responsibility of coaching junior developers, ensuring alignment of client expectations with the producer, and contributing significantly to the app's design. I played a key role in brainstorming animations and flows.
              Demonstrated strong communication skills by engaging in client discussions to clarify deliverables, gather requirements, and negotiate deadlines. I also took an active role in client management, ensuring successful project outcomes.
-
             Tasks:
-
              • Design, develop and implement web applications using VueJS, ReactJS and NodeJS.
              • Discussing the complex technical domain and making architectural decisions.
              • Implement caching strategies and optimize data retrieval to reduce server load and enhance responsiveness.
@@ -113,10 +110,8 @@ const professionalExperiences: Experience[] = [
     icon: 'https://i.imgur.com/3fIF7HW.png',
     defaultOpened: false,
     content: {
-      content: `
-              Cowmanager is a company in the agricultural domain. They provide cow monitoring services and health sensor technologies. I was responsible for the maintenance and improvement of a core web service and its underlying database.
+      content: `              Cowmanager is a company in the agricultural domain. They provide cow monitoring services and health sensor technologies. I was responsible for the maintenance and improvement of a core web service and its underlying database.
               In this role, I monitored system performance by troubleshooting and resolving issues. I also took part in the implementation of new features and updates for both the web service and web client app. I worked alongside the development team to ensure that all changes underwent proper testing and deployment.
-
           Tasks:
               • Designing, developing, and implementing frontend, integration, and backend services.
               • Implementing new features and enhancements to the existing system.
@@ -137,10 +132,8 @@ const professionalExperiences: Experience[] = [
     icon: 'https://i.imgur.com/lkhhta0.png',
     defaultOpened: false,
     content: {
-      content: `
-Pycom is a global Device-to-Cloud Internet of Things (IoT) technology company. I was responsible for the development of Pycom's IoT dashboard.
+      content: `              Pycom is a global Device-to-Cloud Internet of Things (IoT) technology company. I was responsible for the development of Pycom's IoT dashboard.
             Additionally, I was responsible for maintaining the Pymakr extension, an IDE designed for Pycom boards available on both VSCode and Atom. I also led the development of Pymakr 2.
-
           Tasks:
               • Development of a MicroPython-based device and dashboard web app
               • Ensuring reliable integrations between devices and the cloud
@@ -160,11 +153,9 @@ Pycom is a global Device-to-Cloud Internet of Things (IoT) technology company. I
     link: 'https://webbio.nl/',
     icon: 'https://i.imgur.com/76CEHlw.png',
     content: {
-      content: `
-Webbio B.V. is a digital agency providing custom-made web solutions. As a Front-End Developer at Webbio, I primarily focused on designing and building web applications using ReactJS. I actively participated in daily Scrum meetings, ensuring the delivery of quality code within the stipulated time frames.
+      content: `              Webbio B.V. is a digital agency providing custom-made web solutions. As a Front-End Developer at Webbio, I primarily focused on designing and building web applications using ReactJS. I actively participated in daily Scrum meetings, ensuring the delivery of quality code within the stipulated time frames.
               A key project that my team and I worked on was Blackfriday Nederland, a complex e-shop portal. Despite the project's large scale and the significant amount of data it managed, the team optimized the portal to handle high levels of traffic and achieve a high SEO score.
               In addition to my development responsibilities, I also provided mentorship to my team mates, sharing my expertise and supporting their learning journey.
-
           Tasks:
               • Designing and developing web applications using ReactJS
               • Providing mentorship to my team mates
@@ -188,8 +179,7 @@ Webbio B.V. is a digital agency providing custom-made web solutions. As a Front-
     description: 'Clubpetro',
     link: 'https://novo.clubpetro.com/',
     content: {
-      content: `
-ClubPetro is a customer loyalty company specializing in the fuel retail market. As a Full-Stack Engineer at ClubPetro, I was given the responsibility of completely rebuilding the company's primary product, including the web app, database, and web service.
+      content: `              ClubPetro is a customer loyalty company specializing in the fuel retail market. As a Full-Stack Engineer at ClubPetro, I was given the responsibility of completely rebuilding the company's primary product, including the web app, database, and web service.
               My tasks involved selecting suitable technologies and languages, designing a new database structure, the app layout, and the web service. Additionally, I provided mentorship to my colleagues throughout the project.
           Tasks:
               • Responsible for selecting the appropriate technologies and programming language.
@@ -208,8 +198,7 @@ ClubPetro is a customer loyalty company specializing in the fuel retail market. 
     icon: 'https://i.imgur.com/DfyY23C.png',
     link: 'http://www.vale.com/EN/Pages/default.aspx',
     content: {
-      content: `
-Vale S.A. is one of the world's largest mining companies, known for its dedication to innovation and technology.
+      content: `              Vale S.A. is one of the world's largest mining companies, known for its dedication to innovation and technology.
               As a full-stack developer, I utilized a range of technologies including MSSQL, .NET MVC, RESTful Web Services with .NET Framework, and VueJS for smaller web applications.
               I developed a smart Telegram bot, which automated the delivery of information from multiple internal web-services to key users, primarily managers, directors, and stockholders. This was achieved using C#.
               I also gained extensive experience with SQL Server, focusing on query optimization and the development of procedures, functions, triggers, and jobs.
@@ -228,8 +217,7 @@ Vale S.A. is one of the world's largest mining companies, known for its dedicati
     icon: 'https://i.imgur.com/kthsc9S.jpg',
     link: 'http://www.google.com',
     content: {
-      content: `
-   As a freelance fullstack developer, I worked on dozens of web, mobile and windows apps. I worked on projects for restaurants, movie theaters, supermarkets, schools and hotels.
+      content: `              As a freelance fullstack developer, I worked on dozens of web, mobile and windows apps. I worked on projects for restaurants, movie theaters, supermarkets, schools and hotels.
               One of my notable projects was "Estádio Sonoro". This was a highly interactive frontend app designed for a MVP pitch for a promotional campaign between Flamengo and Tim, a telecom company. The app played a karaoke of Flamengo's football team anthem, recording the user's singing and sending it to the server for processing. The server then compiled the individual performances into a unified anthem.
               Another project of note was "SIHP", a comprehensive hotel management application. This app serviced over 50 clients in the Vale do Aço region.
               I also developed Cabe+1, a mobile carpool app which during its peak had over 700 daily users. Cabe+1 helped students from UNIFEI to organize carpooling to and from the university.
@@ -252,8 +240,7 @@ Vale S.A. is one of the world's largest mining companies, known for its dedicati
     icon: 'https://i.imgur.com/FyWA7ar.png',
     link: 'https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/informatica/',
     content: {
-      content: `
- At CEFET-MG university, I worked as an IT support intern providing technical assistance to faculty and students. This included troubleshooting and resolving various computer and software-related issues.
+      content: `              At CEFET-MG university, I worked as an IT support intern providing technical assistance to faculty and students. This included troubleshooting and resolving various computer and software-related issues.
               I also held responsibilities for maintaining and updating the university's IT infrastructure, encompassing servers, networking equipment, and other hardware.
               An important part of my tenure at the university was developing a Redmine Server for internal use, aimed at enhancing project management and collaboration among the university staff. This project not only required technical prowess but also a deep understanding of the organization's needs and processes to ensure that the solution was fit-for-purpose.
           Tasks:

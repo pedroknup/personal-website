@@ -68,13 +68,11 @@ export const CvModal = ({ onClose }: CvProps) => {
           <div>
             <h3>Contact</h3>
             <div className="cv-modal__content__contact__item">
-              {/* <div className="cv-modal__content__contact__item__title">E</div> */}
               <div className="cv-modal__content__contact__item__content">
                 Email: {personalData.email}
               </div>
             </div>
             <div className="cv-modal__content__contact__item">
-              {/* <div className="cv-modal__content__contact__item__title">A</div> */}
               <div className="cv-modal__content__contact__item__content">
                 Based in {personalData.based}
               </div>
