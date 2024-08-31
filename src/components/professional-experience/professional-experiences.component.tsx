@@ -1,31 +1,26 @@
 import * as React from 'react';
-import { Section } from '../section';
+import { SectionPage } from '../section';
 import { ExperienceItem } from '../experience-item';
 import { professionalExperiences } from '../../data/experiences';
 import './professional-experiences.style.scss';
+import { PageProps } from '../../../types/page-props';
 
-interface ISkillsProps {
-  removeHighlight?: (id: string) => void;
-  isHighlighted?: boolean;
-  darkMode: boolean;
-}
-
-export const ProfessionalExperiencesPage = (props: ISkillsProps) => {
+export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, darkMode }: PageProps) => {
   return (
-    <div className={`professional-experiences-container ${props.darkMode ? '' : 'light'}`}>
-      <Section
-        darkMode={props.darkMode}
-        removeHighlight={props.removeHighlight}
-        isHighlighted={props.isHighlighted}
+    <div className={`professional-experiences-container ${darkMode ? '' : 'light'}`}>
+      <SectionPage
+        darkMode={darkMode}
+        removeHighlight={removeHighlight}
+        isHighlighted={isHighlighted}
         id="experiences"
         paddingColumns={2}
         title="ProfessionalExperiences"
         description="Professional Career"
       >
         {professionalExperiences.map((item, key) => (
-          <ExperienceItem {...item} isDark={props.darkMode} key={key} />
+          <ExperienceItem {...item} isDark={darkMode} key={key} />
         ))}
-      </Section>
+      </SectionPage>
     </div>
   );
 };

@@ -1,9 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import './skills.style.scss';
 
-export interface IHomeComponentProps {}
-
-interface ISkillItemProps {
+type SkillItemProps = {
   title: string;
   content: any;
   open?: boolean;
@@ -12,7 +10,8 @@ interface ISkillItemProps {
   darkMode?: boolean;
   onClick: (key: number) => void;
 }
-export const SkillItem = (props: ISkillItemProps) => {
+
+export const SkillItem = (props: SkillItemProps) => {
   const { title, content, progress, open, id, onClick, darkMode } = props;
 
   const toggleOpen = () => {

@@ -1,18 +1,14 @@
-import * as React from 'react';
-import { Section } from '../section';
+import React from 'react';
+import { SectionPage } from '../section';
 import { educationalExperiences } from '../../data/experiences';
-import { ExperienceItem } from '../experience-item';
 import './education.style.scss';
-interface ISkillsProps {
-  removeHighlight?: (id: string) => void;
-  isHighlighted?: boolean;
-  darkMode: boolean;
-}
+import { PageProps } from '../../../types/page-props';
+import { ExperienceItem } from '../experience-item';
 
-export const EducationPage = (props:ISkillsProps) => {
+export const EducationPage = ({ darkMode, removeHighlight, isHighlighted }: PageProps) => {
   return <div className="education-container">
-      <Section darkMode={props.darkMode}  removeHighlight={props.removeHighlight} isHighlighted={props.isHighlighted} paddingColumns={2} id="education" title="Education" description="Academic Career">
-        {educationalExperiences.map((item, key) => <ExperienceItem isDark={props.darkMode} {...item} key={key} />)}
-      </Section>
-    </div>;
+    <SectionPage darkMode={darkMode} removeHighlight={removeHighlight} isHighlighted={isHighlighted} paddingColumns={2} id="education" title="Education" description="Academic Career">
+      {educationalExperiences.map((item, key) => <ExperienceItem isDark={darkMode} {...item} key={key} />)}
+    </SectionPage>
+  </div>;
 };

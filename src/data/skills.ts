@@ -1,11 +1,11 @@
-interface ISkillItem { 
+type SkillItem = {
   name: string;
   content: any;
   progress: number;
   id: number;
 }
 
-const skillsFront: ISkillItem[] = [
+const skillsFront: SkillItem[] = [
   {
     id: 0,
     name: 'HTML+JS+CSS',
@@ -50,7 +50,7 @@ const skillsFront: ISkillItem[] = [
     progress: 20
   }
 ];
-const skillsBack: ISkillItem[] = [
+const skillsBack: SkillItem[] = [
   {
     id: 5,
     name: 'NodeJS',
@@ -123,7 +123,7 @@ const skillsBack: ISkillItem[] = [
   },
 ];
 
-const skillsMobile: ISkillItem[] = [
+const skillsMobile: SkillItem[] = [
   {
     id: 14,
     name: 'React Native',
@@ -161,7 +161,7 @@ const skillsMobile: ISkillItem[] = [
   }
 ];
 
-const skillsOther: ISkillItem[] = [
+const skillsOther: SkillItem[] = [
   {
     id: 19,
     name: 'Photoshop & Illustrator',
@@ -211,7 +211,7 @@ const skillsCV = [
     section: 'Front-end',
     items: [
       {
-        name: 'VueJS (2 & 3)', 
+        name: 'VueJS (2 & 3)',
         icon: '',
       },
       {

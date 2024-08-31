@@ -1,4 +1,4 @@
-interface IMedia {
+type Media = {
   title: string;
   date: string;
   link: string;
@@ -6,7 +6,7 @@ interface IMedia {
   description: string;
 }
 
-export const youtubeVideos: IMedia[] = [
+export const youtubeVideos: Media[] = [
   {
     title: 'Portrait',
     date: 'Jul/2022',

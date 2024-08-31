@@ -1,43 +1,29 @@
-import * as React from 'react';
-import personalData, { skillsCV } from '../../data';
-
-import './cv.style.scss';
-import { educationalExperiences, professionalExperiences } from '../../data/experiences';
+import React, { useEffect, UIEvent, useState } from 'react';
 import _ from 'lodash';
+import personalData, { skillsCV } from '../../data';
+import { educationalExperiences, professionalExperiences } from '../../data/experiences';
+import './cv.style.scss';
 
-
-interface ICvProps {
+type CvProps = {
   onClose: () => void;
 }
 
-export const CvModal = ({ onClose }: ICvProps) => {
-  const [hasScrolled, setHasScrolled] = React.useState(false);
-  const [isOpen, setIsOpen] = React.useState(false);
+export const CvModal = ({ onClose }: CvProps) => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const debounce = <T extends any[]>(func: (...args: T) => void, delay: number) => {
-   let timerId: ReturnType<typeof setTimeout>;
-
-  return (...args: T) => {
-    if (timerId) clearTimeout(timerId);
-
-    timerId = setTimeout(() => {
-      func.apply(null, args);
-    }, delay);
-  };
-};
-
-  const handleOnScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleOnScroll = (e: UIEvent<HTMLDivElement>) => {
     const scrollTop = e.currentTarget.scrollTop;
     updateScrollState(scrollTop);
   };
 
   const updateScrollState = _.debounce((scrollTop: number) => {
-       if (scrollTop > 0) {
-        setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
-      }
-    }, 100);
+    if (scrollTop > 0) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
+    }
+  }, 100);
 
 
   const handleOnDownload = () => {
@@ -54,14 +40,14 @@ export const CvModal = ({ onClose }: ICvProps) => {
     }, 320);
   };
 
-  React.useEffect(()=> {
+  useEffect(() => {
     setTimeout(() => {
       setIsOpen(true);
     }, 10);
   }, [])
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
-  <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+    <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="cv-modal__header">
         <div className="cv-modal__header__image">
           <img src={personalData.profilePic} alt="profile" />
@@ -108,22 +94,22 @@ export const CvModal = ({ onClose }: ICvProps) => {
             <h3>Skills</h3>
             <div className="gapped-list">
               {skillsCV.map((section, key) => <div className="cv-modal__content__contact__skill">
-                  <div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
-                    {section.section}
-                  </div>
-                  <ul className="cv-modal__content__contact__skill__section__content">
-                    {section.items.map((skill, key2) => (
-                      <li
-                        key={`skill-item-${key2}`}
-                        className="cv-modal__content__contact_skill__item"
-                      >
-                        <div className="cv-modal__content__contact_skill__item__title">
-                          {skill.name}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>)}
+                <div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
+                  {section.section}
+                </div>
+                <ul className="cv-modal__content__contact__skill__section__content">
+                  {section.items.map((skill, key2) => (
+                    <li
+                      key={`skill-item-${key2}`}
+                      className="cv-modal__content__contact_skill__item"
+                    >
+                      <div className="cv-modal__content__contact_skill__item__title">
+                        {skill.name}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>)}
             </div>
           </div>
         </div>
@@ -131,7 +117,7 @@ export const CvModal = ({ onClose }: ICvProps) => {
           <div className="cv-modal__content__section__timeline-bar" />
           <div className="cv-modal__content__section__title__wrapper">
             <div className="cv-modal__content__section__timeline__icon">
-              <img src={'/personal-website/suitcase-icon.png'}/>
+              <img src={'/personal-website/suitcase-icon.png'} />
             </div>
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>

@@ -1,21 +1,6 @@
-interface IExperience {
-  title: string;
-  date: string;
-  link: string;
-  icon: string;
-  description: string;
-  defaultOpened?: boolean;
-  content: {
-    content: string;
-    items?: {
-      title: string;
-      content: string;
-    }[];
-  };
-  skills?: string[];
-}
+import { Experience } from "../../types/experience";
 
-const educationalExperiences: IExperience[] = [
+const educationalExperiences: Experience[] = [
   {
     title: 'Computer Engineering',
     date: 'Jan/2015 - Mar/2019',
@@ -24,7 +9,7 @@ const educationalExperiences: IExperience[] = [
     link: 'www.google.com',
     content: {
       content: `Programming Logic Monitor with a workload of 32h monthly. Advisor: Wandré Nunes Veloso. Programming Logic Monitor with a workload of 32h monthly. Advisor: Claudia Izeki.
-Algorithms and Data structures Monitor with a workload of 32h monthly. Advisor: Claudia Izeki. 
+Algorithms and Data structures Monitor with a workload of 32h monthly. Advisor: Claudia Izeki.
 
 Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
     }
@@ -42,7 +27,7 @@ Volunteer jobs: Up Consultoria JR and FEJEMG as an IT assessor`
   }
 ];
 
-const professionalExperiences: IExperience[] = [
+const professionalExperiences: Experience[] = [
   {
     title: 'Senior Frontend Developer',
     date: 'Apr/2023 - Now',
@@ -167,7 +152,7 @@ const professionalExperiences: IExperience[] = [
     icon: 'https://i.imgur.com/DfyY23C.png',
     link: 'http://www.vale.com/EN/Pages/default.aspx',
     content: {
-      content: `At Vale, I worked as a full-stack developer, utilizing technologies such as .NET MVC, RESTful Web Services with .NET Framework, and small web applications using VueJS. 
+      content: `At Vale, I worked as a full-stack developer, utilizing technologies such as .NET MVC, RESTful Web Services with .NET Framework, and small web applications using VueJS.
 
 I developed a smart Telegram bot to automate the delivery of information to users (mostly managers, directors, and stockholders), using C#. Additionally, I had extensive experience with SQL Server, including optimization of queries, development of procedures, functions, triggers, and jobs.`
     },
@@ -202,4 +187,4 @@ I developed a smart Telegram bot to automate the delivery of information to user
   }
 ];
 
-export { professionalExperiences, IExperience, educationalExperiences };
+export { professionalExperiences, Experience as IExperience, educationalExperiences };

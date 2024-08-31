@@ -1,9 +1,11 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typist from 'react-typist';
 import { SocialIcon } from 'react-social-icons';
 import './intro.style.scss';
+import '../../styles/main.scss';
+import personalData from '../../data';
 
-export interface IIntroPageProps {
+export type IntroPageProps = {
   onFinish: () => void;
   previousState?: number;
   hasScrolled: boolean;
@@ -12,42 +14,29 @@ export interface IIntroPageProps {
   darkMode: boolean;
 }
 
-import '../../styles/main.scss';
-import personalData from '../../data';
+export const IntroPageComponent = ({ onFinish, hasScrolled, darkMode, previousState, currentState }: IntroPageProps) => {
+  const [hasFinishedTyping, setHasFinishedTyping] = useState(false);
 
-export const IntroPageComponent = (props: IIntroPageProps) => {
-  const [hasScrolled, setHasScrolled] = React.useState(false);
-  const [hasFinishedTyping, setHasFinishedTyping] = React.useState(false);
-
-  React.useEffect(
+  useEffect(
     () => {
       if (hasFinishedTyping) {
-        props.onFinish();
+        onFinish();
       }
     },
     [hasFinishedTyping]
   );
 
-  React.useEffect(
-    () => {
-      if (props.hasScrolled) {
-        setHasScrolled(true);
-      }
-    },
-    [props.hasScrolled]
-  );
-
-  return <div className={`intro-container ${props.darkMode ? '' : 'light'}`}>
-      <div className="profile-pic">
-        <img src={personalData.profilePic} />
-      </div>
-      <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
-        {hasFinishedTyping && <span>/*</span>}
+  return <div className={`intro-container ${darkMode ? '' : 'light'}`}>
+    <div className="profile-pic">
+      <img src={personalData.profilePic} />
+    </div>
+    <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
+      {hasFinishedTyping && <span>/*</span>}
         <span  style={{ marginLeft: hasFinishedTyping ? 15 : 0, display: 'block' }}>
-          {props.currentState === 0 && props.previousState == undefined && <Typist onTypingDone={() => {
+          {currentState === 0 && previousState == undefined && <Typist onTypingDone={() => {
                 setHasFinishedTyping(true);
-              }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={props.currentState === 0 ? 1000 : 0}>
-              {props.currentState === 0 && <span>
+              }} avgTypingDelay={hasScrolled ? 0 : 40} cursor={{ hideWhenDone: false, element: '' }} startDelay={currentState === 0 ? 1000 : 0}>
+              {currentState === 0 && <span>
                   Hi! I’m Pedro Knup
                   <br />
                   I love coding and creating creative content :)

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 import { IntroPageComponent } from '../../components/intro';
 import { SkillsPage } from '../../components/skills';
@@ -6,18 +6,18 @@ import { EducationPage } from '../../components/education';
 import { ProfessionalExperiencesPage } from '../../components/professional-experience';
 import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
-import { INavbarItem, Navbar } from '../../components/nav-bar';
+import { NavbarItem, Navbar } from '../../components/nav-bar';
 import { CvModal } from '../../components/cv';
 
 import './home-page.style.scss';
 
-export interface IHomeComponentProps { }
+export type HomeComponentProps = {}
 
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
 const SCROLL_TIMEOUT = 1000;
 
-const initialNavbarItem: INavbarItem[] = [
+const initialNavbarItem: NavbarItem[] = [
   {
     title: 'About',
     isSelected: false,
@@ -37,7 +37,7 @@ export const HomeComponent = () => {
   const container = useRef<HTMLDivElement>(null);
   const intro = useRef<HTMLDivElement>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [navBarItems, setNavBarItems] = useState<INavbarItem[]>(initialNavbarItem);
+  const [navBarItems, setNavBarItems] = useState<NavbarItem[]>(initialNavbarItem);
   const [previousState, setPreviousState] = useState<number | undefined>(undefined);
   const [darkMode, setDarkMode] = useState(true);
   const [showCv, setShowCv] = useState(false);
@@ -84,7 +84,7 @@ export const HomeComponent = () => {
     }
   };
 
-  const onScroll = React.useCallback(() => {
+  const onScroll = useCallback(() => {
     if (isScrollingRef.current) {
       return;
     }

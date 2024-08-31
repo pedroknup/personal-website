@@ -1,67 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // const { Hamburgerrow } = hamburgerArrow;
 import './nav-bar.style.scss';
-interface INavbarItem {
+
+type NavbarItem = {
   title: string;
   id: string;
   isSelected?: boolean;
   shouldHighlight?: boolean;
   element?: any;
 }
-interface INavbarProps {
+
+type NavbarProps = {
   onClick: (id: string) => void;
   setDarkMode: (state: boolean) => void;
   darkMode: boolean;
-  items: INavbarItem[];
+  items: NavbarItem[];
 }
 
-const Navbar = (props: INavbarProps) => {
-  const [isActive, setIsActive] = React.useState(false)
-  React.useEffect(() => {
-    setIsActive(false);
-  }, [props.darkMode])
+const Navbar = ({ darkMode, setDarkMode, items, onClick }: NavbarProps) => {
+  const [isActive, setIsActive] = useState(false)
 
-  const onClick = (id: string) => {
-    props.onClick(id);
+  useEffect(() => {
+    setIsActive(false);
+  }, [darkMode])
+
+  const handleMenuItemClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+    event.preventDefault();
+    setIsActive(false);
+    onClick(id);
   };
 
   return <div>
-      <div className={`${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'} hamburger-icon`}>
-        {/* <HamburgerArow buttonWidth={36} onClick={() => { */}
-            {/* setIsActive(!isActive); */}
-          {/* }} isActive={isActive} /> */}
-      </div>
+    <div className={`${isActive ? 'is-active' : ''} ${darkMode ? '' : 'light'} hamburger-icon`}>
+      {/* <HamburgerArow buttonWidth={36} onClick={() => { */}
+      {/* setIsActive(!isActive); */}
+      {/* }} isActive={isActive} /> */}
+    </div>
 
-      <div className={`navbar links ${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'}`}>
-        {/* <div className="buttons">
-          <div className="button red" />
-          <div className="button yellow" />
-          <div className="button green" />
-        </div> */}
-        <div className="container">
-          {props.items.map((item, key) => (
-            <a
-              href="#"
-              className={item.isSelected ? 'selected' : ''}
-              key={key}
-              onClick={(e) => {
-                e.preventDefault();
-                setIsActive(false);
-                onClick(item.id);
-              }}
-            >
-              {item.title}
-              <div className="divider" />
-            </a>
-          ))}
-          <label className="toggle-dark" onClick={() => {
-              props.setDarkMode(!props.darkMode);
-            }}>
-            Toggle Dark mode
-          </label>
-        </div>
+    <div className={`navbar links ${isActive ? 'is-active' : ''} ${darkMode ? '' : 'light'}`}>
+      <div className="container">
+        {items.map((item, key) => (
+          <a
+            href="#"
+            className={item.isSelected ? 'selected' : ''}
+            key={key}
+            onClick={(e) => {
+              handleMenuItemClick(e, item.id);
+            }}
+          >
+            {item.title}
+            <div className="divider" />
+          </a>
+        ))}
+        <label className="toggle-dark" onClick={() => {
+          setDarkMode(!darkMode);
+        }}>
+          Toggle Dark mode
+        </label>
       </div>
-    </div>;
+    </div>
+  </div>;
 };
 
-export { INavbarItem, Navbar };
+export { NavbarItem, Navbar };
