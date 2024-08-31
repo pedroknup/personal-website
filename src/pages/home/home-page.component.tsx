@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { IntroPageComponent } from '../../components/intro';
 import { SkillsPage } from '../../components/skills';
@@ -7,12 +7,11 @@ import { ProfessionalExperiencesPage } from '../../components/professional-exper
 import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
 import { INavbarItem, Navbar } from '../../components/nav-bar';
-import { useLocation } from 'react-router-dom';
-
-import './home-page.style.scss';
 import { CvModal } from '../../components/cv';
 
-export interface IHomeComponentProps {}
+import './home-page.style.scss';
+
+export interface IHomeComponentProps { }
 
 const MINIMUM_STEPS = 0;
 const STEPS = 1000;
@@ -31,19 +30,19 @@ const initialNavbarItem: INavbarItem[] = [
 ];
 
 export const HomeComponent = () => {
-  const [currentPosition, setCurrentPosition] = React.useState(0);
-  const [isScrolling, setIsScrolling] = React.useState(false);
-  const isScrollingRef = React.useRef(false);
-  const [hasScrolledIntro, setHasScrolledIntro] = React.useState(false);
-  const container = React.useRef<HTMLDivElement>(null);
-  const intro = React.useRef<HTMLDivElement>(null);
-  const [hasScrolled, setHasScrolled] = React.useState(false);
-  const [navBarItems, setNavBarItems] = React.useState<INavbarItem[]>(initialNavbarItem);
-  const [previousState, setPreviousState] = React.useState<number | undefined>(undefined);
-  const [darkMode, setDarkMode] = React.useState(true);
-  const [showCv, setShowCv] = React.useState(false);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const isScrollingRef = useRef(false);
+  const [hasScrolledIntro, setHasScrolledIntro] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
+  const intro = useRef<HTMLDivElement>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [navBarItems, setNavBarItems] = useState<INavbarItem[]>(initialNavbarItem);
+  const [previousState, setPreviousState] = useState<number | undefined>(undefined);
+  const [darkMode, setDarkMode] = useState(true);
+  const [showCv, setShowCv] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.addEventListener('scroll', onScroll, true);
     setPreviousState(undefined);
 
@@ -56,13 +55,13 @@ export const HomeComponent = () => {
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     isScrollingRef.current = isScrolling;
   });
 
-  React.useEffect(
+  useEffect(
     () => {
-      if (showCv){
+      if (showCv) {
         window.history.pushState({}, '', '/personal-website/#/resume');
       } else {
         window.history.pushState({}, '', '/personal-website/#');
@@ -76,6 +75,7 @@ export const HomeComponent = () => {
       if (item.id === id) {
         return { ...item, isSelected: true, shouldHighlight };
       }
+
       return { ...item, isSelected: false, shouldHighlight: false };
     });
 
@@ -124,20 +124,18 @@ export const HomeComponent = () => {
       container.current &&
       container.current.scrollTop === 0
     ) {
-      if (container && container.current) {
-        container.current.style.overflow = 'auto';
-      }
+      container.current.style.overflow = 'auto';
     }
 
     setTimeout(() => {
       const navBarElement = document.getElementById(`${id}`);
       if (navBarElement) {
         navBarElement.scrollIntoView({ behavior: 'auto' });
-      } else {
-        console.log('Element not found');
       }
+
       setSelectedNavbarItem(id, true);
     }, 50);
+
     setTimeout(() => {
       setIsScrolling(false);
     }, SCROLL_TIMEOUT);
@@ -156,17 +154,25 @@ export const HomeComponent = () => {
       container.current.scrollTop === 0
     ) {
       let count = currentPosition + event.deltaY;
-      if (count > STEPS + MINIMUM_STEPS) count = STEPS + MINIMUM_STEPS;
-      else if (count < MINIMUM_STEPS && hasScrolledIntro) {
+
+      if (count > STEPS + MINIMUM_STEPS) {
+        count = STEPS + MINIMUM_STEPS
+      } else if (count < MINIMUM_STEPS && hasScrolledIntro) {
         count = 0;
       }
-      if (count < 0) count = 0;
+
+      if (count < 0) {
+        count = 0;
+      }
+
       if (count >= MINIMUM_STEPS && !hasScrolledIntro) {
         setHasScrolledIntro(true);
       }
+
       if (count < MINIMUM_STEPS && hasScrolledIntro) {
         count = MINIMUM_STEPS;
       }
+
       setCurrentPosition(count);
       container.current.style.overflow = 'auto';
     }
@@ -192,7 +198,6 @@ export const HomeComponent = () => {
               darkMode={darkMode}
               currentStep={0}
               previousState={previousState}
-              key={0}
               currentState={0}
               hasScrolled={hasScrolled}
               onFinish={() => {
@@ -216,7 +221,7 @@ export const HomeComponent = () => {
             <EducationPage darkMode={darkMode} />
             <BlogPage darkMode={darkMode} />
             <div className="huge">
-              <h2>Thanks for visiting my website :)</h2>
+              <h2>Thank you for visiting my website :)</h2>
             </div>
           </div>
         </div>

@@ -1,215 +1,138 @@
-var webpack = require('webpack');
-var path = require('path');
-var package = require('./package.json');
+const webpack = require('webpack');
+const path = require('path');
+const package = require('./package.json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// variables
-var isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
-var sourcePath = path.join(__dirname, './src');
-var outPath = path.join(__dirname, './build');
-
-// plugins
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+const isProduction = process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
+const sourcePath = path.join(__dirname, './src');
+const outPath = path.resolve(__dirname, 'build');
 
 module.exports = {
   context: sourcePath,
   entry: {
-    app: './main.tsx'
+    app: './main.tsx',
   },
   output: {
-    publicPath: '/personal-website/',
+    publicPath: '/',
     path: outPath,
-    filename: isProduction ? '[contenthash].js' : '[hash].js',
-    chunkFilename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js'
+    filename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js',
+    clean: true,
+    chunkFilename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js',
   },
   target: 'web',
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
-    // Fix webpack's default behavior to not load packages with jsnext:main module
-    // (jsnext:main directs not usually distributable es6 format, but es6 sources)
     mainFields: ['module', 'browser', 'main'],
     alias: {
       app: path.resolve(__dirname, 'src/app/'),
       '@api': path.resolve(__dirname, 'src/api/api'),
-      '@assets': path.resolve(__dirname, 'src/assets')
-    }
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
   },
   module: {
     rules: [
-      // .ts, .tsx
       {
         test: /\.tsx?$/,
         use: [
           !isProduction && {
             loader: 'babel-loader',
-            options: { plugins: ['react-hot-loader/babel'] }
+            options: { plugins: ['react-hot-loader/babel'] },
           },
-          'ts-loader'
-        ].filter(Boolean)
+          'ts-loader',
+        ].filter(Boolean),
       },
-
-      // // css
-      // {
-      //   test: /\.css$/,
-      //   use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }),
-      //   use: [
-      //     isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-      //     {
-      //       loader: 'css-loader',
-      //       query: {
-      //         modules: true,
-      //         sourceMap: !isProduction,
-      //         importLoaders: 1,
-      //         localIdentName: isProduction ? '[hash:base64:5]' : '[local]__[hash:base64:5]'
-      //       }
-      //     },
-      //     {
-      //       loader: 'postcss-loader',
-      //       options: {
-      //         ident: 'postcss',
-      //         plugins: [
-      //           require('postcss-import')({ addDependencyTo: webpack }),
-      //           require('postcss-url')(),
-      //           require('postcss-preset-env')({
-      //             /* use stage 2 features (defaults) */
-      //             stage: 2
-      //           }),
-      //           require('postcss-reporter')(),
-      //           require('postcss-browser-reporter')({
-      //             disabled: isProduction
-      //           })
-      //         ]
-      //       }
-      //     }
-      //   ]
-      // },
-      // scss
-      // {
-      //   // look for .css or .scss files
-      //   test: /\.scss$/,
-      //   // in the `src` directory
-      //   include: path.join(__dirname, 'src', 'styles'),
-
-      //   use: [
-      //     {
-      //       loader: 'style-loader'
-      //     },
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         discardDuplicates: true,
-      //         importLoaders: 1,
-      //         // This enables local scoped CSS based in CSS Modules spec
-      //         modules: true,
-      //         // generates a unique name for each class (e.g. app__app___2x3cr)
-      //         localIdentName: '[name]__[local]___[hash:base64:5]'
-      //       }
-      //     },
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         sourceMap: true
-      //       }
-      //     }
-      //   ]
-      // },
       {
-        test: /\.css$/i,
-        loader: 'css-loader',
-        options: {
-          modules: true
-        }
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-      // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.(a?png|svg)$/, use: 'url-loader?limit=10000' },
       {
         test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/,
-        use: 'file-loader'
+        use: 'file-loader',
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: 'file-loader'
-      }
-    ]
+    ],
   },
   optimization: {
     splitChunks: {
-      name: true,
       cacheGroups: {
         commons: {
-          chunks: 'initial',
-          minChunks: 2
+          name: 'commons',
+          chunks: 'all',
+          minChunks: 2,
+          priority: -10,
         },
         vendors: {
           test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
           chunks: 'all',
-          filename: isProduction ? 'vendor.[contenthash].js' : 'vendor.[hash].js',
-          priority: -10
-        }
-      }
+          priority: -20,
+        },
+      },
     },
-    runtimeChunk: true
+    runtimeChunk: {
+      name: (entrypoint) => `runtime-${entrypoint.name}`,
+    },
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-      DEBUG: false
+      NODE_ENV: 'development',
+      DEBUG: false,
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[hash].css',
-      disable: !isProduction
+      filename: isProduction ? '[name].[contenthash].css' : '[name].[hash].css',
     }),
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, 'src/assets/index.html'),
+    //   minify: {
+    //     minifyJS: true,
+    //     minifyCSS: true,
+    //     removeComments: true,
+    //     useShortDoctype: true,
+    //     collapseWhitespace: true,
+    //     collapseInlineTagWhitespace: true,
+    //   },
+    //   meta: {
+    //     title: package.name,
+    //     description: package.description,
+    //     keywords: Array.isArray(package.keywords) ? package.keywords.join(',') : undefined,
+    //   },
+    // }),
     new HtmlWebpackPlugin({
-      template: 'assets/index.html',
+      template: path.resolve(__dirname, 'src/assets/index.html'),
+
       minify: {
         minifyJS: true,
         minifyCSS: true,
         removeComments: true,
         useShortDoctype: true,
         collapseWhitespace: true,
-        collapseInlineTagWhitespace: true
+        collapseInlineTagWhitespace: true,
       },
       append: {
-        head: '<script src="//cdn.polyfill.io/v3/polyfill.min.js"></script>'
+        head: '<script src="//cdn.polyfill.io/v3/polyfill.min.js"></script>',
       },
       meta: {
         title: package.name,
         description: package.description,
-        keywords: Array.isArray(package.keywords) ? package.keywords.join(',') : undefined
-      }
-    })
+        keywords: Array.isArray(package.keywords) ? package.keywords.join(',') : undefined,
+      },
+    }),
   ],
   devServer: {
-    // contentBase: sourcePath,
-    hot: true,
-    inline: true,
-    historyApiFallback: {
-      disableDotRule: true
+    static: {
+      directory: outPath,
     },
-    stats: 'minimal',
-    clientLogLevel: 'warning',
-    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'build')],
+    compress: true,
+    port: 9000, // or any other port you prefer
+    historyApiFallback: true,
   },
-  // https://webpack.js.org/configuration/devtool/
-  devtool: isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map',
-  node: {
-    // workaround for webpack-dev-server issue
-    // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
-    fs: 'empty',
-    net: 'empty'
-  }
+  devtool: isProduction ? 'hidden-source-map' : 'cheap-module-source-map',
 };

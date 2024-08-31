@@ -1,6 +1,5 @@
-import * as React from 'react';
-const hamburgerArrow = require('react-animated-burgers');
-const { HamburgerArrow } = hamburgerArrow;
+import React from 'react';
+// const { Hamburgerrow } = hamburgerArrow;
 import './nav-bar.style.scss';
 interface INavbarItem {
   title: string;
@@ -28,9 +27,9 @@ const Navbar = (props: INavbarProps) => {
 
   return <div>
       <div className={`${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'} hamburger-icon`}>
-        <HamburgerArrow buttonWidth={36} onClick={() => {
-            setIsActive(!isActive);
-          }} isActive={isActive} />
+        {/* <HamburgerArow buttonWidth={36} onClick={() => { */}
+            {/* setIsActive(!isActive); */}
+          {/* }} isActive={isActive} /> */}
       </div>
 
       <div className={`navbar links ${isActive ? 'is-active' : ''} ${props.darkMode ? '' : 'light'}`}>
