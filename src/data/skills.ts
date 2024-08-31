@@ -8,155 +8,140 @@ type SkillItem = {
 const skillsFront: SkillItem[] = [
   {
     id: 0,
-    name: 'HTML+JS+CSS',
-    content: `I like to play with those languages since I was a kid. I'm always challenging myself creating different layouts scenarios and keeping up-to-date with the design trends. I consider my html+css skills advanced.`,
+    name: 'HTML, JavaScript, CSS',
+    content: `My journey with HTML, JavaScript, and CSS began in my early years and has evolved significantly over time. I consistently challenge myself by designing diverse layouts and staying abreast of the latest design trends. My proficiency in HTML and CSS is advanced.`,
     progress: 90
-  },
-  {
-    id: 2,
-    name: 'Vue',
-    content: `At my current job at Media.Monks, I've been using Vue intensively.`,
-    progress: 80
   },
   {
     id: 1,
     name: 'React',
-    content: `I've been studying and working with React intensively. I'm constantly following the new releases of it. On my React projects, I like to use Redux (or context), Typescript and SCSS.`,
-    progress: 70
+    content: `I have a deep understanding of React, having worked intensively with it. I stay updated with its latest releases and incorporate tools such as Redux (or Context), TypeScript, and SCSS in my React projects.`,
+    progress: 90
+  },
+  {
+    id: 2,
+    name: 'Vue.js',
+    content: `I have extensive experience with Vue.js, utilizing it in various projects to build dynamic and responsive user interfaces.`,
+    progress: 80
   },
   {
     id: 3,
-    name: 'Webpack ',
-    content: `I'm able to configure the build tool to better satisfy the project's requirements.`,
+    name: 'Webpack',
+    content: `I am proficient in configuring Webpack to meet the specific needs of a project, ensuring optimal build performance and output.`,
     progress: 70
   },
   {
     id: 100,
     name: 'Lit',
-    content: `I've been working with Lit quite a lot recently `,
+    content: `I have recently gained considerable experience with Lit, applying it to various projects for efficient and scalable web component development.`,
     progress: 60
   },
   {
     id: 4,
     name: 'GSAP',
-    content: `I feel quite comfortable working with GSAP`,
+    content: `I am quite adept at using GSAP for creating sophisticated animations and interactive effects in web applications.`,
     progress: 60
   },
   {
     id: 512,
-    name: 'AngularJS + Angular 2',
-    content:
-      "I haven't had a solid experience it with so far. But I know how it works and its fundamentals and I prefer to avoid it",
+    name: 'AngularJS & Angular',
+    content: `Although my experience with AngularJS and Angular is limited, I understand their core principles and fundamentals. However, I currently prefer other frameworks for my projects.`,
     progress: 20
   }
 ];
+
 const skillsBack: SkillItem[] = [
   {
     id: 5,
-    name: 'NodeJS',
-    content:
-      `I've been intensively using NodeJS for my projects. For Web services, I like to use ExpressJS with TypeScript and some object-relational mapping framework, such as Loopback, TypeORM, Mongoose etc. For tests I use Jest.`,
+    name: 'Node.js',
+    content: `I have substantial experience with Node.js, particularly in developing web services using Express.js with TypeScript. I also employ various object-relational mapping frameworks, such as LoopBack, TypeORM, and Mongoose, and utilize Jest for testing.`,
     progress: 90
   },
   {
     id: 6,
-    name: 'Relational DB',
-    content:
-      `I've been working with relational databases since I started programming (15 years ago). I consider my database knowledge advanced.`,
+    name: 'Relational Databases',
+    content: `With over 15 years of experience working with relational databases, I possess advanced knowledge in database design, management, and optimization.`,
     progress: 80
   },
   {
     id: 400,
     name: '.NET',
-    content:
-     `I had several .NET experiences, with both Core (v1.0 & v2.0) and Framework. I delivered big projects where some of them I had to deal with millions of data (from the database and third-party web services). I haven't worked with .NET since the release of .NET Core 3.`,
+    content: `I have a robust background in .NET, including both .NET Core (v1.0 & v2.0) and the .NET Framework. I have managed large-scale projects involving extensive data processing. My experience with .NET has not extended beyond .NET Core 3.`,
     progress: 70
   },
   {
     id: 7,
-    name: 'NoSQL DB',
-    content:
-      'Normally I use MongoDB when I am working on a Serverless application or when the DB structure is relatively simple and will store a big amount of data. ',
+    name: 'NoSQL Databases',
+    content: `I typically use MongoDB for serverless applications or scenarios requiring flexible data structures and substantial data storage.`,
     progress: 70
   },
   {
     id: 8,
     name: 'Docker',
-    content:
-      `Docker makes our lives easier. I've been using it for almost every project I'm working on`,
+    content: `Docker is a key tool in my development workflow, and I integrate it into nearly every project to streamline development and deployment processes.`,
     progress: 70
   },
   {
     id: 9,
     name: 'Google Cloud Platform',
-    content:
-    `At my work at Media.Monks, we used a lot of GCP to host and implement apps for Google (Google Cloud and Youtube), from Cloud functions, CI/CD pipelines and app hosting.`,
-    progress: 50
+    content: `At Media.Monks, I extensively utilized Google Cloud Platform for hosting and implementing applications across various Google services, including Cloud Functions, CI/CD pipelines, and app hosting.`,
+    progress: 80
   },
   {
     id: 90,
-    name: 'Microsoft Azure',
-    content:
-    `I use Azure to host some personal projects. Serverless applications, CI/CD pipelines, hosting, function apps and so on. `,
-    progress: 20
+    name: 'Microsoft Azure DevOps',
+    content: `I have extensively used Azure DevOps for my personal projects and at most of the clients, specially at Rabobank.`,
+    progress: 80
   },
   {
     id: 11,
     name: 'Google Firebase',
-    content:
-      `I used Firebase to host some web apps when I did freelancing and at my work at Media.Monks.`,
+    content: `I have employed Firebase for hosting web applications both during freelancing and at Media.Monks.`,
     progress: 40
   },
   {
     id: 10,
     name: 'Java',
-    content:
-      'I only worked with Java during highschool and university. I am not a Java expert, but I am able to understand and write Java code.',
+    content: `My experience with Java is limited to high school and university. While far away from being a Java specialist, I am capable of understanding and writing Java code.`,
     progress: 20
   },
   {
     id: 12,
     name: 'AWS',
-    content:
-    `I used AWS to host the biggest Mobile App I have made (Cabe+1). But I switched to Azure due the cheaper Azure plan I got.`,
+    content: `I utilized AWS for hosting a significant mobile application (Cabe+1) before transitioning to Azure DevOps due to a more cost-effective plan.`,
     progress: 20
-  },
+  }
 ];
 
 const skillsMobile: SkillItem[] = [
   {
     id: 14,
     name: 'React Native',
-    content:
-      `I've been studying React Native since 2018 and I used it for some freelance projects. I'm able to build native mobile application at an awesome speed.`,
+    content: `Since 2018, I have been working with React Native for various freelance projects, enabling rapid development of native mobile applications.`,
     progress: 80
   },
   {
     id: 15,
     name: 'Xamarin',
-    content:
-      `With my knowledge on C#, I was quickly building rich and well written mobile native applications. It was what I needed for mobile development. But nowadays, I've switched to React Native.`,
+    content: `Leveraging my C# expertise, I efficiently developed rich mobile applications with Xamarin. However, I have since transitioned to React Native for my mobile development needs.`,
     progress: 50
   },
   {
     id: 16,
     name: 'Flutter',
-    content:
-      `Not much solid experience with Flutter but I've written some simple and functional apps with it.`,
+    content: `While my experience with Flutter is not extensive, I have created functional and straightforward applications using this framework.`,
     progress: 30
   },
   {
     id: 17,
     name: 'Android',
-    content:
-     `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
+    content: `I have explored Android development primarily to resolve issues in Xamarin and React Native projects.`,
     progress: 20
   },
   {
     id: 18,
     name: 'iOS',
-    content:
-    `Just for curiosity, to help me solving some possible problems in Xamarin and React.`,
+    content: `My familiarity with iOS development is mainly to support problem-solving in Xamarin and React Native contexts.`,
     progress: 20
   }
 ];
@@ -165,44 +150,38 @@ const skillsOther: SkillItem[] = [
   {
     id: 19,
     name: 'Photoshop & Illustrator',
-    content:
-     `I am a photography/design enthusiast. I have solid knowledge on photo manipulation and graphics creation (logo, banners, flyers, UI design etc).`,
+    content: `As a photography and design enthusiast, I possess strong skills in photo manipulation and graphic design, including logo creation, banners, flyers, and UI design.`,
     progress: 80
   },
   {
     id: 20,
     name: 'Git',
-    content:
-      `I follow the git best practices (by Github). `,
+    content: `My version control tool that I used since the very beginning, I adhere to best practices for version control as recommended by GitHub, ensuring effective and efficient code management.`,
     progress: 70
   },
   {
     id: 21,
     name: 'Illustration',
-    content:
-    `I like to draw since I was a kid. Usually I work with graphite, markers, oil & acrylic painting, nankin and watercolor. I got to know digital painting a couple of years ago and I loved it too.`,
+    content: `Drawing has been a passion of mine from a young age. I work with various traditional mediums such as graphite, markers, oil and acrylic paints, as well as digital painting, which I discovered and embraced in recent years.`,
     progress: 70
   },
   {
     id: 22,
     name: 'Scrum',
-    content:
-     `I've been working with scrum in the past 3 years. Usually it's based on 2 weeks sprints with daily stand-up, retrospective and planning scrum meetings. I enjoyed pretty much the Jeff Sutherlands' book: "Scrum: The Art of Doing Twice the Work in Half the Time".`,
-    progress: 50
+    content: `Over the past three years, I have actively participated in Scrum methodologies, typically working in two-week sprints with regular stand-ups, retrospectives, and planning meetings. I have found Jeff Sutherland’s book, "Scrum: The Art of Doing Twice the Work in Half the Time," particularly insightful. I have experience in working close to the Product Owner and stakeholders, managing the backlog, and estimating tasks and features.`,
+    progress: 70
   },
   {
     id: 23,
     name: 'Audiovisual Production',
-    content:
-    `I used to make music and produce them on Reaper/Logic Pro. I recorded every instrument and proper mixed on DAW. I also liked record myself playing some music in some instrument and upload it to my social networks (Youtube and Facebook). I've also directed some amateur short-films.`,
+    content: `I have experience in music production using Reaper and Logic Pro, including recording and mixing. I also enjoy recording and sharing music performances on social media platforms and have directed several amateur short films.`,
     progress: 50
   },
   {
     id: 24,
     name: '3D Modeling',
-    content:
-    `Another hobby out from my curiosity. I used to car fanatic when I was a kid and that motivated me to learn 3D modelling. I chose Autodesk 3D Studio Max and spent many hours on learning. I loved it, it's relaxing and stress reliever for me. I have a solid knowledge on geometric modeling (non-organic) and a little bit of animation.`,
-    progress: 30
+    content: `My interest in cars as a child led me to learn 3D modeling using Autodesk 3D Studio Max. I have developed solid skills in geometric modeling and a basic understanding of animation, finding the process both relaxing and rewarding.`,
+    progress: 40
   }
 ];
 
@@ -210,88 +189,43 @@ const skillsCV = [
   {
     section: 'Front-end',
     items: [
-      {
-        name: 'VueJS (2 & 3)',
-        icon: '',
-      },
-      {
-        name: 'ReactJS & React Native',
-        icon: '',
-      },
-      {
-        name: 'LitJS',
-        icon: '',
-      },
-      {
-        name: 'Build tools (Webpack, Rollup, Vite)',
-        icon: '',
-      },
-      {
-        name: 'Interactive App (gsap, pixijs, threejs)',
-        icon: '',
-      }
+      { name: 'ReactJS & React Native', icon: '' },
+      { name: 'Vue.js (2 & 3)', icon: '' },
+      { name: 'LitJS', icon: '' },
+      { name: 'Build Tools (Webpack, Rollup, Vite)', icon: '' },
+      { name: 'Interactive Apps (GSAP, PixiJS, Three.js)', icon: '' }
     ]
   },
   {
     section: 'Back-end',
     items: [
-      {
-        name: 'NodeJS (ExpressJS)',
-        icon: '',
-      },
-      {
-        name: 'Python',
-        icon: '',
-      },
-      {
-        name: 'C# (.NET Core & Framework)',
-        icon: '',
-      },
+      { name: 'Node.js', icon: '' },
+      { name: 'Python', icon: '' },
+      { name: 'C# (.NET Core & Framework)', icon: '' }
     ]
   },
   {
     section: 'Mobile',
     items: [
-      {
-        name: 'React Native',
-        icon: '',
-      },
-      {
-        name: 'Flutter',
-        icon: '',
-      },
+      { name: 'React Native', icon: '' },
+      { name: 'Flutter', icon: '' }
     ]
   },
   {
     section: 'Database',
     items: [
-      {
-        name: 'SQL (MySQL, PostgreSQL, MSSQL)',
-        icon: '',
-      },
-      {
-        name: 'NoSQL (MongoDB, Firebase)',
-        icon: '',
-      },
+      { name: 'SQL (MySQL, PostgreSQL, MSSQL)', icon: '' },
+      { name: 'NoSQL (MongoDB, Firebase)', icon: '' }
     ]
   },
   {
     section: 'Cloud',
     items: [
-      {
-        name: 'Google Cloud Platform',
-        icon: '',
-      },
-      {
-        name: 'Google Firebase',
-        icon: '',
-      },
-      {
-        name: 'AWS',
-        icon: '',
-      },
+      { name: 'Azure DevOps', icon: '' },
+      { name: 'Google Cloud Platform', icon: '' },
+      { name: 'AWS', icon: '' }
     ]
-  },
-]
+  }
+];
 
 export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV };

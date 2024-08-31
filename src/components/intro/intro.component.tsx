@@ -52,7 +52,7 @@ export const IntroPageComponent = ({ onFinish, hasScrolled, darkMode, previousSt
         <div className="social-icons">
           <SocialIcon  bgColor="transparent"  target='_blank' url="https://www.linkedin.com/in/pedroknup" />
           <SocialIcon  bgColor="transparent" target='_blank' url="https://www.facebook.com/pedroknup" />
-          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.github,com/pedroknup" />
+          <SocialIcon  bgColor="transparent" target='_blank' url="https://www.github.com/pedroknup" />
           <SocialIcon  bgColor="transparent" target='_blank' url="https://www.instagram.com/pedroknup" />
           <SocialIcon  bgColor="transparent" target='_blank' url="https://www.pedroknup.deviantart.com" />
         </div>
