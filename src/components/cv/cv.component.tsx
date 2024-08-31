@@ -110,6 +110,13 @@ export const CvModal = ({ onClose }: CvProps) => {
               </div>)}
             </div>
           </div>
+          <div>
+            <h3>Personal Note</h3>
+            <div>
+              When I am not coding, I am either painting or record some music in my home studio
+            </div>
+          </div>
+
         </div>
         <div className="cv-modal__content__section">
           <div className="cv-modal__content__section__timeline-bar" />

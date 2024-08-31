@@ -73,12 +73,13 @@ $main-color: #f5cd38;
       }
 
       p {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         color: black;
         max-height: 1000px;
         transition: all 0.3s ease-in-out;
         overflow: hidden;
+        white-space: break-spaces;
       }
 
       &__container {
@@ -160,12 +161,12 @@ $main-color: #f5cd38;
     height: fit-content;
     font-family: 'Montserrat', sans-serif;
     gap: 16px;
+    color: #dbd0bf;
 
     &__contact {
       min-height: 100%;
       background-color: #545454;
       padding: 16px;
-      color: white;
       width: 260px;
 
       display: flex;
@@ -177,7 +178,7 @@ $main-color: #f5cd38;
         gap: 8px;
 
         a {
-          color: white;
+          color: inherit;
         }
       }
 
