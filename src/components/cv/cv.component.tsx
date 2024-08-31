@@ -37,7 +37,7 @@ export const CvModal = ({ onClose }: CvProps) => {
     setIsOpen(false);
     setTimeout(() => {
       onClose();
-    }, 320);
+    }, 380);
   };
 
   useEffect(() => {
@@ -47,35 +47,35 @@ export const CvModal = ({ onClose }: CvProps) => {
   }, [])
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
+    <div className={`header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open': ''}`}>
+      <div className="profile-image-wrapper">
+        <img src={personalData.profilePic} alt="profile" />
+      </div>
+      <div className="header__title">
+        <div className="header__title__container">
+          <div className="flex">
+            <h2>{personalData.name}</h2>
+            <span className="position">{personalData.position}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
-      <div className="cv-modal__header expanded">
-        <div className="cv-modal__header__image">
-          <img src={personalData.profilePic} alt="profile" />
-        </div>
-        <div className="cv-modal__header__title">
-          <div className="cv-modal__header__title__container">
-            <div className="position-wrapper">
-              <h1>{personalData.name}</h1>
-              <span className="position collapsed">{personalData.position}</span>
-            </div>
-            <span className="position expanded">{personalData.position}</span>
-          </div>
-          <p>{personalData.bio}</p>
-        </div>
+    <div className={`header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open': ''}`}>
+      <div className="profile-image-wrapper">
+        <img src={personalData.profilePic} alt="profile" />
       </div>
-      <div className="cv-modal__header flat">
-        <div className="cv-modal__header__image">
-          <img src={personalData.profilePic} alt="profile" />
-        </div>
-        <div className="cv-modal__header__title">
-          <div className="cv-modal__header__title__container">
-            <div className="position-wrapper">
-              <h1>{personalData.name}</h1>
-              <span className="position collapsed">{personalData.position}</span>
-            </div>
+      <div className="header__title">
+        <div className="header__title__container">
+          <div className="position-wrapper">
+            <h1>{personalData.name}</h1>
           </div>
+          <span className="position expanded">{personalData.position}</span>
         </div>
+        <p>{personalData.bio}</p>
       </div>
+    </div>
       <div className="cv-modal__content">
         <div className="cv-modal__content__contact">
           <div>
