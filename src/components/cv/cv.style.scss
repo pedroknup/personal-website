@@ -47,6 +47,11 @@ $main-color: #f5cd38;
     box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
     transition: all 0.3s ease-in-out;
 
+    &.flat {
+      max-height: 0;
+      opacity: 0;
+    }
+
     &__image {
       $image-size: 200px;
       min-width: $image-size;
@@ -63,6 +68,7 @@ $main-color: #f5cd38;
         object-fit: cover;
       }
     }
+
 
     &__title {
       h1 {
@@ -94,6 +100,10 @@ $main-color: #f5cd38;
           font-family: 'Montserrat', sans-serif;
         }
       }
+    }
+
+    &.flat {
+      border: 1px solid red;
     }
   }
 
@@ -127,32 +137,15 @@ $main-color: #f5cd38;
       }
     }
 
-    .cv-modal__header {
-      padding: 6px 66px 6px 12px;
-      gap: 16px;
-      align-items: center;
+    .cv-modal__header.expanded {
+      max-height: 0;
+      opacity: 0;
+      margin-block: 0;
+    }
 
-      &__image {
-        $image-size: 32px;
-        min-width: $image-size;
-        max-width: $image-size;
-        min-height: $image-size;
-        max-height: $image-size;
-      }
-
-      &__title {
-        margin-top: -3px;
-
-        h1 {
-          font-size: 24px;
-        }
-
-        p {
-          max-height: 0;
-          opacity: 0;
-          margin-block: 0;
-        }
-      }
+    .cv-modal__header.flat {
+      max-height: unset;
+      opacity: 1;
     }
   }
 

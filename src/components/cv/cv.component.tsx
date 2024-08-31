@@ -48,7 +48,7 @@ export const CvModal = ({ onClose }: CvProps) => {
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
     <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
-      <div className="cv-modal__header">
+      <div className="cv-modal__header expanded">
         <div className="cv-modal__header__image">
           <img src={personalData.profilePic} alt="profile" />
         </div>
@@ -61,6 +61,19 @@ export const CvModal = ({ onClose }: CvProps) => {
             <span className="position expanded">{personalData.position}</span>
           </div>
           <p>{personalData.bio}</p>
+        </div>
+      </div>
+      <div className="cv-modal__header flat">
+        <div className="cv-modal__header__image">
+          <img src={personalData.profilePic} alt="profile" />
+        </div>
+        <div className="cv-modal__header__title">
+          <div className="cv-modal__header__title__container">
+            <div className="position-wrapper">
+              <h1>{personalData.name}</h1>
+              <span className="position collapsed">{personalData.position}</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="cv-modal__content">
