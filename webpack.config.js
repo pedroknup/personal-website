@@ -15,7 +15,7 @@ module.exports = {
     app: './main.tsx',
   },
   output: {
-    publicPath: '/',
+    publicPath: '/personal-website/',
     path: outPath,
     filename: isProduction ? '[name].[contenthash].js' : '[name].[hash].js',
     clean: true,
