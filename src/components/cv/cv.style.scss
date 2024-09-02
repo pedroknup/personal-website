@@ -334,6 +334,39 @@ $image-size: 200px;
   }
 }
 
+.expand-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.3s ease-in-out;
+  padding: 4px 8px;
+  margin: 8px auto 0;
+  position: relative;
+  display: block;
+  opacity: 0;
+}
+
+.description-wrapper {
+  cursor: pointer;
+  display: block;
+  align-items: center;
+  padding: 4px 4px 24px;;
+  border-radius: 4px;
+  margin: -4px;
+
+  &:hover {
+    border: 2px dashed $main-color;
+    margin: 0;
+    margin: -6px;
+
+    .expand-button {
+      opacity: 1;
+    }
+  }
+}
+
+
 .header {
   max-height: 0;
   opacity: 0;
@@ -344,11 +377,10 @@ $image-size: 200px;
     max-height: 100vh;
     opacity: 1;
   }
-
 }
 
 .header.expanded {
-  position: sticky;
+  position: relative;
   padding: 36px 24px 24px;
   top: 0;
   left: 0;
@@ -425,4 +457,33 @@ $image-size: 200px;
   display: flex;
   gap: 16px;
   align-items: baseline;
+}
+
+.experience-chevron::before {
+  border-style: solid;
+  border-width: 0.1em 0.1em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 7px;
+  position: relative;
+  top: 18px;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.experience-chevron.right:before {
+  left: -25px;
+  transform: rotate(135deg);
+}
+
+.experience-chevron.bottom:before {
+  left: -27px;
+  top: 22px;
+  transform: rotate(315deg);
+}
+
+.experience-chevron.left:before {
+  transform: rotate(-135deg);
 }
