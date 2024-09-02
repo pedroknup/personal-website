@@ -1,17 +1,24 @@
+type Project = {
+  title: string,
+  content: string,
+}
+
+export type Description = {
+  content: {
+    web: string,
+    cv: string,
+  },
+  projects?: Project[],
+}
+
 export type Experience = {
   title: string;
   date: string;
   link: string;
   icon: string;
-  description: string;
+  place: string;
   defaultOpened?: boolean;
-  content: {
-    content: string;
-    items?: {
-      title: string;
-      content: string;
-    }[];
-  };
+  description: Description;
   skills?: string[];
 }
 

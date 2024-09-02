@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './experience-item.style.scss';
 import { ExperienceItemProps } from '../../../types/experience';
+import Markdown from 'markdown-to-jsx';
 
-export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, description, content }: ExperienceItemProps) => {
+export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, place, description }: ExperienceItemProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpened);
 
   const toggleOpen = () => {
@@ -22,20 +23,20 @@ export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, descr
       <div className="content2">
         <div className="date">{date}</div>
         <div className="title">{title}</div>
-        <div className="name">{`//${'*'} ${description}`}</div>
+        <div className="name">{`//${'*'} ${place}`}</div>
       </div>
     </div>
     <div className={`content3 ${isOpen ? 'open' : ''}`}>
-      {content.content.split('\n').map((item: string, i: number) => {
+      {description.content.web.split('\n').map((item: string, i: number) => {
         return <p key={i}>{item}</p>;
       })}
-      {content.items &&
+      {description.projects &&
         <div>
           <br />
 
           Projects Highlights:
-          {content.items?.map((item: any, i: number) => {
-            return <p key={i}><span className="project-title">{item.title}</span>: <span dangerouslySetInnerHTML={{ __html: item.content }}></span></p>;
+          {description.projects.map((item, i: number) => {
+            return <p key={i}><span className="project-title">{item.title}</span>: <Markdown>{item.title}</Markdown></p>;
           })}
         </div>
       }

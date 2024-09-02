@@ -169,10 +169,10 @@ export const CvModal = ({ onClose }: CvProps) => {
                 <div className="cv-modal__content__section__item__date">{experience.date}</div>
               </div>
               <div className="cv-modal__content__section__item__location">
-                {experience.description}
+                {experience.place}
               </div>
               <div className="cv-modal__content__section__item__content">
-                <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{experience.content.content as any}</Markdown>
+                <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{experience.description.content.cv}</Markdown>
               </div>
               {experience.skills && (<div className="cv-modal__content__section__item__skills">
                 <strong>Skills:</strong> {experience.skills?.join(' · ')}.
@@ -195,10 +195,10 @@ export const CvModal = ({ onClose }: CvProps) => {
                 <div className="cv-modal__content__section__item__date">{education.date}</div>
               </div>
               <div className="cv-modal__content__section__item__location">
-                {education.description}
+                {education.place}
               </div>
               <div className="cv-modal__content__section__item__content">
-                {education.content.content}
+                {education.description.content.cv}
               </div>
             </div>
           ))}
