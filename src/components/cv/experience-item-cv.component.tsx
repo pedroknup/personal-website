@@ -4,6 +4,7 @@ import _ from 'lodash';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './cv.style.scss';
+import './experience-item-cv.style.scss';
 import { Description } from '../../../types/experience';
 
 type ExperienceItemCvProps = {
@@ -17,10 +18,10 @@ type ExperienceItemCvProps = {
 }
 
 export const ExperienceItemCv = ({ onExpandClick, skills, title, date, place, description, isExpanded }: ExperienceItemCvProps) => {
-  return <div className="experience-item-cv">
-    <div className="section__item__header">
-      <div className="cv-modal__content__section__item__title">{title}</div>
-      <div className="cv-modal__content__section__item__date">{date}</div>
+  return <div className="experience-item-cv ExperienceItemCv">
+    <div className="header">
+      <div className="title">{title}</div>
+      <div className="date">{date}</div>
     </div>
     <div className="cv-modal__content__section__item__location">
       {place}

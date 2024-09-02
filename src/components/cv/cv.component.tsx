@@ -61,12 +61,12 @@ export const CvModal = ({ onClose }: CvProps) => {
   }, [])
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
-    <div className={`header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+    <div className={`cv-header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="profile-image-wrapper">
         <img src={personalData.profilePic} alt="profile" />
       </div>
-      <div className="header__title">
-        <div className="header__title__container">
+      <div className="cv-header__title">
+        <div className="cv-header__title__container">
           <div className="flex">
             <h2>{personalData.name}</h2>
             <span className="position">{personalData.position}</span>
@@ -76,12 +76,12 @@ export const CvModal = ({ onClose }: CvProps) => {
     </div>
 
     <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
-      <div className={`header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+      <div className={`cv-header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
         <div className="profile-image-wrapper">
           <img src={personalData.profilePic} alt="profile" />
         </div>
-        <div className="header__title">
-          <div className="header__title__container">
+        <div className="cv-header__title">
+          <div className="cv-header__title__container">
             <div className="position-wrapper">
               <h1>{personalData.name}</h1>
             </div>
