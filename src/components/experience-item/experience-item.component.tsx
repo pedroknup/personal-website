@@ -35,8 +35,8 @@ export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, place
           <br />
 
           Projects Highlights:
-          {description.projects.map((item, i: number) => {
-            return <p key={i}><span className="project-title">{item.title}</span>: <Markdown>{item.title}</Markdown></p>;
+          {description.projects.map((item, index) => {
+            return <p key={index}><span className="project-title">{item.title}</span>: <Markdown>{item.title}</Markdown></p>;
           })}
         </div>
       }
