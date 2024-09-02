@@ -4,6 +4,7 @@ import _ from 'lodash';
 import personalData, { skillsCV, softSkillsCV } from '../../data';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import './cv.style.scss';
+import { ExperienceItemCv } from './experience-item-cv.component';
 
 type CvProps = {
   onClose: () => void;
@@ -175,28 +176,15 @@ export const CvModal = ({ onClose }: CvProps) => {
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
           {professionalExperiences.map((experience, index) => (
-            <div className="cv-modal__content__section__item" key={`professional-${index}`}>
-              <div className="cv-modal__content__section__item__header">
-                <div className="cv-modal__content__section__item__title">{experience.title}</div>
-                <div className="cv-modal__content__section__item__date">{experience.date}</div>
-              </div>
-              <div className="cv-modal__content__section__item__location">
-                {experience.place}
-              </div>
-              <div className="description-wrapper" onClick={() => handleOnExpandExperience(index)}>
-                <div>
-                  <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{expandedExperienceDescriptionIndexes.includes(index) ? experience.description.content.web : experience.description.content.cv}</Markdown>
-
-                  {experience.skills && (<div className="cv-modal__content__section__item__skills">
-                    <strong>Skills:</strong> {experience.skills?.join(' · ')}.
-                  </div>)}
-                </div>
-                <button className="expand-button" onClick={() => handleOnExpandExperience(index)}>
-                  {expandedExperienceDescriptionIndexes.includes(index) ? 'Collapse' : 'Expand'}
-                  <span className={`experience-chevron ${expandedExperienceDescriptionIndexes.includes(index) ? 'bottom' : 'right'}`} />
-                </button>
-              </div>
-            </div>
+            <ExperienceItemCv
+              title={experience.title}
+              date={experience.date}
+              place={experience.place}
+              description={experience.description}
+              skills={experience.skills}
+              onExpandClick={() => handleOnExpandExperience(index)}
+              isExpanded={expandedExperienceDescriptionIndexes.includes(index)}
+            />
           ))}
           <div className="cv-modal__content__section__divider" />
 
