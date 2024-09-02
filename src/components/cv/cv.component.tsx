@@ -1,6 +1,7 @@
 import React, { useEffect, UIEvent, useState } from 'react';
+import Markdown from "markdown-to-jsx";
 import _ from 'lodash';
-import personalData, { skillsCV } from '../../data';
+import personalData, { skillsCV, softSkillsCV } from '../../data';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import './cv.style.scss';
 
@@ -47,7 +48,7 @@ export const CvModal = ({ onClose }: CvProps) => {
   }, [])
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
-    <div className={`header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open': ''}`}>
+    <div className={`header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
       <div className="profile-image-wrapper">
         <img src={personalData.profilePic} alt="profile" />
       </div>
@@ -62,20 +63,20 @@ export const CvModal = ({ onClose }: CvProps) => {
     </div>
 
     <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
-    <div className={`header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open': ''}`}>
-      <div className="profile-image-wrapper">
-        <img src={personalData.profilePic} alt="profile" />
-      </div>
-      <div className="header__title">
-        <div className="header__title__container">
-          <div className="position-wrapper">
-            <h1>{personalData.name}</h1>
-          </div>
-          <span className="position expanded">{personalData.position}</span>
+      <div className={`header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+        <div className="profile-image-wrapper">
+          <img src={personalData.profilePic} alt="profile" />
         </div>
-        <p>{personalData.bio}</p>
+        <div className="header__title">
+          <div className="header__title__container">
+            <div className="position-wrapper">
+              <h1>{personalData.name}</h1>
+            </div>
+            <span className="position expanded">{personalData.position}</span>
+          </div>
+          <p>{personalData.bio}</p>
+        </div>
       </div>
-    </div>
       <div className="cv-modal__content">
         <div className="cv-modal__content__contact">
           <div>
@@ -124,6 +125,28 @@ export const CvModal = ({ onClose }: CvProps) => {
             </div>
           </div>
           <div>
+            <h3>Soft Skills</h3>
+            <div className="gapped-list">
+              {softSkillsCV.map((section, key) => <div className="cv-modal__content__contact__skill">
+                {section.section && (<div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
+                  {section.section}
+                </div>)}
+                <ul className="cv-modal__content__contact__skill__section__content">
+                  {section.items.map((skill, key2) => (
+                    <li
+                      key={`skill-item-${key2}`}
+                      className="cv-modal__content__contact_skill__item"
+                    >
+                      <div className="cv-modal__content__contact_skill__item__title">
+                        {skill.name}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>)}
+            </div>
+          </div>
+          <div>
             <h3>Personal Note</h3>
             <div>
               When I am not coding, I am either painting or record some music in my home studio
@@ -149,7 +172,7 @@ export const CvModal = ({ onClose }: CvProps) => {
                 {experience.description}
               </div>
               <div className="cv-modal__content__section__item__content">
-                {experience.content.content}
+                <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{experience.content.content as any}</Markdown>
               </div>
               {experience.skills && (<div className="cv-modal__content__section__item__skills">
                 <strong>Skills:</strong> {experience.skills?.join(' · ')}.
@@ -190,5 +213,5 @@ export const CvModal = ({ onClose }: CvProps) => {
         CLOSE
       </button>
     </div>
-  </div>;
+  </div >;
 };

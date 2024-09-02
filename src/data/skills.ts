@@ -227,5 +227,17 @@ const skillsCV = [
     ]
   }
 ];
+const softSkillsCV = [
+  {
+    section: '',
+    items: [
+      { name: 'Team player', icon: '' },
+      { name: 'Leader', icon: '' },
+      { name: 'Social', icon: '' },
+      { name: 'Creative', icon: '' },
+      { name: 'Good with design', icon: '' },
+    ]
+  },
+];
 
-export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV };
+export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV,  softSkillsCV };
