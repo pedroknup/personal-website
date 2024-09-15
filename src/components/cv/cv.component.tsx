@@ -195,19 +195,28 @@ export const CvModal = ({ onClose }: CvProps) => {
             <div className="cv-modal__content__section__title">Education</div>
           </div>
 
-          {educationalExperiences.map((education, key) => (
-            <div className="cv-modal__content__section__item" key={`education-${key}`}>
-              <div className="cv-modal__content__section__item__header">
-                <div className="cv-modal__content__section__item__title">{education.title}</div>
-                <div className="cv-modal__content__section__item__date">{education.date}</div>
-              </div>
-              <div className="cv-modal__content__section__item__location">
-                {education.place}
-              </div>
-              <div className="cv-modal__content__section__item__content">
-                {education.description.content.cv}
-              </div>
-            </div>
+          {educationalExperiences.map((education, index) => (
+            <ExperienceItemCv
+              title={education.title}
+              date={education.date}
+              place={education.place}
+              description={education.description}
+              skills={education.skills}
+              onExpandClick={() => handleOnExpandExperience(index + 100)}
+              isExpanded={expandedExperienceDescriptionIndexes.includes(index + 100)}
+            />
+            // <div className="cv-modal__content__section__item" key={`education-${key}`}>
+            //   <div className="cv-modal__content__section__item__header">
+            //     <div className="cv-modal__content__section__item__title">{education.title}</div>
+            //     <div className="cv-modal__content__section__item__date">{education.date}</div>
+            //   </div>
+            //   <div className="cv-modal__content__section__item__location">
+            //     {education.place}
+            //   </div>
+            //   <div className="cv-modal__content__section__item__content">
+            //     {education.description.content.cv}
+            //   </div>
+            // </div>
           ))}
         </div>
       </div>
