@@ -10,8 +10,7 @@ const educationalExperiences: Experience[] = [
     description: {
       content: {
         web:
-          `
-UNIFEI, or the Federal University of Itajubá (Universidade Federal de Itajubá), is a prominent federal university located in the state of Minas Gerais, Brazil. Established in 1913, it is recognized as one of the top engineering schools in the country. UNIFEI is esteemed for its rigorous academic programs and research output, making it a leading institution in technological education in Brazil. Its reputation is bolstered by over a century of tradition in engineering education, contributing significantly to the field of power systems research in Latin America.
+          `UNIFEI, or the Federal University of Itajubá (Universidade Federal de Itajubá), is a prominent federal university located in the state of Minas Gerais, Brazil. Established in 1913, it is recognized as one of the top engineering schools in the country. UNIFEI is esteemed for its rigorous academic programs and research output, making it a leading institution in technological education in Brazil. Its reputation is bolstered by over a century of tradition in engineering education, contributing significantly to the field of power systems research in Latin America.
 
 During my time at UNIFEI, I was always involved in extra-curricular activities such as the Robotics team (Drummonsters), Programing Marathon, elected Computer Engineering representant, part of junior enterprises and Academic support class teacher.
 
@@ -44,7 +43,7 @@ Computer technician integrated to Highschool. From programming logic, data struc
 const professionalExperiences: Experience[] = [
   {
     title: 'JavaScript Consultant',
-    date: 'Sep/2024 - Now',
+    date: 'Sep/2023 - Now',
     place: 'Rabobank (via FrontValue)',
     link: 'www.rabobank.nl',
     icon: 'https://i.imgur.com/27l1d7y.png',
@@ -88,9 +87,9 @@ Demonstrated strong communication skills by engaging in client discussions to cl
 • Participating in knowledge sharing sessions, talking about new frontend technologies.
 • Active participation in code reviews and pair programming.
 • Providing mentorship to less experienced colleagues.
-• Implement an AI powered code bot to automate the execution to simple tasks in Jira to improve productivity.
+• Implement an AI powered code bot to automate the execution of tasks in Jira to improve productivity.
 `,
-        cv: 'Senior Frontend Developer at Media.Monks, responsible for complex web applications for Google and General Motors. Led development of Chromebook Retail App, Google Cloud Chess, and Pixel 6 launch. Emphasized code quality through reviews and pair programming. Contributed to backend development with Python. Actively engaged in client discussions and mentored junior developers.'
+        cv: 'Senior Frontend Developer at Media.Monks, responsible for complex web applications for Google and General Motors such as Chromebook Retail App, Google Cloud Chess, and Pixel 6 launch. Emphasized code quality through reviews and pair programming. Contributed to backend development with Python. Actively engaged in client discussions and mentored junior developers.'
       },
       projects: [
         {
@@ -105,7 +104,7 @@ Demonstrated strong communication skills by engaging in client discussions to cl
         {
           title: 'Chromebook Retail App',
           content:
-            'Google Chromebook Retail app that is running on Chromebooks in stores around the world. To check it out, just go to any store that has chromebook to sell ;)'
+            'Google Chromebook Retail app that is running on Chromebooks in stores around the world. To check it out, you can go to any store that has chromebook to sell.'
         },
         {
           title: 'Google Cloud: Engage Sessions',
