@@ -9,8 +9,7 @@ const educationalExperiences: Experience[] = [
     link: 'www.google.com',
     description: {
       content: {
-        web:
-          `UNIFEI, or the Federal University of Itajubá (Universidade Federal de Itajubá), is a prominent federal university located in the state of Minas Gerais, Brazil. Established in 1913, it is recognized as one of the top engineering schools in the country. UNIFEI is esteemed for its rigorous academic programs and research output, making it a leading institution in technological education in Brazil. Its reputation is bolstered by over a century of tradition in engineering education, contributing significantly to the field of power systems research in Latin America.
+        web: `UNIFEI, or the Federal University of Itajubá (Universidade Federal de Itajubá), is a prominent federal university located in the state of Minas Gerais, Brazil. Established in 1913, it is recognized as one of the top engineering schools in the country. UNIFEI is esteemed for its rigorous academic programs and research output, making it a leading institution in technological education in Brazil. Its reputation is bolstered by over a century of tradition in engineering education, contributing significantly to the field of power systems research in Latin America.
 
 During my time at UNIFEI, I was always involved in extra-curricular activities such as the Robotics team (Drummonsters), Programing Marathon, elected Computer Engineering representant, part of junior enterprises and Academic support class teacher.
 
@@ -19,7 +18,7 @@ Programming Logic support teacher with a workload of 32h monthly. Advisor: Claud
 Algorithms and Data structures support teacher with a workload of 32h monthly. Advisor: Claudia Izeki.
 
 Volunteer jobs (junior enterprises): Up Consultoria JR and FEJEMG as IT consultant.`,
-        cv: 'Pursuing Computer Engineering at UNIFEI, a top Brazilian engineering school. Actively involved in extracurricular activities including robotics team, programming marathon, and academic support teaching. Gained experience as a Programming Logic and Algorithms support teacher, and participated in volunteer IT consulting for junior enterprises.'
+        cv: 'Pursuing Computer Engineering at UNIFEI, a top Brazilian engineering school. Actively involved in extracurricular activities including robotics team, programming marathon, and academic support teaching. Gained experience as a Programming Logic and Algorithms support teacher, and participated in volunteer IT consulting for local businesses.'
       }
     }
   },
