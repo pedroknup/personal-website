@@ -7,15 +7,11 @@ const personalData = {
   based: 'Amersfoort, NL.',
   position: 'Senior Web Developer',
   bio: `
-As a Senior Software Engineer with nearly a decade of experience, I bring a passion for web development and a deep expertise in JavaScript technologies, including React, Node.js, and Vue.js.
+I'm a Senior Software Engineer with nearly a decade of hands-on experience in web development, specializing in JavaScript technologies like React, Node.js, and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
 
-My journey in tech has equipped me with a versatile skill set spanning both front-end and back-end development, complemented by valuable experience in DevOps practices and database management.
+Over the years, I’ve built a diverse skill set that spans everything from crafting seamless interfaces to managing databases and navigating DevOps. I love turning complex problems into simple, efficient solutions while keeping the user experience front and center.
 
-I take pride in crafting visually appealing and user-centric applications, with attention to detail, understanding of the product or brand, and the users.
-
-Throughout my career, I've thrived in collaborative environments, leveraging my strong communication skills and enthusiasm for mentoring to promote team growth and innovation.
-
-My problem-solving mindset and genuine love for technology drive me to consistently deliver robust and creative solutions.
+I thrive in team environments where collaboration and creativity are valued. Whether mentoring others or working alongside teammates, I enjoy sharing knowledge, tackling challenges, and continuously learning to improve my craft.
 
 I am currently looking for a challenging and exciting position where I can contribute with my technical, social and creative skills.
 `,
