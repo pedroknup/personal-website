@@ -98,7 +98,7 @@ Demonstrated strong communication skills by engaging in client discussions to cl
         {
           title: 'Pixel 6 Launch campaign apps',
           content:
-            'The Google Pixel Fall Launch was consisted of three different parts/web apps: Countdown for the launch, the actual stream and the <a href="https://pixelevent.withgoogle.com/" target="_blank" />post stream</a>. There were over 500.000 people that followed the event through those apps. The live steam video can be watched <a href="https://www.youtube.com/watch?v=WNarpiGz3Kk" target="_blank">here</a>'
+            'The Google Pixel Fall Launch was consisted of three different parts/web apps: Countdown for the launch, the actual stream and the <a href="https://pixelevent.withgoogle.com/" target="_blank" />post stream</a>. There were over 500.000 people that followed the event through those apps. The live steam video can be watched <a href="https://www.youtube.com/watch?v=WNarpiGz3Kk" target="_blank">here</a>.'
         },
         {
           title: 'Chromebook Retail App',
