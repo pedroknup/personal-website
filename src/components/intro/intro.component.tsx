@@ -57,7 +57,7 @@ export const IntroPageComponent = ({ onFinish, hasScrolled, darkMode, previousSt
           <SocialIcon  bgColor="transparent" target='_blank' url="https://www.pedroknup.deviantart.com" />
         </div>
         <div className="signature">
-          made with <span style={{ color: 'red' }}>♥</span> by <span>Pedro Knup </span> | ©2021
+          made with <span style={{ color: 'red' }}>♥</span> by <span>Pedro Knup </span>
         </div>
       </div>
     </div>;
