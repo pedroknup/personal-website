@@ -69,18 +69,6 @@ $image-size: 200px;
     display: none;
   }
 
-  &.scrolled {
-    .position {
-      &.expanded {
-        opacity: 0;
-      }
-
-      &.collapsed {
-        opacity: 1;
-      }
-    }
-  }
-
   &__content {
     display: flex;
     height: fit-content;
@@ -355,14 +343,6 @@ $image-size: 200px;
       opacity: 1;
     }
 
-
-    &.scrolled {
-      max-height: 0;
-      opacity: 0;
-      margin-block: 0;
-    }
-
-
     .profile-image-wrapper {
       min-width: $image-size;
       max-width: $image-size;
@@ -389,16 +369,6 @@ $image-size: 200px;
       transition: all 0.3s ease-in-out;
       transition-delay: 0.6s;
     }
-
-    &.scrolled {
-      opacity: 1;
-
-      .position {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
 
     .profile-image-wrapper {
       margin-top: 4px;

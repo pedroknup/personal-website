@@ -10,25 +10,9 @@ type CvProps = {
   onClose: () => void;
 }
 
-const hasScrolled = false;
-
 export const CvModal = ({ onClose }: CvProps) => {
-  // const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [expandedExperienceDescriptionIndexes, setExpandedExperienceDescriptionIndexes] = useState<number[]>([]);
-
-  const handleOnScroll = (e: UIEvent<HTMLDivElement>) => {
-    //   const scrollTop = e.currentTarget.scrollTop;
-    //   updateScrollState(scrollTop);
-  };
-
-  // const updateScrollState = _.debounce((scrollTop: number) => {
-  //   if (scrollTop > 0) {
-  //     setHasScrolled(true);
-  //   } else {
-  //     setHasScrolled(false);
-  //   }
-  // }, 100);
 
   const handleOnExpandExperience = (index: number) => {
     const newIndexes = [...expandedExperienceDescriptionIndexes];
@@ -61,7 +45,7 @@ export const CvModal = ({ onClose }: CvProps) => {
   }, [])
 
   return <div className={`cv-container ${isOpen ? 'open' : ''}`}>
-    <div className={`cv-header flat ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+    <div className={`cv-header flat ${isOpen ? 'open' : ''}`}>
       <div className="profile-image-wrapper">
         <img src={personalData.profilePic} alt="profile" />
       </div>
@@ -75,8 +59,8 @@ export const CvModal = ({ onClose }: CvProps) => {
       </div>
     </div>
 
-    <div onScroll={handleOnScroll} className={`cv-modal ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
-      <div className={`cv-header expanded ${hasScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
+    <div className={`cv-modal ${isOpen ? 'open' : ''}`}>
+      <div className={`cv-header expanded ${isOpen ? 'open' : ''}`}>
         <div className="profile-image-wrapper">
           <img src={personalData.profilePic} alt="profile" />
         </div>
