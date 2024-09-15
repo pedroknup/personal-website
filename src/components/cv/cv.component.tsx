@@ -1,5 +1,4 @@
-import React, { useEffect, UIEvent, useState } from 'react';
-import Markdown from "markdown-to-jsx";
+import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import personalData, { skillsCV, softSkillsCV } from '../../data';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
@@ -146,7 +145,7 @@ export const CvModal = ({ onClose }: CvProps) => {
           <div>
             <h3>Personal Note</h3>
             <div>
-              When I am not coding, I am either painting or record some music in my home studio
+              When I am not coding, I am either painting or recording some music in my home studio
             </div>
           </div>
 
@@ -189,18 +188,6 @@ export const CvModal = ({ onClose }: CvProps) => {
               onExpandClick={() => handleOnExpandExperience(index + 100)}
               isExpanded={expandedExperienceDescriptionIndexes.includes(index + 100)}
             />
-            // <div className="cv-modal__content__section__item" key={`education-${key}`}>
-            //   <div className="cv-modal__content__section__item__header">
-            //     <div className="cv-modal__content__section__item__title">{education.title}</div>
-            //     <div className="cv-modal__content__section__item__date">{education.date}</div>
-            //   </div>
-            //   <div className="cv-modal__content__section__item__location">
-            //     {education.place}
-            //   </div>
-            //   <div className="cv-modal__content__section__item__content">
-            //     {education.description.content.cv}
-            //   </div>
-            // </div>
           ))}
         </div>
       </div>
