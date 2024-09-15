@@ -159,15 +159,17 @@ export const CvModal = ({ onClose }: CvProps) => {
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
           {professionalExperiences.map((experience, index) => (
-            <ExperienceItemCv
-              title={experience.title}
-              date={experience.date}
-              place={experience.place}
-              description={experience.description}
-              skills={experience.skills}
-              onExpandClick={() => handleOnExpandExperience(index)}
-              isExpanded={expandedExperienceDescriptionIndexes.includes(index)}
-            />
+            <div className="experience-wrapper">
+              <ExperienceItemCv
+                title={experience.title}
+                date={experience.date}
+                place={experience.place}
+                description={experience.description}
+                skills={experience.skills}
+                onExpandClick={() => handleOnExpandExperience(index)}
+                isExpanded={expandedExperienceDescriptionIndexes.includes(index)}
+              />
+            </div>
           ))}
           <div className="cv-modal__content__section__divider" />
 
@@ -179,15 +181,17 @@ export const CvModal = ({ onClose }: CvProps) => {
           </div>
 
           {educationalExperiences.map((education, index) => (
-            <ExperienceItemCv
-              title={education.title}
-              date={education.date}
-              place={education.place}
-              description={education.description}
-              skills={education.skills}
-              onExpandClick={() => handleOnExpandExperience(index + 100)}
-              isExpanded={expandedExperienceDescriptionIndexes.includes(index + 100)}
-            />
+            <div className="experience-wrapper">
+              <ExperienceItemCv
+                title={education.title}
+                date={education.date}
+                place={education.place}
+                description={education.description}
+                skills={education.skills}
+                onExpandClick={() => handleOnExpandExperience(index + 100)}
+                isExpanded={expandedExperienceDescriptionIndexes.includes(index + 100)}
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -74,13 +74,13 @@ $image-size: 200px;
     height: fit-content;
     font-family: 'Montserrat', sans-serif;
     gap: 16px;
-    color: #c7c4c1;
 
     &__contact {
       min-height: 100%;
-      background-color: #545454;
+      background-color: #272727;
       padding: 16px;
       width: 260px;
+      color: #cfcfcf;
 
       display: flex;
       flex-direction: column;
@@ -387,4 +387,20 @@ $image-size: 200px;
   display: flex;
   gap: 16px;
   align-items: baseline;
+}
+
+.experience-wrapper {
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    position: absolute;
+    left: -38px;
+    top: 4px;
+  }
 }
