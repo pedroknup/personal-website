@@ -118,11 +118,8 @@ export const HomeComponent = () => {
     setIsScrolling(true);
 
     if (
-      intro &&
-      intro.current &&
-      container &&
-      container.current &&
-      container.current.scrollTop === 0
+      intro?.current &&
+      container?.current?.scrollTop === 0
     ) {
       container.current.style.overflow = 'auto';
     }
@@ -147,11 +144,8 @@ export const HomeComponent = () => {
     }
 
     if (
-      intro &&
       intro.current &&
-      container &&
-      container.current &&
-      container.current.scrollTop === 0
+      container.current?.scrollTop === 0
     ) {
       let count = currentPosition + event.deltaY;
 

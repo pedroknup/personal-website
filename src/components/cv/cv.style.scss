@@ -227,7 +227,7 @@ $image-size: 200px;
   &__close-button-wrapper {
     position: fixed;
     top: 0;
-    right: 8px;
+    right: 36px;
     height: 48px;
     display: flex;
     justify-content: center;
@@ -312,8 +312,8 @@ $image-size: 200px;
 
       &__container {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
+        gap: 32px;
         height: 40px;
 
         span {

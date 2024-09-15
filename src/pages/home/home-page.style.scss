@@ -14,12 +14,11 @@ body {
 
 .home-container {
   background-color: $background;
-
   -webkit-overflow-scrolling: touch;
   height: 100vh;
   flex: 1;
-  // margin-left: 300px;
   overflow: auto;
+
   &.light {
     background-color: $light-background !important;
     color: $light-foreground;
@@ -28,8 +27,6 @@ body {
         fill: $light-foreground !important;
       }
     }
-  }
-  .intro {
   }
 
   .links {
@@ -137,7 +134,7 @@ body {
 .cv-button-wrapper {
   position: fixed;
   top: 8px;
-  right: 12px;
+  right: 24px;
   background-color: $background-dark;
   z-index: 0;
   color: $foreground;
