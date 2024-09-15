@@ -27,7 +27,7 @@ export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, place
       </div>
     </div>
     <div className={`content3 ${isExpanded ? 'open' : ''}`}>
-      <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{description.content.web}</Markdown>
+      <Markdown style={{ maxWidth: 'calc(100vw - 200px)', whiteSpace: 'break-spaces' }}>{description.content.web}</Markdown>
 
       {description.projects &&
         <div>
