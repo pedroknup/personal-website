@@ -11,6 +11,7 @@
     "generate-api": "swagger-codegen generate -i http://localhost:3030/api-docs.json -l typescript-node -o ./src/api&&node src/api/fix-generated-file.js",
     "start": "webpack serve --mode development --hot --progress --color --port 3100 --open",
     "build": "webpack --progress",
+    "postbuild": "cp ./pedro-knup-cv-09-2024.pdf ./build",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "license": "MIT",
