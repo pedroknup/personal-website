@@ -16,7 +16,7 @@ export const AboutPage = ({ darkMode, removeHighlight, isHighlighted }: PageProp
         </span>, <br />
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
           age
-        </span>: <span className="number">"{personalData.age}</span>", <br />
+        </span>: <span className="number">{personalData.age}</span>, <br />
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="property">
           nationality
         </span>: <span className="string">"{personalData.nationality}"</span>, <br />

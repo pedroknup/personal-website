@@ -232,7 +232,7 @@ export const HomeComponent = () => {
           </div>
         </div>
       </div>
-      <button className="cv-button-wrapper" onClick={handleCvCtaClick}>
+      <button className={`cv-button-wrapper ${darkMode ? '' : 'light'}`} onClick={handleCvCtaClick}>
         Curriculum Vitae
       </button>
     </div>
