@@ -240,4 +240,28 @@ const softSkillsCV = [
   },
 ];
 
-export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV,  softSkillsCV };
+const skillLanguages = [
+  {
+    language: 'Portuguese (BR)',
+    level: 'Native'
+  },
+  {
+    language: 'English',
+    level: 'Advanced',
+  },
+  {
+    language: 'Spanish',
+    level: 'Intermediary',
+  },
+  {
+    language: 'Italian',
+    level: 'Beginner',
+  },
+  {
+    language: 'Dutch',
+    level: 'Elementary',
+  }
+
+]
+
+export { skillsFront, skillsBack, skillsMobile, skillsOther, skillsCV, softSkillsCV, skillLanguages };

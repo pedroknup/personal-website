@@ -55,3 +55,13 @@ body {
     transform: rotate(-135deg);
   }
 }
+
+.flex {
+  display: flex;
+  gap: 8px;
+}
+
+.justified-inline {
+  display: flex;
+  justify-content: space-between;
+}

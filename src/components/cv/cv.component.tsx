@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
-import personalData, { skillsCV, softSkillsCV } from '../../data';
+import personalData, { skillsCV, softSkillsCV, skillLanguages } from '../../data';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import './cv.style.scss';
 import { ExperienceItemCv } from './experience-item-cv.component';
@@ -102,7 +102,7 @@ export const CvModal = ({ onClose }: CvProps) => {
             <h3>Skills</h3>
             <div className="gapped-list">
               {skillsCV.map((section, key) => <div className="cv-modal__content__contact__skill">
-                <div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
+                <div key={`skill-cv-item-${key}`} className="subtitle">
                   {section.section}
                 </div>
                 <ul className="cv-modal__content__contact__skill__section__content">
@@ -123,14 +123,14 @@ export const CvModal = ({ onClose }: CvProps) => {
           <div>
             <h3>Soft Skills</h3>
             <div className="gapped-list">
-              {softSkillsCV.map((section, key) => <div className="cv-modal__content__contact__skill">
-                {section.section && (<div key={`skill-cv-item-${key}`} className="cv-modal__content__contact__skill__section">
+              {softSkillsCV.map((section) => <div className="cv-modal__content__contact__skill">
+                {section.section && (<span key={`skill-cv-item-${section.section}`} className="subtitle">
                   {section.section}
-                </div>)}
-                <ul className="cv-modal__content__contact__skill__section__content">
-                  {section.items.map((skill, key2) => (
+                </span>)}
+                <ul className="skill-content">
+                  {section.items.map((skill) => (
                     <li
-                      key={`skill-item-${key2}`}
+                      key={`skill-item-${skill.name}`}
                       className="cv-modal__content__contact_skill__item"
                     >
                       <div className="cv-modal__content__contact_skill__item__title">
@@ -140,6 +140,29 @@ export const CvModal = ({ onClose }: CvProps) => {
                   ))}
                 </ul>
               </div>)}
+            </div>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <div className="gapped-list">
+              {skillLanguages.map(language => (
+                <ul className="skill-content">
+                  <li
+                    key={`language-item-${language}`}
+                    className="cv-modal__content__contact_skill__item"
+                  >
+                    <span className="justified-inline">
+                      <span className="cv-modal__content__contact_skill__item__title">
+                        {language.language}
+                      </span>
+                      <span className="subtitle">
+                        {" "}{language.level}
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              ))}
+
             </div>
           </div>
           <div>
