@@ -28,7 +28,7 @@ export const ExperienceItemCv = ({ onExpandClick, skills, title, date, place, de
     </div>
     <div className="description-wrapper" onClick={onExpandClick}>
       <div>
-        <Markdown style={{ maxWidth: 'calc(100vw - 200px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{isExpanded ? description.content.web : description.content.cv}</Markdown>
+        <Markdown style={{ maxWidth: 'calc(100vw - 100px)', textAlign: 'justify', whiteSpace: 'break-spaces' }}>{isExpanded ? description.content.web : description.content.cv}</Markdown>
 
         {skills && (<div className="cv-modal__content__section__item__skills">
           <strong>Skills:</strong> {skills?.join(' · ')}.

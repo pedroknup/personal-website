@@ -1,11 +1,5 @@
 @import '../../styles/variables.scss';
 
-@media (max-width: 768px) {
-  .experience-item {
-    padding-left: 21px !important;
-  }
-}
-
 .experience-item {
   padding: 6px 0;
   display: flex;
@@ -17,6 +11,12 @@
   border-radius: 8px;
   margin: 4px -32px 4px -60px;
 
+  @media (max-width: #{$screen-md-min}) {
+    width: 90%;
+    margin-left: -45px;
+
+  }
+
   .main-content {
     display: inline-flex;
     margin-left: -2px;
@@ -24,6 +24,7 @@
     padding: 6px 28px;
     width: fit-content;
     cursor: pointer;
+
   }
 
   &.light {
@@ -39,6 +40,15 @@
     padding-left: 40px;
     border: 2px dashed $light-orange-highlight;
 
+    @media (max-width: #{$screen-md-min}) {
+      margin-left: -19px;
+      padding-right: 0;
+
+      .main-content {
+        margin: 0;
+        padding-left: 0;
+      }
+    }
   }
 
   a,
@@ -58,7 +68,7 @@
     width: 24px;
     min-width: 24px;
 
-    @media (max-width: 768px) {
+    @media (max-width: #{$screen-md-min}) {
       width: 21px;
       min-width: 21px;
       margin-left: -2px;
@@ -84,7 +94,7 @@
       color: $blue-highlight;
       max-width: calc(100vw - 400px);
 
-      @media (max-width: 768px) {
+      @media (max-width: #{$screen-md-min}) {
         max-width: calc(100vw - 200px);
       }
     }
@@ -93,7 +103,7 @@
       color: $foreground-light;
       max-width: calc(100vw - 400px);
 
-      @media (max-width: 768px) {
+      @media (max-width: #{$screen-md-min}) {
         max-width: calc(100vw - 200px);
       }
     }
@@ -106,8 +116,7 @@
     padding-right: 12px;
     max-width: 50vw;
 
-    @media (max-width: 768px) {
-      margin-left: 24px;
+    @media (max-width: #{$screen-md-min}) {
       max-width: 90vw;
       padding: 0 8px;
     }

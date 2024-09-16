@@ -54,7 +54,8 @@
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: #{$screen-md-min}) {
+
   .hamburger-icon {
     display: block;
   }
