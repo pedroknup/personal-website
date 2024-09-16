@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// const { Hamburgerrow } = hamburgerArrow;
+import Hamburger from 'hamburger-react'
 import './nav-bar.style.scss';
 
 type NavbarItem = {
@@ -30,11 +30,13 @@ const Navbar = ({ darkMode, setDarkMode, items, onClick }: NavbarProps) => {
     onClick(id);
   };
 
+  const handleHamburgerMenuClick = () => {
+    setIsActive(!isActive);
+  }
+
   return <div>
     <div className={`${isActive ? 'is-active' : ''} ${darkMode ? '' : 'light'} hamburger-icon`}>
-      {/* <HamburgerArow buttonWidth={36} onClick={() => { */}
-      {/* setIsActive(!isActive); */}
-      {/* }} isActive={isActive} /> */}
+      <Hamburger toggled={isActive} toggle={handleHamburgerMenuClick} />
     </div>
 
     <div className={`navbar links ${isActive ? 'is-active' : ''} ${darkMode ? '' : 'light'}`}>

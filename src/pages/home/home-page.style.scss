@@ -22,6 +22,7 @@ body {
   &.light {
     background-color: $light-background !important;
     color: $light-foreground;
+
     svg {
       path {
         fill: $light-foreground !important;
@@ -40,6 +41,7 @@ body {
     top: 0;
     font-family: sans-serif;
     font-size: 12px;
+
     .title {
       color: white;
       padding: 0 2px;
@@ -47,11 +49,13 @@ body {
       width: 80px;
       margin-left: 4px;
     }
+
     .buttons {
       width: 45px;
       display: flex;
       align-items: center;
       justify-content: space-around;
+
       .button {
         width: 10px;
         height: 10px;
@@ -59,37 +63,47 @@ body {
         min-height: 10px;
         border-radius: 50%;
         cursor: pointer;
+
         &.red {
           background-color: rgb(179, 49, 49);
+
           &:hover {
             background-color: red;
           }
         }
+
         &.yellow {
           background-color: rgb(204, 204, 45);
+
           &:hover {
             background-color: yellow;
           }
         }
+
         &.green {
           background-color: rgb(45, 97, 45);
+
           &:hover {
             background-color: green;
           }
         }
       }
     }
+
     .container {
       display: flex;
       width: 100%;
       flex-direction: row;
     }
+
     a {
       text-decoration: none;
       color: $foreground;
       padding: 0 24px;
+
       &.selected {
         color: red;
+
         .divider {
           width: 100% !important;
         }
@@ -151,4 +165,11 @@ body {
     background-color: $background-dark;
     color: $foreground;
   }
+
+  @media (max-width: #{$screen-md-min}) {
+    right: 72px;
+    top: 32px;
+  }
+
+
 }
