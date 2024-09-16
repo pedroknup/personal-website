@@ -10,23 +10,23 @@ export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, place
     setIsExpanded(!isExpanded);
   };
 
-  return <div onClick={toggleOpen} className={`experience-item ${isExpanded ? 'open' : ''} ${isDark ? '' : 'light'}`}>
-    <div className="main-content">
+  return <div className={`experience-item ${isExpanded ? 'open' : ''} ${isDark ? '' : 'light'}`}>
+    <div onClick={toggleOpen} className="main-content">
       <div className="wrapper">
         <div className="toggle">
-          <span className={`chevron2 ${isExpanded ? 'bottom' : 'right'}`} />
+          <span className={`experience-chevron ${isExpanded ? 'bottom' : 'right'}`} />
         </div>
         <div className="picture">
           <img src={icon} />
         </div>
       </div>
-      <div className="content2">
+      <div className="experience-content">
         <div className="date">{date}</div>
         <div className="title">{title}</div>
         <div className="name">{`//${'*'} ${place}`}</div>
       </div>
     </div>
-    <div className={`content3 ${isExpanded ? 'open' : ''}`}>
+    <div className={`experience-description ${isExpanded ? 'open' : ''}`}>
       <Markdown style={{ maxWidth: 'calc(100vw - 200px)', whiteSpace: 'break-spaces' }}>{description.content.web}</Markdown>
 
       {description.projects &&

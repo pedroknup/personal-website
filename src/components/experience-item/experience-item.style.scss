@@ -75,9 +75,8 @@
     }
   }
 
-  .content2 {
+  .experience-content {
     .date {
-      // color: $orange-highlight;
       color: $green-highlight;
     }
 
@@ -86,24 +85,21 @@
       max-width: calc(100vw - 400px);
 
       @media (max-width: 768px) {
-        // display: block;
         max-width: calc(100vw - 200px);
       }
     }
 
     .name {
-      // color: $green-highlight;
       color: $foreground-light;
       max-width: calc(100vw - 400px);
 
       @media (max-width: 768px) {
-        // display: block;
         max-width: calc(100vw - 200px);
       }
     }
   }
 
-  .content3 {
+  .experience-description {
     margin: 6px 0;
     display: none;
     word-break: break-word;
@@ -122,7 +118,7 @@
   }
 }
 
-.chevron2::before {
+.experience-chevron::before {
   border-style: solid;
   border-width: 0.1em 0.1em 0 0;
   content: '';
@@ -136,16 +132,16 @@
   width: 0.45em;
 }
 
-.chevron2.right:before {
+.experience-chevron.right:before {
   left: 5px;
   transform: rotate(45deg);
 }
 
-.chevron2.bottom:before {
+.experience-chevron.bottom:before {
   top: 22px;
   transform: rotate(135deg);
 }
 
-.chevron2.left:before {
+.experience-chevron.left:before {
   transform: rotate(-135deg);
 }
