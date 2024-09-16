@@ -147,6 +147,6 @@
 }
 
 .soft-transition {
-  transition: opacity 2s ease;
+  transition: opacity 3s ease-in-out;
   overflow-x: hidden;
 }
