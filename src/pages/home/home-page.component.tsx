@@ -8,6 +8,7 @@ import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
 import { NavbarItem, Navbar } from '../../components/nav-bar';
 import { CvModal } from '../../components/cv';
+import { PDF_URL } from '../../data/constants';
 
 import './home-page.style.scss';
 
@@ -172,6 +173,17 @@ export const HomeComponent = () => {
     }
   };
 
+  const handleCvCtaClick = () => {
+    if (window.innerWidth < 768) {
+      window.open(
+        PDF_URL,
+        '_blank'
+      );
+    } else {
+      setShowCv(true)
+    }
+  }
+
   return (
     <div className="main">
       <div className={`container ${darkMode ? '' : 'light'}`}>
@@ -220,7 +232,7 @@ export const HomeComponent = () => {
           </div>
         </div>
       </div>
-      <button className="cv-button-wrapper" onClick={() => setShowCv(true)}>
+      <button className="cv-button-wrapper" onClick={handleCvCtaClick}>
         Curriculum Vitae
       </button>
     </div>

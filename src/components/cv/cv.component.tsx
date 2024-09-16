@@ -4,6 +4,7 @@ import personalData, { skillsCV, softSkillsCV, skillLanguages } from '../../data
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import './cv.style.scss';
 import { ExperienceItemCv } from './experience-item-cv.component';
+import { PDF_URL } from '../../data/constants';
 
 type CvProps = {
   onClose: () => void;
@@ -25,7 +26,7 @@ export const CvModal = ({ onClose }: CvProps) => {
 
   const handleOnDownload = () => {
     window.open(
-      '/personal-website/Pedro-Knup-resume-23-06.pdf',
+      PDF_URL,
       '_blank'
     );
   };
