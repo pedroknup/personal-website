@@ -8,6 +8,24 @@ type Media = {
 
 export const youtubeVideos: Media[] = [
   {
+    title: 'Rhodes digital painting',
+    date: 'Dec/2024',
+    description: `Digital painting.`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6183985f-4752-422f-9ac1-68b16cb95718/djsq1ee-cf9eba45-eb16-469b-b121-00945d5aa6fd.jpg/v1/fit/w_828,h_1024,q_70,strp/rhodes__greece__digital_painting_by_phknup_djsq1ee-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTMzNSIsInBhdGgiOiJcL2ZcLzYxODM5ODVmLTQ3NTItNDIyZi05YWMxLTY4YjE2Y2I5NTcxOFwvZGpzcTFlZS1jZjllYmE0NS1lYjE2LTQ2OWItYjEyMS0wMDk0NWQ1YWE2ZmQuanBnIiwid2lkdGgiOiI8PTEwODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gtQHwNi-5Zd6PtREDKcKkCAp5Vrq1INtSDkcO5GYEbA"/>',
+    link:
+      'https://www.deviantart.com/phknup/art/1197101462'
+  },
+  {
+    title: 'Still life oil painting',
+    date: 'Jul/2023',
+    description: `Oil on canvas 40x50cm`,
+    content:
+      '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6183985f-4752-422f-9ac1-68b16cb95718/djsq109-10dbe764-20f1-4ac7-93b1-8f1b228f737d.jpg/v1/fit/w_828,h_1012,q_70,strp/still_life_painting_by_phknup_djsq109-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTMyMCIsInBhdGgiOiJcL2ZcLzYxODM5ODVmLTQ3NTItNDIyZi05YWMxLTY4YjE2Y2I5NTcxOFwvZGpzcTEwOS0xMGRiZTc2NC0yMGYxLTRhYzctOTNiMS04ZjFiMjI4ZjczN2QuanBnIiwid2lkdGgiOiI8PTEwODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.qitxpt8M4wRPegM54ixokO9CPPAoqYG2hg8iEcPQY4c"/>',
+    link:
+      'https://www.deviantart.com/phknup/art/Still-life-painting-1197100953'
+  },
+  {
     title: 'Portrait',
     date: 'Jul/2022',
     description: `Digital painting.`,
