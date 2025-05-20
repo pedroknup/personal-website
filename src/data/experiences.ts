@@ -48,9 +48,9 @@ const professionalExperiences: Experience[] = [
     defaultOpened: true,
     description: {
       content: {
-        web: `At Rabobank, I work as a JavaScript (TypeScript) Consultant, contributing to the development and maintenance of a complex React and Node.js application using Spotify’s Backstage framework. My role spans full-stack development, DevOps responsibilities, and collaboration with the Product Owner to design new features for the software catalog.
+        web: `At Rabobank, I work as a JavaScript (TypeScript) Consultant, contributing to the development and maintenance of a complex developer portal built on React and Node.js using Spotify’s Backstage framework. My role spans full-stack development, DevOps responsibilities, and collaboration with the Product Owner to design and architect features and improvements.
 
-I work with cross-functional teams to standardize and ensure consistency across the software ecosystem, writing clean code, creating unit tests, and maintaining detailed documentation. I also present updates to stakeholders and departments, and mentor junior and mid-level developers.
+Furthermore, I work with cross-functional teams to standardize and ensure consistency across the software ecosystem, writing clean code, creating unit tests, and maintaining detailed documentation. I also present updates to stakeholders and departments, and mentor junior and mid-level developers.
 
 **Tasks:**
 • Build and maintain a developer portal using Node.js, React.js, and Backstage framework
@@ -63,7 +63,7 @@ I work with cross-functional teams to standardize and ensure consistency across 
 • Interview candidates and evaluate their technical skills
 • Engage in DevOps practices including CI/CD pipeline development and infrastructure management
 • Participate in daily stand-ups and Agile ceremonies`,
-        cv: 'JavaScript Consultant at Rabobank, working on a React and Node.js application using Spotify’s Backstage framework. Involved in full-stack development, DevOps, and mentoring. Focused on feature architecture, code quality, and documentation.'
+        cv: 'JavaScript Consultant at Rabobank, developing a complex developer portal in React and Node.js using Spotify’s Backstage framework. Involved in full-stack development, DevOps, and mentoring. Focused on feature architecture, code quality, and documentation.'
       }
     },
     skills: [
