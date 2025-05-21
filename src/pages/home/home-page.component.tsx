@@ -27,7 +27,7 @@ const initialNavbarItem: NavbarItem[] = [
   { title: 'Skills', isSelected: false, id: 'skills' },
   { title: 'Experiences', isSelected: false, id: 'experiences' },
   { title: 'Education', isSelected: false, id: 'education' },
-  { title: 'Artworks', isSelected: false, id: 'blog' }
+  { title: 'Art & tech', isSelected: false, id: 'blog' }
 ];
 
 export const HomeComponent = () => {
