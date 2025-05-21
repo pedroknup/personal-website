@@ -20,7 +20,7 @@ export const SectionPage = ({ id, title, children, description, padding, padding
   return <div id={id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${isHighlighted ? 'highlight' : ''} ${darkMode ? '' : 'light'}`}>
     <div className="anchor" />
     <div className="title">
-      <span>{title}</span>
+      <span> {title}</span>
     </div>
 
     <div className={`content big ${paddingColumns === 2 ? 'padding' : ''}`}>

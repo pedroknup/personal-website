@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
-import personalData, { skillsCV, softSkillsCV, skillLanguages } from '../../data';
+import { personalData } from '../../data/bio';
+import { skillsCV, softSkillsCV, skillLanguages } from '../../data/skills';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import './cv.style.scss';
 import { ExperienceItemCv } from './experience-item-cv.component';

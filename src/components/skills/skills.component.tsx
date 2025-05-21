@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SectionPage } from '../section';
 import { SkillItem } from './skill-item.component';
-import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../data';
+import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../data/skills';
 import './skills.style.scss';
 import { PageProps } from '../../../types/page-props';
 

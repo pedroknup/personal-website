@@ -21,24 +21,24 @@ I am currently looking for a challenging and exciting position where I can contr
     {
       name: 'Github',
       url: 'https://github.com/pedroknup',
-      icon: 'github'
+      icon: 'github',
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/pedroknup/',
-      icon: 'linkedin'
+      icon: 'linkedin',
     },
     {
       name: 'Instagram',
       url: 'http://instagram.com/pedroknup',
-      icon: 'twitter'
+      icon: 'twitter',
     },
     {
       name: 'DeviantArt',
       url: 'https://www.deviantart.com/pedroknup',
-      icon: 'twitter'
-    }
-  ]
+      icon: 'twitter',
+    },
+  ],
 };
 
-export default personalData;
+export { personalData };
