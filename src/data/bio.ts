@@ -5,11 +5,11 @@ const personalData = {
   age: 30,
   nationality: 'Brazilian',
   based: 'Amersfoort, NL.',
-  position: 'Senior Web Developer',
+  position: 'Senior Software Engineer',
   bio: `
-I'm a Software Engineer with nearly a decade of hands-on experience in web development, specializing in JavaScript technologies like React.js, Node.js, and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
+I am a Software Engineer with a decade of hands-on experience in web development, specializing in JavaScript technologies like React.js, Node.js, Next.js and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
 
-Over the years, I’ve built a diverse skill set that spans everything from crafting seamless interfaces to managing databases and navigating DevOps. I love turning complex problems into simple, efficient solutions while keeping the user experience front and center.
+Over the years, I’ve built a diverse skill set that spans everything from crafting seamless interfaces and IoT systems to managing databases and navigating DevOps. I love turning complex problems into simple, efficient solutions while keeping the user experience front and center.
 
 I thrive in team environments where collaboration and creativity are valued. Whether mentoring others or working alongside teammates, I enjoy sharing knowledge, tackling challenges, and continuously learning to improve my craft.
 
