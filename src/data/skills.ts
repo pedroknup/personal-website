@@ -248,7 +248,7 @@ const softSkillsCV = [
       { name: 'Leader', icon: '' },
       { name: 'Social', icon: '' },
       { name: 'Creative', icon: '' },
-      { name: 'Good with design', icon: '' },
+      { name: 'Eye for design', icon: '' },
     ]
   },
 ];
