@@ -5,7 +5,7 @@ import { skillsBack, skillsFront, skillsMobile, skillsOther } from '../../data/s
 import './skills.style.scss';
 import { PageProps } from '../../../types/page-props';
 
-export const SkillsPage = ({ removeHighlight, isHighlighted, darkMode }: PageProps) => {
+export const SkillsPage = ({ removeHighlight, isHighlighted, isDarkMode: darkMode }: PageProps) => {
   const [selectedSkill, setSelectedSkill] = useState(0);
   const skillOnClick = (key: number) => {
     if (key === selectedSkill) setSelectedSkill(-1);

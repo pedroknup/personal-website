@@ -5,7 +5,7 @@ import { professionalExperiences } from '../../data/experiences';
 import './professional-experiences.style.scss';
 import { PageProps } from '../../../types/page-props';
 
-export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, darkMode }: PageProps) => {
+export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, isDarkMode: darkMode }: PageProps) => {
   return (
     <div className={`professional-experiences-container ${darkMode ? '' : 'light'}`}>
       <SectionPage

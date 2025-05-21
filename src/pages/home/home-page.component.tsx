@@ -221,11 +221,11 @@ export const HomeComponent = () => {
           )}
 
           <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
-            <AboutPage darkMode={darkMode} />
-            <SkillsPage darkMode={darkMode} />
-            <ProfessionalExperiencesPage darkMode={darkMode} />
-            <EducationPage darkMode={darkMode} />
-            <BlogPage darkMode={darkMode} />
+            <AboutPage isDarkMode={darkMode} />
+            <SkillsPage isDarkMode={darkMode} />
+            <ProfessionalExperiencesPage isDarkMode={darkMode} />
+            <EducationPage isDarkMode={darkMode} />
+            <BlogPage isDarkMode={darkMode} />
             <div className="huge">
               <h2>Thank you for visiting my website :)</h2>
             </div>

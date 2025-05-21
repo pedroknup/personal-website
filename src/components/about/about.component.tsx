@@ -4,7 +4,7 @@ import { SectionPage } from '../section';
 import { personalData } from '../../data/bio';
 import { PageProps } from '../../../types/page-props';
 
-export const AboutPage = ({ darkMode, removeHighlight, isHighlighted }: PageProps) => {
+export const AboutPage = ({ isDarkMode: darkMode, removeHighlight, isHighlighted }: PageProps) => {
   return (
     <div className={`about-container ${darkMode ? '' : 'light'}`}>
       <SectionPage
