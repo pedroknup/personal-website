@@ -8,7 +8,7 @@ export const AboutPage = ({ isDarkMode: darkMode, removeHighlight, isHighlighted
   return (
     <div className={`about-container ${darkMode ? '' : 'light'}`}>
       <SectionPage
-        darkMode={darkMode}
+        isDarkMode={darkMode}
         removeHighlight={removeHighlight}
         isHighlighted={isHighlighted}
         id="about"

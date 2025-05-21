@@ -10,12 +10,12 @@ type SectionPageProps = {
   id?: string;
   paddingColumns?: number;
   children?: any;
-  darkMode: boolean;
+  isDarkMode: boolean;
   isHighlighted?: boolean;
   removeHighlight?: (id: string) => void;
 }
 
-export const SectionPage = ({ id, title, children, description, padding, paddingColumns, isHighlighted, darkMode }: SectionPageProps) => {
+export const SectionPage = ({ id, title, children, description, padding, paddingColumns, isHighlighted, isDarkMode: darkMode }: SectionPageProps) => {
 
   return <div id={id} style={{ margin: `0 ${padding !== undefined ? padding : defaultPadding}px` }} className={`section ${isHighlighted ? 'highlight' : ''} ${darkMode ? '' : 'light'}`}>
     <div className="anchor" />

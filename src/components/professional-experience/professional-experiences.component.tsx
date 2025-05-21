@@ -9,7 +9,7 @@ export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, is
   return (
     <div className={`professional-experiences-container ${darkMode ? '' : 'light'}`}>
       <SectionPage
-        darkMode={darkMode}
+        isDarkMode={darkMode}
         removeHighlight={removeHighlight}
         isHighlighted={isHighlighted}
         id="experiences"
