@@ -18,7 +18,7 @@ export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, is
         description="Professional Career"
       >
         {professionalExperiences.map((item, key) => (
-          <ExperienceItem {...item} isDark={darkMode} key={key} />
+          <ExperienceItem {...item} isDarkMode={darkMode} key={key} />
         ))}
       </SectionPage>
     </div>

@@ -3,14 +3,14 @@ import './experience-item.style.scss';
 import { ExperienceItemProps } from '../../../types/experience';
 import Markdown from 'markdown-to-jsx';
 
-export const ExperienceItem = ({ defaultOpened, isDark, icon, date, title, place, description }: ExperienceItemProps) => {
+export const ExperienceItem = ({ defaultOpened, isDarkMode, icon, date, title, place, description }: ExperienceItemProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultOpened);
 
   const toggleOpen = () => {
     setIsExpanded(!isExpanded);
   };
 
-  return <div className={`experience-item ${isExpanded ? 'open' : ''} ${isDark ? '' : 'light'}`}>
+  return <div className={`experience-item ${isExpanded ? 'open' : ''} ${isDarkMode ? '' : 'light'}`}>
     <div onClick={toggleOpen} className="main-content">
       <div className="wrapper">
         <div className="toggle">
