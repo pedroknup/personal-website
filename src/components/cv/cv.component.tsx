@@ -178,9 +178,9 @@ export const CvModal = ({ onClose }: CvProps) => {
         <div className="cv-modal__content__section">
           <div className="cv-modal__content__section__timeline-bar" />
           <div className="cv-modal__content__section__title__wrapper">
-            <div className="cv-modal__content__section__timeline__icon">
+            {/* <div className="cv-modal__content__section__timeline__icon">
               <img src={'/personal-website/suitcase-icon.png'} />
-            </div>
+            </div> */}
             <div className="cv-modal__content__section__title">Professional Experiences</div>
           </div>
           {professionalExperiences.map((experience, index) => (
@@ -199,9 +199,9 @@ export const CvModal = ({ onClose }: CvProps) => {
           <div className="cv-modal__content__section__divider" />
 
           <div className="cv-modal__content__section__title__wrapper">
-            <div className="cv-modal__content__section__timeline__icon">
+            {/* <div className="cv-modal__content__section__timeline__icon">
               <img src={'/personal-website/education.png'} />
-            </div>
+            </div> */}
             <div className="cv-modal__content__section__title">Education</div>
           </div>
 
