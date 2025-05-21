@@ -189,7 +189,7 @@ const skillsCV = [
   {
     section: 'Front-end',
     items: [
-      { name: 'ReactJS & React Native', icon: '' },
+      { name: 'React.js & React Native', icon: '' },
       { name: 'Vue.js (2 & 3)', icon: '' },
       { name: 'LitJS', icon: '' },
       { name: 'Build Tools (Webpack, Rollup, Vite)', icon: '' },

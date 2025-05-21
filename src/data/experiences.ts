@@ -68,8 +68,8 @@ Furthermore, I work with cross-functional teams to standardize and ensure consis
     },
     skills: [
       'TypeScript',
-      'ReactJS',
-      'NodeJS',
+      'React.js',
+      'Node.js',
       'Backstage',
       'PostgreSQL',
       'SQLite',
@@ -101,7 +101,7 @@ I demonstrated strong communication skills by engaging in client discussions to 
 I managed client expectations, clarified deliverables, and led junior developers. My work also included designing UI flows, animations, and architecture decisions.
 
 **Tasks:**
-• Develop applications using VueJS, ReactJS, and NodeJS
+• Develop applications using VueJS, React.js, and Node.js
 • Lead frontend architecture and UI/UX design
 • Optimize web performance and implement caching strategies
 • Mentor junior developers and lead pair programming sessions
@@ -132,7 +132,7 @@ I managed client expectations, clarified deliverables, and led junior developers
       ]
     },
     skills: [
-      'Front-end Development', 'Back-end Development', 'Python', 'VueJS', 'ReactJS', 'LitJS', 'AngularJS', 'NodeJS', 'GSAP', 'Glue', 'ReduxJS', 'Scrum', 'TypeScript'
+      'Front-end Development', 'Back-end Development', 'Python', 'VueJS', 'React.js', 'LitJS', 'AngularJS', 'Node.js', 'GSAP', 'Glue', 'ReduxJS', 'Scrum', 'TypeScript'
     ]
   },
   {
@@ -175,7 +175,7 @@ At CowManager, I was responsible for maintaining and improving core web services
 
 At Pycom, I developed and maintained the company’s device dashboard and the Pymakr IDE extension for VSCode and Atom.
 
-I solely kicked off the development of Pymakr 2, a redesigned IDE with enhanced features, and contributed to Pymakr Online—a web-based IDE for Pycom devices.
+I solely kicked off the development of Pymakr 2, a redesigned IDE with enhanced features, and Pymakr Online — a web-based IDE for Pycom devices.
 
 **Tasks:**
 • Design and develop the IoT dashboard and web-based IDE
@@ -188,7 +188,7 @@ I solely kicked off the development of Pymakr 2, a redesigned IDE with enhanced 
       }
     },
     skills: [
-      'ES6', 'Webpack', 'Jest', 'Mocha', 'GraphQL', 'Plugin Development', 'ReactJS', 'NodeJS', 'Scrum', 'MongoDB'
+      'ES6', 'Webpack', 'Jest', 'Mocha', 'GraphQL', 'Plugin Development', 'React.js', 'Node.js', 'Scrum', 'MongoDB'
     ]
   },
   {
@@ -201,17 +201,17 @@ I solely kicked off the development of Pymakr 2, a redesigned IDE with enhanced 
       content: {
         web: `The company that brought me to the Netherlands, Webbio is a digital agency based in the Netherlands that specializes in building custom websites and applications.
 
-At Webbio, I focused on developing ReactJS applications and ensuring high performance and SEO standards. I contributed significantly to the Blackfriday Nederland e-commerce portal, designed to handle high traffic.
+At Webbio, I focused on developing React.js applications and ensuring high performance and SEO standards. I contributed significantly to the Blackfriday Nederland e-commerce portal, designed to handle high traffic.
 
 I also mentored teammates and participated in daily Scrum ceremonies.
 
 **Tasks:**
-• Develop and optimize high-traffic ReactJS web applications
+• Develop and optimize high-traffic React.js web applications
 • Ensure SEO best practices and performance benchmarks
 • Collaborate with team members during daily Scrum meetings
 • Mentor peers on frontend technologies and workflows
 • Test and debug to ensure production stability`,
-        cv: 'Frontend Developer Intern at Webbio, working on high-traffic ReactJS applications. Key contributor to Blackfriday Nederland. Participated in Agile workflows and mentored peers.'
+        cv: 'Frontend Developer Intern at Webbio, working on high-traffic React.js applications. Key contributor to Blackfriday Nederland. Participated in Agile workflows and mentored peers.'
       },
       projects: [
         {
@@ -220,7 +220,7 @@ I also mentored teammates and participated in daily Scrum ceremonies.
         }
       ]
     },
-    skills: ['Redux', 'Swagger', 'Formik', 'ES6', 'ReactJS', 'Scrum', 'TypeScript']
+    skills: ['Redux', 'Swagger', 'Formik', 'ES6', 'React.js', 'Scrum', 'TypeScript']
   },
   {
     title: 'Fullstack Developer',
@@ -244,7 +244,7 @@ At Clubpetro, I led the complete rebuild of the company's main product, covering
       }
     },
     skills: [
-      'VueJS', 'ReactJS', 'Scrum', 'Microsoft SQL Server', 'Entity Framework', '.NET Framework', 'TypeScript'
+      'VueJS', 'React.js', 'Scrum', 'Microsoft SQL Server', 'Entity Framework', '.NET Framework', 'TypeScript'
     ]
   },
   {
@@ -297,7 +297,7 @@ Highlighted projects include:
       }
     },
     skills: [
-      'Google Firebase', 'Xamarin', 'VanillaJS', 'VueJS', 'NodeJS', 'jQuery', 'MySQL', 'Entity Framework', '.NET Framework', 'MongoDB'
+      'Google Firebase', 'Xamarin', 'VanillaJS', 'VueJS', 'Node.js', 'jQuery', 'MySQL', 'Entity Framework', '.NET Framework', 'MongoDB'
     ]
   },
   {
