@@ -23,7 +23,7 @@ export type Experience = {
 }
 
 export type ExperienceItemProps = Experience & {
-  isDark: boolean;
+  isDarkMode?: boolean;
 }
 
 
