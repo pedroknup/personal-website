@@ -10,7 +10,7 @@ type SectionPageProps = {
   id?: string;
   paddingColumns?: number;
   children?: any;
-  isDarkMode: boolean;
+  isDarkMode?: boolean;
   isHighlighted?: boolean;
   removeHighlight?: (id: string) => void;
 }
