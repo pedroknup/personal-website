@@ -7,7 +7,7 @@ const personalData = {
   based: 'Amersfoort, NL.',
   position: 'Senior Web Developer',
   bio: `
-I'm a Software Engineer with nearly a decade of hands-on experience in web development, specializing in JavaScript technologies like React, Node.js, and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
+I'm a Software Engineer with nearly a decade of hands-on experience in web development, specializing in JavaScript technologies like React.js, Node.js, and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
 
 Over the years, I’ve built a diverse skill set that spans everything from crafting seamless interfaces to managing databases and navigating DevOps. I love turning complex problems into simple, efficient solutions while keeping the user experience front and center.
 
