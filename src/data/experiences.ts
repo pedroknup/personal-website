@@ -85,7 +85,7 @@ Furthermore, I work with cross-functional teams to standardize and ensure consis
   },
   {
     title: 'Senior Frontend Developer',
-    date: 'Feb/2021 - Mar/2023',
+    date: 'Feb/2021 - Aug/2023',
     place: 'Media.Monks',
     link: 'www.mediamonks.com',
     icon: 'https://i.imgur.com/YUOlc25.jpg',
