@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { IntroPageComponent } from '../../components/intro';
 import { SkillsPage } from '../../components/skills';
@@ -7,8 +8,6 @@ import { ProfessionalExperiencesPage } from '../../components/professional-exper
 import { AboutPage } from '../../components/about';
 import { BlogPage } from '../../components/blog';
 import { NavbarItem, Navbar } from '../../components/nav-bar';
-import { CvModal } from '../../components/cv';
-import { PDF_URL } from '../../data/constants';
 
 import './home-page.style.scss';
 
@@ -41,15 +40,11 @@ export const HomeComponent = () => {
   const [navBarItems, setNavBarItems] = useState<NavbarItem[]>(initialNavbarItem);
   const [previousState, setPreviousState] = useState<number | undefined>(undefined);
   const [darkMode, setDarkMode] = useState(true);
-  const [showCv, setShowCv] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.addEventListener('scroll', onScroll, true);
     setPreviousState(undefined);
-
-    if (window.location.hash.includes('/resume')) {
-      setShowCv(true);
-    }
 
     return () => {
       document.body.removeEventListener('scroll', onScroll);
@@ -59,17 +54,6 @@ export const HomeComponent = () => {
   useEffect(() => {
     isScrollingRef.current = isScrolling;
   });
-
-  useEffect(
-    () => {
-      if (showCv) {
-        window.history.pushState({}, '', '/personal-website/#/resume');
-      } else {
-        window.history.pushState({}, '', '/personal-website/#');
-      }
-    },
-    [showCv]
-  );
 
   const setSelectedNavbarItem = (id: string, shouldHighlight?: boolean) => {
     const navBarItemsTemp = initialNavbarItem.map((item) => {
@@ -174,15 +158,8 @@ export const HomeComponent = () => {
   };
 
   const handleCvCtaClick = () => {
-    if (window.innerWidth < 768) {
-      window.open(
-        PDF_URL,
-        '_blank'
-      );
-    } else {
-      setShowCv(true)
-    }
-  }
+    navigate('/cv');
+  };
 
   return (
     <div className="main">
@@ -212,14 +189,6 @@ export const HomeComponent = () => {
             />
             <br />
           </div>
-          {showCv && (
-            <CvModal
-              onClose={() => {
-                setShowCv(false);
-              }}
-            />
-          )}
-
           <div className="soft-transition " style={{ opacity: hasScrolled ? 1 : 0 }}>
             <AboutPage isDarkMode={darkMode} />
             <SkillsPage isDarkMode={darkMode} />
