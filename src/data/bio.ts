@@ -6,15 +6,9 @@ const personalData = {
   nationality: 'Brazilian',
   based: 'Amersfoort, NL.',
   position: 'Senior Software Engineer',
-  bio: `
-I am a Software Engineer with a decade of hands-on experience in web development, specializing in JavaScript technologies like React.js, Node.js, Next.js and Vue.js. My passion for creating engaging, user-friendly applications drives me to stay on the cutting edge of front-end and back-end development.
+  bio: `Senior software engineer with a decade of experience shipping production web applications. Full-stack across the JavaScript ecosystem (React, Node.js, TypeScript, Vue), with enough Python, C#, and DevOps to own features end-to-end.
 
-Over the years, I’ve built a diverse skill set that spans everything from crafting seamless interfaces and IoT systems to managing databases and navigating DevOps. I love turning complex problems into simple, efficient solutions while keeping the user experience front and center.
-
-I thrive in team environments where collaboration and creativity are valued. Whether mentoring others or working alongside teammates, I enjoy sharing knowledge, tackling challenges, and continuously learning to improve my craft.
-
-I am currently looking for a challenging and exciting position where I can contribute with my technical, social and creative skills.
-`,
+Recent work has centred on developer platforms at Rabobank (Backstage) and high-traffic interactive products for Google and GM at Media.Monks. I lead feature design with product and architecture, mentor mid-level engineers, and care about clarity over cleverness in both code and communication.`,
   profilePic: 'https://i.imgur.com/BKdVBZL.png',
   email: 'phknup@gmail.com',
   social: [

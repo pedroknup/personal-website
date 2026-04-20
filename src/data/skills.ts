@@ -9,43 +9,43 @@ const skillsFront: SkillItem[] = [
   {
     id: 0,
     name: 'HTML, JavaScript, CSS',
-    content: `I've worked with HTML, JavaScript, and CSS since the very beginning of my development career. I build performant, responsive layouts and consistently keep up with modern web standards and best practices.`,
+    content: `A decade of web fundamentals. Comfortable with modern CSS (grid, flex, container queries), accessibility basics, and the quirky edges of cross-browser behaviour.`,
     progress: 100,
   },
   {
     id: 1,
-    name: 'React.js',
-    content: `Extensive experience with React, using it as my primary frontend library across multiple projects. I integrate Redux or Context API, apply TypeScript, and build reusable components with a strong emphasis on performance and maintainability.`,
+    name: 'React',
+    content: `Primary frontend library across most of my work. Hooks, TypeScript, Redux or Context, performance profiling, and a preference for small well-bounded components.`,
     progress: 95,
   },
   {
     id: 2,
-    name: 'Vue.js',
-    content: `Used in several professional and personal projects. Proficient in Vue 2 and Vue 3 with experience using Vuex, Composition API, and integrating with backend APIs.`,
+    name: 'Vue',
+    content: `Vue 2 and Vue 3 across several production projects. Vuex, Composition API, and plenty of migrations between major versions.`,
     progress: 90,
   },
   {
     id: 3,
-    name: 'Webpack',
-    content: `Strong experience configuring Webpack for bundling, performance optimization, and custom setups. Also experienced with Vite and Rollup.`,
+    name: 'Build tools (Webpack, Vite, Rollup)',
+    content: `Bundler configuration, code splitting, and performance budgets. Tuned from zero-config to bespoke multi-target setups.`,
     progress: 80,
   },
   {
     id: 100,
     name: 'Lit',
-    content: `Hands-on experience using Lit to create modern, reusable web components. Used in recent projects for encapsulated component architecture.`,
+    content: `Used Lit to ship encapsulated web components that drop cleanly into existing apps without framework lock-in.`,
     progress: 60,
   },
   {
     id: 4,
     name: 'GSAP',
-    content: `Used GSAP for complex animations and user interface interactions. Familiar with its timeline management and plugin ecosystem.`,
+    content: `Complex timelines, scroll-triggered sequences, and production interactive work (notably at Media.Monks).`,
     progress: 60,
   },
   {
     id: 512,
-    name: 'AngularJS & Angular',
-    content: `Basic understanding and exposure to both AngularJS and Angular. Although not my go-to framework, I can navigate codebases and contribute when needed.`,
+    name: 'Angular',
+    content: `Reading-level fluency. I can navigate Angular codebases and contribute patches, but it is not my go-to framework.`,
     progress: 20,
   },
 ].sort((a, b) => b.progress - a.progress);
@@ -54,73 +54,73 @@ const skillsBack: SkillItem[] = [
   {
     id: 5,
     name: 'Node.js',
-    content: `Extensive experience in building APIs and backend services using Node.js with Express.js and TypeScript. Proficient in testing with Jest and integration with databases and DevOps pipelines.`,
+    content: `Years of production APIs and services with Express and TypeScript. Jest for testing, and integrations across databases, queues, and CI/CD pipelines.`,
     progress: 90,
   },
   {
     id: 6,
-    name: 'Relational Databases',
-    content: `Deep experience with PostgreSQL, MySQL, SQLite, and Microsoft SQL Server. Skilled in schema design, query optimization, and migrations.`,
+    name: 'Relational databases',
+    content: `PostgreSQL, MySQL, SQLite, and Microsoft SQL Server. Schema design, query tuning, migrations, and the occasional rescue operation on legacy data.`,
     progress: 85,
   },
   {
     id: 13,
     name: 'Backstage',
-    content: `Daily experience using Spotify's Backstage framework for building developer portals. Developed plugins, customized the catalog, and led efforts to standardize portal architecture.`,
+    content: `Daily driver at Rabobank. Plugin development, catalog customization, and a standardization effort spanning multiple portals across the organization.`,
     progress: 85,
   },
   {
     id: 9,
     name: 'Google Cloud Platform',
-    content: `Used extensively at Media.Monks for deploying applications and managing infrastructure, including Cloud Functions and App Engine.`,
+    content: `Cloud Functions, App Engine, and hosting for production sites. Used heavily during the Media.Monks chapter.`,
     progress: 80,
   },
   {
     id: 90,
-    name: 'Microsoft Azure DevOps',
-    content: `Used at multiple clients, especially Rabobank, for source control, pipeline setup, and project management in CI/CD environments.`,
+    name: 'Azure DevOps',
+    content: `Source control, pipelines, and work management. Current primary CI/CD environment at Rabobank.`,
     progress: 80,
   },
   {
     id: 400,
     name: '.NET',
-    content: `.NET experience including .NET Framework and early versions of .NET Core. Built enterprise services and data-driven applications.`,
+    content: `.NET Framework and early .NET Core. Built data-driven enterprise services at CowManager, Clubpetro, and Vale.`,
     progress: 70,
   },
   {
     id: 7,
-    name: 'NoSQL Databases',
-    content: `Familiar with MongoDB and Firebase for projects requiring flexible schema design. Used in full-stack apps and serverless contexts.`,
+    name: 'NoSQL (MongoDB, Firebase)',
+    content: `Document models for flexible-schema apps and serverless projects. Used in full-stack and side projects rather than data-warehouse contexts.`,
     progress: 70,
   },
   {
     id: 8,
     name: 'Docker',
-    content: `Used regularly to containerize applications and services. Comfortable writing Dockerfiles, composing multi-container systems, and integrating with CI/CD.`,
+    content: `Containerizing services, composing multi-container dev environments, and wiring images into CI/CD.`,
     progress: 70,
   },
   {
     id: 25,
-    name: 'Microsoft Power Automate',
-    content: `Utilized to automate workflows and integrate business logic across applications at Rabobank.`,
+    name: 'Power Automate',
+    content: `Workflow automation and cross-system integrations at Rabobank, especially around ticketing and developer onboarding.`,
     progress: 70,
   },
   {
     id: 11,
-    name: 'Google Firebase',
-    content: `Used Firebase Hosting and Firestore during freelancing and side projects.`,
+    name: 'Firebase',
+    content: `Hosting and Firestore for freelancing and side projects where flexibility beats the setup cost of a full backend.`,
     progress: 40,
   },
   {
     id: 10,
     name: 'Java',
-    content: `Limited academic experience. Comfortable reading and writing basic Java code when required.`,
+    content: `Academic exposure. Comfortable reading Java codebases and making targeted changes, but not my daily language.`,
     progress: 20,
   },
   {
     id: 12,
     name: 'AWS',
-    content: `Used for hosting a large mobile app (Cabe+1). Transitioned to Azure DevOps later for cost reasons.`,
+    content: `Hosted Cabe+1 (700+ daily users) on AWS before migrating to lower-cost infrastructure. Working knowledge of core services.`,
     progress: 20,
   },
 ].sort((a, b) => b.progress - a.progress);
@@ -129,31 +129,31 @@ const skillsMobile: SkillItem[] = [
   {
     id: 14,
     name: 'React Native',
-    content: `Built mobile apps using React Native for freelance and personal projects since 2018. Comfortable with custom native module integration and performance optimization.`,
+    content: `Mobile projects for freelance and personal work since 2018. Comfortable with custom native modules and performance tuning.`,
     progress: 80,
   },
   {
     id: 15,
     name: 'Xamarin',
-    content: `Used Xamarin extensively during early mobile development projects leveraging C#. Switched to React Native for more flexible cross-platform solutions.`,
+    content: `Used Xamarin heavily for early C#-based mobile projects before React Native took over as the cross-platform default.`,
     progress: 50,
   },
   {
     id: 16,
     name: 'Flutter',
-    content: `Basic proficiency with Flutter. Built simple apps for prototyping and learning purposes.`,
+    content: `Prototyping and learning-level projects. I can read and ship Flutter code; not where my depth is.`,
     progress: 30,
   },
   {
     id: 17,
     name: 'Android',
-    content: `Familiar with native Android concepts. Mostly used for debugging or adjusting platform-specific issues in cross-platform projects.`,
+    content: `Native Android knowledge used mostly to debug platform-specific issues in cross-platform apps.`,
     progress: 20,
   },
   {
     id: 18,
     name: 'iOS',
-    content: `Basic experience with iOS development. Mainly used for validating behavior and compatibility in React Native and Xamarin apps.`,
+    content: `Enough iOS knowledge to validate behaviour and fix compatibility issues in React Native and Xamarin apps.`,
     progress: 20,
   },
 ].sort((a, b) => b.progress - a.progress);
@@ -162,37 +162,37 @@ const skillsOther: SkillItem[] = [
   {
     id: 19,
     name: 'Photoshop & Illustrator',
-    content: `Proficient in graphic design, UI mockups, and photo editing. Used in freelance work and personal creative projects.`,
+    content: `Graphic design, UI mockups, and photo editing for freelance work and personal creative projects.`,
     progress: 80,
   },
   {
     id: 20,
     name: 'Git',
-    content: `Experienced with Git workflows including GitHub Flow and trunk-based development. Proficient in resolving merge conflicts and managing branches in large teams.`,
+    content: `Trunk-based and GitHub-flow workflows, merge-conflict archaeology, and branching strategies for large teams.`,
     progress: 80,
   },
   {
     id: 22,
     name: 'Scrum',
-    content: `Experienced working in Scrum teams. Involved in sprint planning, estimation, retrospectives, and close collaboration with Product Owners and stakeholders.`,
+    content: `Day-to-day Scrum practice: sprint planning, estimation, retros, and tight collaboration with product and stakeholders.`,
     progress: 75,
   },
   {
     id: 21,
     name: 'Illustration',
-    content: `Skilled in both digital and traditional illustration. Frequently work with Procreate and Adobe Fresco alongside traditional media like graphite and acrylic.`,
+    content: `Digital and traditional. Procreate and Adobe Fresco, plus graphite and acrylic when I want to step away from the screen.`,
     progress: 70,
   },
   {
     id: 23,
-    name: 'Audiovisual Production',
-    content: `Experience in music production, recording, mixing, and video editing. Tools include Reaper, Logic Pro, and Adobe Premiere.`,
+    name: 'Audiovisual production',
+    content: `Home-studio music production, recording, and mixing in Reaper and Logic Pro. Video editing in Adobe Premiere.`,
     progress: 50,
   },
   {
     id: 24,
-    name: '3D Modeling',
-    content: `Proficient in 3D modeling using Autodesk 3ds Max. Applied in personal and experimental design projects.`,
+    name: '3D modelling',
+    content: `Autodesk 3ds Max for personal and experimental design work.`,
     progress: 40,
   },
 ].sort((a, b) => b.progress - a.progress);
@@ -200,43 +200,60 @@ const skillsOther: SkillItem[] = [
 
 const skillsCV = [
   {
-    section: 'Front-end',
+    section: 'Languages',
     items: [
-      { name: 'React.js & React Native', icon: '' },
-      { name: 'Vue.js (2 & 3)', icon: '' },
-      { name: 'LitJS', icon: '' },
-      { name: 'Build Tools (Webpack, Rollup, Vite)', icon: '' },
-      { name: 'Interactive Apps (GSAP, PixiJS, Three.js)', icon: '' }
+      { name: 'TypeScript', icon: '' },
+      { name: 'JavaScript', icon: '' },
+      { name: 'Python', icon: '' },
+      { name: 'C#', icon: '' },
+      { name: 'SQL', icon: '' }
     ]
   },
   {
-    section: 'Back-end',
+    section: 'Frontend',
+    items: [
+      { name: 'React', icon: '' },
+      { name: 'React Native', icon: '' },
+      { name: 'Vue 2 / 3', icon: '' },
+      { name: 'LitJS', icon: '' },
+      { name: 'GSAP', icon: '' },
+      { name: 'Webpack / Vite', icon: '' }
+    ]
+  },
+  {
+    section: 'Backend',
     items: [
       { name: 'Node.js', icon: '' },
-      { name: 'Python', icon: '' },
-      { name: 'C# (.NET Core & Framework)', icon: '' }
+      { name: 'Express', icon: '' },
+      { name: '.NET (Core & Framework)', icon: '' }
     ]
   },
   {
-    section: 'Mobile',
+    section: 'Data',
     items: [
-      { name: 'React Native', icon: '' },
-      { name: 'Flutter', icon: '' }
+      { name: 'PostgreSQL', icon: '' },
+      { name: 'MySQL', icon: '' },
+      { name: 'MSSQL', icon: '' },
+      { name: 'MongoDB', icon: '' },
+      { name: 'Firebase', icon: '' }
     ]
   },
   {
-    section: 'Database',
+    section: 'Platforms',
     items: [
-      { name: 'SQL (MySQL, PostgreSQL, MSSQL)', icon: '' },
-      { name: 'NoSQL (MongoDB, Firebase)', icon: '' }
-    ]
-  },
-  {
-    section: 'Cloud',
-    items: [
+      { name: 'Backstage (Spotify)', icon: '' },
       { name: 'Azure DevOps', icon: '' },
       { name: 'Google Cloud Platform', icon: '' },
-      { name: 'AWS', icon: '' }
+      { name: 'Docker', icon: '' }
+    ]
+  },
+  {
+    section: 'Practices',
+    items: [
+      { name: 'Technical mentoring', icon: '' },
+      { name: 'System design & architecture', icon: '' },
+      { name: 'CI/CD & DevOps', icon: '' },
+      { name: 'Technical writing', icon: '' }
     ]
   }
 ];

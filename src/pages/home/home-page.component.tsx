@@ -24,7 +24,7 @@ const initialNavbarItem: NavbarItem[] = [
     id: 'about'
   },
   { title: 'Skills', isSelected: false, id: 'skills' },
-  { title: 'Experiences', isSelected: false, id: 'experiences' },
+  { title: 'Experience', isSelected: false, id: 'experiences' },
   { title: 'Education', isSelected: false, id: 'education' },
   { title: 'Art & tech', isSelected: false, id: 'blog' }
 ];
@@ -196,7 +196,7 @@ export const HomeComponent = () => {
             <EducationPage isDarkMode={darkMode} />
             <BlogPage isDarkMode={darkMode} />
             <div className="huge">
-              <h2>Thank you for visiting my website :)</h2>
+              <h2>Thanks for reading this far.</h2>
             </div>
           </div>
         </div>

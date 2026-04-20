@@ -4,10 +4,7 @@ type Project = {
 }
 
 export type Description = {
-  content: {
-    web: string,
-    cv: string,
-  },
+  content: string,
   projects?: Project[],
 }
 
@@ -25,5 +22,3 @@ export type Experience = {
 export type ExperienceItemProps = Experience & {
   isDarkMode?: boolean;
 }
-
-

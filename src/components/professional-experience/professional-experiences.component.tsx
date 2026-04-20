@@ -14,8 +14,8 @@ export const ProfessionalExperiencesPage = ({ removeHighlight, isHighlighted, is
         isHighlighted={isHighlighted}
         id="experiences"
         paddingColumns={2}
-        title="ProfessionalExperiences"
-        description="Professional Career"
+        title="Experience"
+        description="A decade of shipping software across agencies, banks, IoT, and startups."
       >
         {professionalExperiences.map((item, key) => (
           <ExperienceItem {...item} isDarkMode={darkMode} key={key} />

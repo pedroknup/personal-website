@@ -35,7 +35,7 @@ export const IntroPageComponent = ({
         <img src={personalData.profilePic} />
       </div>
       <div className={`intro-text ${hasFinishedTyping ? 'finished' : ''}`}>
-        {hasFinishedTyping && <span>/*</span>}
+        {hasFinishedTyping && <span>{'/*'}</span>}
         <span style={{ marginLeft: hasFinishedTyping ? 15 : 0, display: 'block' }}>
           {currentState === 0 && previousState == undefined && (
             <Typist
@@ -48,9 +48,9 @@ export const IntroPageComponent = ({
             >
               {currentState === 0 && (
                 <span>
-                  Hi! I’m Pedro Knup
+                  Hi, I’m Pedro Knup.
                   <br />
-                  I love coding and creating creative content :)
+                  Senior software engineer. Sometimes also a painter and a musician.
                   <br />
                 </span>
               )}
@@ -58,7 +58,7 @@ export const IntroPageComponent = ({
             </Typist>
           )}
         </span>
-        {hasFinishedTyping && <span>/*</span>}
+        {hasFinishedTyping && <span>{'*/'}</span>}
       </div>
 
       <div className="contact">

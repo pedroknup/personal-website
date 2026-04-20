@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { personalData } from '../../data/bio';
-import { skillsCV, skillLanguages, softSkillsCV } from '../../data/skills';
+import { skillsCV, skillLanguages } from '../../data/skills';
 import { educationalExperiences, professionalExperiences } from '../../data/experiences';
 import { Experience } from '../../../types/experience';
+
+const CV_CONTACT_NETWORKS = ['Github', 'LinkedIn'];
 
 import './cv-page.style.scss';
 
@@ -17,12 +19,9 @@ const Entry = ({ experience }: { experience: Experience }) => (
       </span>
       <span className="cv-entry__date">{experience.date}</span>
     </div>
-    <p className="cv-entry__description">{experience.description.content.cv}</p>
+    <p className="cv-entry__description">{experience.description.content}</p>
     {experience.skills && experience.skills.length > 0 && (
-      <p className="cv-entry__skills">
-        <em>Stack</em>
-        {experience.skills.join(' · ')}
-      </p>
+      <p className="cv-entry__skills">{experience.skills.join(' · ')}</p>
     )}
   </div>
 );
@@ -56,8 +55,10 @@ export const CvPage = () => {
 
   const contactItems = [
     personalData.email,
-    personalData.based,
-    ...personalData.social.map((s) => s.url.replace(/^https?:\/\//, '').replace(/\/$/, '')),
+    personalData.based.replace(/\.$/, ''),
+    ...personalData.social
+      .filter((s) => CV_CONTACT_NETWORKS.includes(s.name))
+      .map((s) => s.url.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/$/, '')),
   ];
 
   return (
@@ -124,10 +125,6 @@ export const CvPage = () => {
                 </div>
               </React.Fragment>
             ))}
-            <div className="cv-section__row-label">Soft</div>
-            <div className="cv-section__row-value">
-              {softSkillsCV[0].items.map((s) => s.name).join(' · ')}
-            </div>
           </div>
         </section>
 

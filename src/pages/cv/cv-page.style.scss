@@ -234,7 +234,7 @@ $cv-sheet-min-height: 1123px; // A4 @ 96dpi
       margin-left: 6px;
 
       &::before {
-        content: '— ';
+        content: '· ';
         color: $cv-ink-mute;
       }
     }
@@ -284,10 +284,10 @@ $cv-sheet-min-height: 1123px; // A4 @ 96dpi
 }
 
 // ---------------------------------------------------------------------------
-// Print styles — what the user sees in "Save as PDF" / a real printer.
+// Print styles: what the user sees in "Save as PDF" / a real printer.
 // Strip the dark page background, hide the toolbar, render the sheet at the
 // browser's page size with native page-break behavior. Real text, real links,
-// vector graphics — no rasterized image.
+// vector graphics, no rasterized image.
 // ---------------------------------------------------------------------------
 
 @page {

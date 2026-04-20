@@ -13,8 +13,8 @@ export const BlogPage = ({ isDarkMode: darkMode, removeHighlight, isHighlighted 
         removeHighlight={removeHighlight}
         isHighlighted={isHighlighted}
         id="blog"
-        title="Artworks"
-        description="My latest artworks and passion projects"
+        title="Art & tech"
+        description="The things I build when I step away from client work: paintings, music, and hardware experiments."
       >
         {youtubeVideos.map((video, key) => (
           <div key={`yt-${key}`}>
